@@ -50,10 +50,12 @@ class NBodyDataset:
         return (loc, vel, edge_attr, charges), edges
 
     def preprocess(self, loc, vel, edges, charges):
+        #print("before",loc.shape, vel.shape, edges.shape, charges.shape)
         # Convert arrays to tensors and adjust dimension ordering
-        loc = torch.tensor(loc).float().permute(0, 2, 3, 1)  # [batch, nodes, features, time_steps]
-        vel = torch.tensor(vel).float().permute(0, 2, 3, 1)  # [batch, nodes, features, time_steps]
+        loc = torch.tensor(loc).float().permute(0, 1, 3, 2)  # [batch, nodes, features, time_steps]
+        vel = torch.tensor(vel).float().permute(0, 1, 3, 2)  # [batch, nodes, features, time_steps]
         charges = torch.tensor(charges).float()
+        #print("after", loc.shape, vel.shape, edges.shape, charges.shape)
 
         # Limit the number of samples if max_samples is set
         if self.max_samples is not None:
@@ -90,12 +92,12 @@ class NBodyDataset:
 
 
 class NBody:
-    def __init__(self, data_root, num_samples=3000, batch_size=100):
+    def __init__(self, data_root ='nbody_dataset/', num_samples=3000, batch_size=100):
         self.train_dataset = NBodyDataset(
             partition="train", data_root=data_root, max_samples=num_samples, suffix='_charged5_initvel1small'
         )
         self.valid_dataset = NBodyDataset(
-            partition="val", data_root=data_root, max_samples=num_samples, suffix='_charged5_initvel1small'
+            partition="valid", data_root=data_root, max_samples=num_samples, suffix='_charged5_initvel1small'
         )
         self.test_dataset = NBodyDataset(
             partition="test", data_root=data_root, max_samples=num_samples, suffix='_charged5_initvel1small'
