@@ -1,89 +1,45 @@
 import torch
 
-# Original implementation
-def original_attention_mask(batch_size, n_nodes, edges, device):
-    batch_index = torch.arange(batch_size, device=device)
-    edges = edges + n_nodes * batch_index[:, None, None]
-    edges = tuple(edges.transpose(0, 1).flatten(1))
-    start_nodes, end_nodes = edges
+class ExampleClass:
+    def make_edge_attr(self, node_features, edges):
+        node1_features = node_features[edges[0]]
+        node2_features = node_features[edges[1]]
+        difference = node1_features - node2_features
+        edge_attributes = torch.cat((node1_features, node2_features, difference), dim=-1)
+        return edge_attributes
 
-    attention_mask = torch.zeros(batch_size * (n_nodes + 20), batch_size * (n_nodes + 20), device=device)
+def make_edge_attr(node_features, edges, batch_size=None):
+    edge_attributes = []
 
-    for b in range(batch_size):
-        node_start_idx = b * (n_nodes + 20)
-        edge_start_idx = node_start_idx + n_nodes
+    total_number_edges = edges[0].shape[0]
 
-        for i in range(20):
-            start_node = start_nodes[i + b * 20].item() + node_start_idx
-            end_node = end_nodes[i + b * 20].item() + node_start_idx
-            edge_idx = edge_start_idx + i
+    # Loop over all edges
+    for i in range(total_number_edges):
+        node1 = edges[0][i]
+        node2 = edges[1][i]
 
-            attention_mask[edge_idx, start_node] = 1
-            attention_mask[edge_idx, end_node] = 1
-            attention_mask[start_node, edge_idx] = 1
-            attention_mask[end_node, edge_idx] = 1
+        # difference between node features
+        node_i_features = node_features[node1]  # [#features(charge, loc, vel), dim]
+        node_j_features = node_features[node2]  # [#features(charge, loc, vel), dim]
+        difference = node_i_features - node_j_features
+        edge_representation = torch.cat((node_i_features, node_j_features, difference), dim=-1)
+        edge_attributes.append(edge_representation)
 
-    attention_mask = attention_mask.float()
-    attention_mask = attention_mask.masked_fill(attention_mask == 0, float('-inf'))
-    attention_mask = attention_mask.masked_fill(attention_mask == 1, float(0.0))
+    edge_attributes = torch.stack(edge_attributes)
+    return edge_attributes
 
-    return attention_mask
+# Define inputs
+node_features = torch.rand((10, 4))  # 10 nodes, 4 features per node
+edges = (torch.tensor([0, 1, 2]), torch.tensor([1, 2, 3]))  # Example edges
 
-# Optimized implementation
-def optimized_attention_mask(batch_size, n_nodes, edges, device):
-    num_edges_per_graph = edges.size(1) // batch_size
-    total_elements_per_graph = n_nodes + num_edges_per_graph
+# Create instance of the class
+example_class = ExampleClass()
 
-    attention_mask = torch.full((batch_size * total_elements_per_graph, batch_size * total_elements_per_graph), float('-inf'), device=device)
+# Call both functions
+output1 = example_class.make_edge_attr(node_features, edges)
+output2 = make_edge_attr(node_features, edges)
 
-    batch_index = torch.arange(batch_size, device=device).view(-1, 1, 1)
-    node_start_indices = batch_index * total_elements_per_graph
-    edge_start_indices = node_start_indices + n_nodes
-
-    start_nodes = edges[0] + node_start_indices
-    end_nodes = edges[1] + node_start_indices
-    edge_indices = torch.arange(num_edges_per_graph, device=device).view(1, -1) + edge_start_indices
-
-    start_nodes = start_nodes.flatten()
-    end_nodes = end_nodes.flatten()
-    edge_indices = edge_indices.flatten()
-
-    attention_mask[edge_indices[:, None], start_nodes] = 0
-    attention_mask[edge_indices[:, None], end_nodes] = 0
-    attention_mask[start_nodes[:, None], edge_indices] = 0
-    attention_mask[end_nodes[:, None], edge_indices] = 0
-
-    for b in range(batch_size):
-        node_start_idx = b * total_elements_per_graph
-        node_end_idx = node_start_idx + n_nodes
-        attention_mask[node_start_idx:node_end_idx, node_start_idx:node_end_idx] = 0
-
-    return attention_mask
-
-# Test function to compare the outputs
-def test_attention_masks():
-    batch_size = 3
-    n_nodes = 5
-    num_edges = 20
-    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-
-    # Example edges tensor
-    edges = torch.randint(0, n_nodes, (2, batch_size * num_edges), device=device)
-
-    original_mask = original_attention_mask(batch_size, n_nodes, edges, device)
-    optimized_mask = optimized_attention_mask(batch_size, n_nodes, edges, device)
-
-    # Compare the results
-    if torch.allclose(original_mask, optimized_mask):
-        print("The attention masks are equivalent.")
-    else:
-        print("The attention masks are not the same!")
-        print("Original Mask:")
-        print(original_mask)
-        print("Optimized Mask:")
-        print(optimized_mask)
-        print("Difference:")
-        print(original_mask - optimized_mask)
-
-# Run the test
-test_attention_masks()
+# Compare the outputs
+print(torch.allclose(output1, output2))  # Should be True
+print(output1)
+print(output2)

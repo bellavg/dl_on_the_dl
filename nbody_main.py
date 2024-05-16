@@ -11,18 +11,18 @@ metric = [1, 1, 1]
 clifford_algebra = CliffordAlgebra(metric)
 
 # Hyperparameters
-input_dim = 7  # feature_dim
-d_model = 7
+input_dim = 3  # feature_dim
+d_model = 16
 num_heads = 8
 num_layers = 6
 embed_in_features = 3
 embed_out_features = 3
-batch_size = 10
+batch_size = 100
 channels = 7
-num_samples = 256
+num_samples = 1000
 
 # Create the model
-model = NBodyTransformer(input_dim, d_model, num_heads, num_layers, embed_in_features, embed_out_features, clifford_algebra, channels)
+model = NBodyTransformer(input_dim, d_model, num_heads, num_layers, clifford_algebra, channels)
 criterion = nn.MSELoss()
 optimizer = optim.Adam(model.parameters(), lr=0.001)
 
