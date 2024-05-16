@@ -68,9 +68,9 @@ class SelfAttentionClifford(nn.Module):
         return output
 
 
-class GASTBlock(nn.Module):
+class TransformerBlock(nn.Module):
     def __init__(self, d_model, num_heads, clifford_algebra):
-        super(GASTBlock, self).__init__()
+        super(TransformerBlock, self).__init__()
         self.mvlayernorm1 = MVLayerNorm(clifford_algebra, d_model * 2)
         self.self_attn = SelfAttentionClifford(d_model * 2, 5, 20, clifford_algebra, num_heads)
         self.mvlayernorm2 = MVLayerNorm(clifford_algebra, d_model*2)
@@ -105,11 +105,11 @@ class GASTBlock(nn.Module):
         return src
 
 
-class GAST(nn.Module):
+class MainBody(nn.Module):
     def __init__(self, num_layers, d_model, num_heads, clifford_algebra):
-        super(GAST, self).__init__()
+        super(MainBody, self).__init__()
         self.layers = nn.ModuleList(
-            [GASTBlock(d_model, num_heads, clifford_algebra) for _ in range(num_layers)])
+            [TransformerBlock(d_model, num_heads, clifford_algebra) for _ in range(num_layers)])
 
     def forward(self, src, src_mask=None):
         for layer in self.layers:

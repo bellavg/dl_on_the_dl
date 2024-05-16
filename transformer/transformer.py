@@ -3,8 +3,7 @@ import torch.nn as nn
 from algebra.cliffordalgebra import CliffordAlgebra
 from original_models.modules.linear import MVLinear
 from transformer.modules.clifford_embedding import NBodyGraphEmbedder
-from transformer.modules.attention import GAST
-
+from transformer.modules.attention import MainBody
 
 
 class NBodyTransformer(nn.Module):
@@ -12,10 +11,15 @@ class NBodyTransformer(nn.Module):
                  clifford_algebra):
         super(NBodyTransformer, self).__init__()
 
+        # Initialize the transformer with the given parameters
+        # and the Clifford algebra
         self.clifford_algebra = clifford_algebra
+        # Initialize the embedding layer
         self.embedding_layer = NBodyGraphEmbedder(self.clifford_algebra, in_features=input_dim, embed_dim=d_model)
-        self.GAST = GAST(num_layers, d_model, num_heads, self.clifford_algebra)
-        self.combined_projection = MVLinear(self.clifford_algebra, d_model, d_model*2, subspaces=True)
+
+
+        self.GAST = MainBody(num_layers, d_model, num_heads, self.clifford_algebra)
+        self.combined_projection = MVLinear(self.clifford_algebra, d_model, d_model * 2, subspaces=True)
         self.MV_input = MVLinear(self.clifford_algebra, input_dim, d_model, subspaces=True)
         self.MV_GP = MVLinear(self.clifford_algebra, d_model * 2, d_model, subspaces=True)
 
@@ -23,7 +27,8 @@ class NBodyTransformer(nn.Module):
         batch_size, n_nodes, _ = batch[0].size()
 
         # Generate node and edge embeddings along with the attention mask add back attention mask at smoe point please
-        node_embeddings, edge_embeddings, loc_end_clifford, attention_mask = self.embedding_layer.embed_nbody_graphs(batch)
+        node_embeddings, edge_embeddings, loc_end_clifford, attention_mask = self.embedding_layer.embed_nbody_graphs(
+            batch)
 
         # nodes -> [batch_size * n_nodes, d_model/2, 8]
         # edges -> [batch_size * n_edges, d_model, 8]
