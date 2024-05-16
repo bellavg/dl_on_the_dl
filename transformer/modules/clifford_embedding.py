@@ -8,7 +8,7 @@ class NBodyGraphEmbedder:
     def __init__(self, clifford_algebra, in_features, embed_dim):
         self.clifford_algebra = clifford_algebra
         self.embedding = MVLinear(
-            self.clifford_algebra, in_features, int(embed_dim / 2), subspaces=False
+            self.clifford_algebra, in_features, embed_dim, subspaces=False
         )
         self.edge_projection = MVLinear(
             self.clifford_algebra, 10, embed_dim, subspaces=False
@@ -16,14 +16,15 @@ class NBodyGraphEmbedder:
 
     def embed_nbody_graphs(self, batch):
         batch_size, n_nodes, _ = batch[0].size()
-        full_node_embedding, full_edge_embedding, loc_end_clifford, edges = self.get_embedding(batch, batch_size,
+        full_node_embedding, full_edge_embedding, loc_end_clifford, edges, og_locations = self.get_embedding(batch, batch_size,
                                                                                                n_nodes)
         attention_mask = self.get_attention_mask(batch_size, n_nodes, edges)
 
-        return full_node_embedding, full_edge_embedding, loc_end_clifford, attention_mask
+        return full_node_embedding, full_edge_embedding, loc_end_clifford, attention_mask,  og_locations
 
     def get_embedding(self, batch, batch_size, n_nodes):
         loc_mean, vel, edge_attr, charges, loc_end, edges = self.preprocess(batch)
+        og_locations = self.clifford_algebra.embed(batch[0], (1, 2, 3))
 
         # Embed data in Clifford space
         invariants = self.clifford_algebra.embed(charges, (0,))
@@ -40,16 +41,15 @@ class NBodyGraphEmbedder:
         # Clifford embeddings for end locations
         loc_end_clifford = self.clifford_algebra.embed(loc_end, (1, 2, 3))
 
-        return full_node_embedding, full_edge_embedding, loc_end_clifford, (start_nodes, end_nodes)
+        return full_node_embedding, full_edge_embedding, loc_end_clifford, (start_nodes, end_nodes), og_locations
 
     def preprocess(self, batch):
         loc, vel, edge_attr, charges, loc_end, edges = batch
         # print("before",loc.shape, vel.shape, edge_attr.shape, edges.shape, charges.shape)
         loc_mean = self.compute_mean_centered(loc)
-        loc_end_mean = self.compute_mean_centered(loc_end)
-        loc_mean, vel, edge_attr, charges, loc_end_mean = self.flatten_tensors(loc_mean, vel, edge_attr, charges,
-                                                                               loc_end_mean)
-        return loc_mean, vel, edge_attr, charges, loc_end_mean, edges
+        loc_mean, vel, edge_attr, charges, loc_end = self.flatten_tensors(loc_mean, vel, edge_attr, charges,
+                                                                          loc_end)
+        return loc_mean, vel, edge_attr, charges, loc_end, edges
 
     def compute_mean_centered(self, tensor):
         return tensor - tensor.mean(dim=1, keepdim=True)
@@ -75,15 +75,21 @@ class NBodyGraphEmbedder:
     def make_edge_attr(self, node_features, edges):
         node1_features = node_features[edges[0]]
         node2_features = node_features[edges[1]]
-        difference = node1_features - node2_features
-        edge_attributes = torch.cat((node1_features, node2_features, difference), dim=1)
-        return edge_attributes
+        # difference = node1_features - node2_features
+        gp = self.clifford_algebra.geometric_product(node1_features, node2_features)
+        attr = torch.cat((node1_features, node2_features, gp), dim=1)
+        return attr
 
-    def get_attention_mask(self,batch_size, n_nodes, edges):
+    def get_attention_mask(self, batch_size, n_nodes, edges):
         num_edges_per_graph = edges[0].size(0) // batch_size
 
         # Initialize an attention mask with zeros for a single batch
         base_attention_mask = torch.zeros(1, 25, 25, device=edges[0].device)
+
+        # Nodes can attend to themselves and to all other nodes within the same graph
+        for i in range(n_nodes):
+            for j in range(n_nodes):
+                base_attention_mask[0, i, j] = 1
 
         for i in range(num_edges_per_graph):
             start_node = edges[0][i].item()
@@ -105,5 +111,8 @@ class NBodyGraphEmbedder:
         attention_mask = attention_mask.float()
         attention_mask.masked_fill(attention_mask == 0, float('-inf'))
         attention_mask.masked_fill(attention_mask == 1, float(0.0))
+
+        # Set the diagonal of the attention mask to 0
+        attention_mask[0].fill_diagonal_(float('-inf'))
 
         return attention_mask

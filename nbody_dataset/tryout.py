@@ -7,6 +7,7 @@ metric = [1, 1, 1]
 clifford_algebra = CliffordAlgebra(metric)
 
 
+
 def test_equivariant_dropout():
     dropout_prob = 0.5
     layer = EquivariantDropout(p=dropout_prob)
@@ -56,9 +57,33 @@ def test_equivariant_properties():
     assert torch.allclose(input_norm, output_norm, atol=tolerance), "Equivariance not maintained after dropout"
 
 
-class EquivariantDropout(nn.Module):
+def grade_dropout(multivectors: torch.Tensor, p: float, training: bool) -> torch.Tensor:
+    """Apply grade dropout to multivectors.
+
+    Parameters
+    ----------
+    multivectors : torch.Tensor
+        Input multivectors with shape (..., 8).
+    p : float
+        Dropout probability.
+    training : bool
+        Whether the model is in training mode.
+
+    Returns
+    -------
+    torch.Tensor
+        Multivectors with dropout applied.
     """
-    Equivariant Dropout layer for multivectors.
+    if not training or p == 0.0:
+        return multivectors
+
+    # Generate dropout mask for each grade in the Clifford space dimension
+    mask = torch.rand(multivectors.shape[-1], device=multivectors.device) > p
+    return multivectors * mask.float()
+
+
+class EquivariantDropout(nn.Module):
+    """Grade dropout for multivectors (and regular dropout for auxiliary scalars).
 
     Parameters
     ----------
@@ -68,34 +93,28 @@ class EquivariantDropout(nn.Module):
 
     def __init__(self, p: float = 0.0):
         super().__init__()
-        self.p = p
+        self._dropout_prob = p
 
-    def forward(self, x: torch.Tensor) -> torch.Tensor:
-        """
-        Forward pass. Applies dropout.
+    def forward(self, src: torch.Tensor) -> torch.Tensor:
+        """Forward pass. Applies dropout.
 
         Parameters
         ----------
-        x : torch.Tensor with shape (batch, num_edges + num_nodes, hidden_dim, 8)
-            Multivector inputs.
+        src : torch.Tensor with shape [batch_size, n_nodes + n_edges, embedding_dim, 8]
+            Input tensor containing multivectors embedded in a higher space in Clifford algebra.
 
         Returns
         -------
-        torch.Tensor with shape (batch, num_edges + num_nodes, hidden_dim, 8)
-            Multivector inputs with dropout applied.
+        torch.Tensor
+            Tensor with dropout applied.
         """
-        if not self.training or self.p == 0.0:
-            return x
+        batch_size, num_elements, embedding_dim, clifford_space = src.shape
+        assert clifford_space == 8, "Expected the last dimension to be 8."
 
-        # Generate dropout mask
-        mask_shape = x[..., :1].shape
-        mask = torch.bernoulli((1 - self.p) * torch.ones(mask_shape, device=x.device))
-        mask = mask / (1 - self.p)  # Scale the mask to keep the expected value the same
+        # Apply grade dropout to the multivectors
+        src_dropout = grade_dropout(src, p=self._dropout_prob, training=self.training)
 
-        # Apply the mask to the input tensor
-        output = x * mask
-
-        return output
+        return src_dropout
 
 
 def test_gradient_flow():

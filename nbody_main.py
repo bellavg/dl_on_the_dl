@@ -5,7 +5,6 @@ from tqdm import tqdm
 from transformer.transformer import NBodyTransformer
 from algebra.cliffordalgebra import CliffordAlgebra
 from dataset import NBody
-from torch.utils.tensorboard import SummaryWriter
 
 
 def train_epoch(model, train_loader, criterion, optimizer):
@@ -44,15 +43,14 @@ num_layers = 6
 embed_in_features = 3
 embed_out_features = 3
 batch_size = 100
-channels = 7
-num_samples = 1000
+num_samples = 3000
 
 # Create the model
 model = NBodyTransformer(input_dim, d_model, num_heads, num_layers, clifford_algebra)
 criterion = nn.MSELoss()
-# optimizer = optim.Adam(model.parameters(), lr=0.001, weight_decay=0.0001)
-optimizer = optim.Adam(model.parameters(), lr=0.001)  # Check is weight decay equivariant i feel like no...
-scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, mode='min', factor=0.1, patience=10)
+optimizer = optim.Adam(model.parameters(), lr=0.001, weight_decay=0.0001)
+#optimizer = optim.Adam(model.parameters(), lr=0.001)  # Check is weight decay equivariant i feel like no...
+scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, mode='min', factor=0.1, patience=10) # cosine scheduler
 
 nbody_data = NBody(num_samples=num_samples, batch_size=batch_size)
 

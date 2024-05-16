@@ -20,6 +20,7 @@ class SelfAttentionClifford(nn.Module):
         self.k_linear = MVLinear(algebra, num_feat, num_feat * num_heads, subspaces=True)
         self.v_linear = MVLinear(algebra, num_feat, num_feat * num_heads, subspaces=True)
         self.output_embedding = MVLinear(algebra, num_feat * num_heads, num_feat, subspaces=True)
+        self.cat_output_embedding = MVLinear(algebra, num_feat * 2, num_feat, subspaces=True)
         self.concat_layernorm = MVLayerNorm(algebra, num_feat)
 
     def forward(self, feature_matrix, attention_mask):
@@ -45,17 +46,26 @@ class SelfAttentionClifford(nn.Module):
         # Adjust the attention mask
         attention_mask = attention_mask.unsqueeze(1).repeat(1, self.num_heads, 1,
                                                             1)  # Shape: [batch_size, num_heads, n_nodes + n_edges, n_nodes + n_edges]
-        attn = attn + attention_mask  # Apply the mask
+        #attn = attn + attention_mask  # Apply the mask
         attn = F.softmax(attn, dim=-1)
 
         # Apply attention to value
         attention_output = torch.matmul(attn, v) # [batch_size, num_heads, n_nodes + n_edges, d_model, 8]
 
+
         attention_output = attention_output.transpose(1, 2).contiguous().view(bs*(self.num_nodes + self.num_edges), self.num_heads * self.num_feat, 8)
         # attention_output -> [batch_size * (n_nodes + n_edges), d_model*num_heads, 8]
+        output = self.output_embedding(attention_output)
+        # output -> [batch_size * (n_nodes + n_edges), d_model, 8]
+
+        gp_output = self.algebra.geometric_product(output, output)
+        #
+
+        output_cat = torch.cat((output, gp_output), dim=1)
+
 
         # Output linear transformation
-        output = self.output_embedding(attention_output)
+        output = self.cat_output_embedding(output_cat)
         # output -> [batch_size * (n_nodes + n_edges), d_model, 8]
 
         # # Apply geometric product to attention output
@@ -65,20 +75,21 @@ class SelfAttentionClifford(nn.Module):
         # output = output.view(bs * (self.num_nodes + self.num_edges), self.num_feat, 8)
         # output = self.concat_layernorm(output)
 
+
         return output
 
 
 class TransformerBlock(nn.Module):
     def __init__(self, d_model, num_heads, clifford_algebra):
         super(TransformerBlock, self).__init__()
-        self.mvlayernorm1 = MVLayerNorm(clifford_algebra, d_model * 2)
-        self.self_attn = SelfAttentionClifford(d_model * 2, 5, 20, clifford_algebra, num_heads)
-        self.mvlayernorm2 = MVLayerNorm(clifford_algebra, d_model*2)
-        self.mvlayernorm3 = MVLayerNorm(clifford_algebra, d_model*2)
+        self.mvlayernorm1 = MVLayerNorm(clifford_algebra, d_model )
+        self.self_attn = SelfAttentionClifford(d_model, 5, 20, clifford_algebra, num_heads)
+        self.mvlayernorm2 = MVLayerNorm(clifford_algebra, d_model)
+        self.mvlayernorm3 = MVLayerNorm(clifford_algebra, d_model)
         self.mlp = nn.Sequential(
-            MVLinear(clifford_algebra, d_model* 2, d_model * 4),
-            MVSiLU(clifford_algebra, d_model * 4),
-            MVLinear(clifford_algebra, d_model * 4, d_model*2)
+            MVLinear(clifford_algebra, d_model, d_model * 4),
+            MVSiLU(clifford_algebra, d_model * 4), # replace with geometric product
+            MVLinear(clifford_algebra, d_model * 4, d_model) # CE MLP instead of MLP
         )
         # self.dropout = TBD
 
