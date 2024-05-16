@@ -103,7 +103,7 @@ class NBodyGraphEmbedder:
 
         # Convert the mask to float and set masked positions to -inf and allowed positions to 0
         attention_mask = attention_mask.float()
-        attention_mask = attention_mask.masked_fill(attention_mask == 0, float('-inf'))
-        attention_mask = attention_mask.masked_fill(attention_mask == 1, float(0.0))
+        attention_mask.masked_fill(attention_mask == 0, float('-inf'))
+        attention_mask.masked_fill(attention_mask == 1, float(0.0))
 
         return attention_mask

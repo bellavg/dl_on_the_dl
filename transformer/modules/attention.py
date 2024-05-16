@@ -69,7 +69,7 @@ class SelfAttentionClifford(nn.Module):
 
 
 class GASTBlock(nn.Module):
-    def __init__(self, d_model, num_heads, clifford_algebra, dropout=0.1):
+    def __init__(self, d_model, num_heads, clifford_algebra):
         super(GASTBlock, self).__init__()
         self.mvlayernorm1 = MVLayerNorm(clifford_algebra, d_model * 2)
         self.self_attn = SelfAttentionClifford(d_model * 2, 5, 20, clifford_algebra, num_heads)
@@ -106,10 +106,10 @@ class GASTBlock(nn.Module):
 
 
 class GAST(nn.Module):
-    def __init__(self, num_layers, d_model, num_heads, clifford_algebra, channels):
+    def __init__(self, num_layers, d_model, num_heads, clifford_algebra):
         super(GAST, self).__init__()
         self.layers = nn.ModuleList(
-            [GASTBlock(d_model, num_heads, clifford_algebra, channels) for _ in range(num_layers)])
+            [GASTBlock(d_model, num_heads, clifford_algebra) for _ in range(num_layers)])
 
     def forward(self, src, src_mask=None):
         for layer in self.layers:

@@ -5,8 +5,32 @@ from tqdm import tqdm
 from transformer.transformer import NBodyTransformer
 from algebra.cliffordalgebra import CliffordAlgebra
 from dataset import NBody
+from torch.utils.tensorboard import SummaryWriter
 
-# Define the metric for 3D space (Euclidean)
+def train_epoch(model, train_loader, criterion, optimizer):
+    model.train()
+    running_loss = 0.0
+    for i, batch in enumerate(train_loader):
+        optimizer.zero_grad()
+        output, tgt = model(batch)
+        loss = criterion(output, tgt)
+        loss.backward()
+        nn.utils.clip_grad_norm_(model.parameters(), max_norm=1.0)  # Gradient clipping
+        optimizer.step()
+        running_loss += loss.item()
+    return running_loss / len(train_loader)
+
+
+def validate_epoch(model, val_loader, criterion):
+    model.eval()
+    running_loss = 0.0
+    with torch.no_grad():
+        for i, batch in enumerate(val_loader):
+            output, tgt = model(batch)
+            loss = criterion(output, tgt)
+            running_loss += loss.item()
+    return running_loss / len(val_loader)
+
 metric = [1, 1, 1]
 clifford_algebra = CliffordAlgebra(metric)
 
@@ -22,23 +46,32 @@ channels = 7
 num_samples = 1000
 
 # Create the model
-model = NBodyTransformer(input_dim, d_model, num_heads, num_layers, clifford_algebra, channels)
+model = NBodyTransformer(input_dim, d_model, num_heads, num_layers, clifford_algebra)
 criterion = nn.MSELoss()
-optimizer = optim.Adam(model.parameters(), lr=0.001)
+optimizer = optim.Adam(model.parameters(), lr=0.001, weight_decay=0.0001)
+scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, mode='min', factor=0.1, patience=10)
 
 nbody_data = NBody(num_samples=num_samples, batch_size=batch_size)
 
 train_loader = nbody_data.train_loader()
+val_loader = nbody_data.val_loader()  # Assuming you have a validation data loader
 
-model.train()
-for epoch in tqdm(range(10)):
-    for i, batch in enumerate(train_loader):
-        #print(f"Batch {i + 1} size: {batch[0].size()}")  # Assuming batch[0] is your data
+# Create a SummaryWriter to log data for TensorBoard
+writer = SummaryWriter()
 
-        optimizer.zero_grad()
-        output, tgt = model(batch)
-        loss = criterion(output, tgt)
-        loss.backward()
-        optimizer.step()
+best_val_loss = float('inf')
+early_stopping_counter = 0
+early_stopping_limit = 10
 
-    print(f'Epoch {epoch + 1}, Loss: {loss.item()}')
+
+
+
+for epoch in tqdm(range(100)):
+    train_loss = train_epoch(model, train_loader, criterion, optimizer)
+    val_loss = validate_epoch(model, val_loader, criterion)
+    scheduler.step(val_loss)  # Update learning rate based on validation loss
+
+    print(f'Epoch {epoch + 1}, Training Loss: {train_loss}, Validation Loss: {val_loss}')
+
+#Ideas to try: add geometric product in self attention, add specific positional encoding
+#Add dropout

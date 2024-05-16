@@ -9,12 +9,12 @@ from transformer.modules.attention import GAST
 
 class NBodyTransformer(nn.Module):
     def __init__(self, input_dim, d_model, num_heads, num_layers,
-                 clifford_algebra, channels):
+                 clifford_algebra):
         super(NBodyTransformer, self).__init__()
 
         self.clifford_algebra = clifford_algebra
         self.embedding_layer = NBodyGraphEmbedder(self.clifford_algebra, in_features=input_dim, embed_dim=d_model)
-        self.GAST = GAST(num_layers, d_model, num_heads, self.clifford_algebra, channels)
+        self.GAST = GAST(num_layers, d_model, num_heads, self.clifford_algebra)
         self.combined_projection = MVLinear(self.clifford_algebra, d_model, d_model*2, subspaces=True)
         self.MV_input = MVLinear(self.clifford_algebra, input_dim, d_model, subspaces=True)
         self.MV_GP = MVLinear(self.clifford_algebra, d_model * 2, d_model, subspaces=True)
