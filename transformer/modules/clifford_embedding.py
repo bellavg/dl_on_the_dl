@@ -76,8 +76,9 @@ class NBodyGraphEmbedder:
     def make_edge_attr(self, node_features, edges):
         node1_features = node_features[edges[0]]
         node2_features = node_features[edges[1]]
-        difference = node1_features - node2_features
-        edge_attributes = torch.cat((node1_features, node2_features, difference), dim=1)
+        #difference = node1_features - node2_features
+        gp = self.clifford_algebra.geometric_product(node1_features, node2_features)
+        edge_attributes = torch.cat((node1_features, node2_features, gp), dim=1)
         return edge_attributes
 
     def get_attention_mask(self, batch_size, n_nodes, edges):
