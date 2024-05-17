@@ -3,7 +3,7 @@ import torch.nn as nn
 from algebra.cliffordalgebra import CliffordAlgebra
 from original_models.modules.linear import MVLinear
 from transformer.modules.clifford_embedding import NBodyGraphEmbedder
-from transformer.modules.attention import MainBody
+from transformer.modules.block import MainBody
 
 
 class NBodyTransformer(nn.Module):

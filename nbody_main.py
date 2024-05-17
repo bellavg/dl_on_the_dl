@@ -49,9 +49,14 @@ num_samples = 1000
 # Create the model
 model = NBodyTransformer(input_dim, d_model, num_heads, num_layers, clifford_algebra)
 criterion = nn.MSELoss()
-# optimizer = optim.Adam(model.parameters(), lr=0.001, weight_decay=0.0001)
-optimizer = optim.Adam(model.parameters(), lr=0.001)  # Check is weight decay equivariant i feel like no...
-scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, mode='min', factor=0.1, patience=10)
+optimizer = optim.Adam(model.parameters(), lr=0.001, weight_decay=0.0001)
+#optimizer = optim.Adam(model.parameters(), lr=0.001)  # Check is weight decay equivariant i feel like no...
+#scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, mode='min', factor=0.1, patience=10)
+T_0 = 10  # Number of iterations for the first restart
+T_mult = 1  # A factor to increase T_i after a restart
+eta_min = 0.00001  # Minimum learning rate
+
+scheduler = torch.optim.lr_scheduler.CosineAnnealingWarmRestarts(optimizer, T_0, T_mult, eta_min)
 
 nbody_data = NBody(num_samples=num_samples, batch_size=batch_size)
 
@@ -65,7 +70,7 @@ early_stopping_limit = 10
 for epoch in tqdm(range(100)):
     train_loss = train_epoch(model, train_loader, criterion, optimizer)
     val_loss = validate_epoch(model, val_loader, criterion)
-    scheduler.step(val_loss)  # Update learning rate based on validation loss
+    scheduler.step(epoch)  # Update learning rate based on validation loss
 
     # Save model if validation loss improved
     if val_loss < best_val_loss:
