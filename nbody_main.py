@@ -12,8 +12,9 @@ def train_epoch(model, train_loader, criterion, optimizer):
     model.train()
     running_loss = 0.0
     for i, batch in enumerate(train_loader):
+        loc, vel, edge_attr, charges, loc_end, edges = batch
         optimizer.zero_grad()
-        output, tgt = model(batch)
+        output, tgt = model([loc, vel, charges, loc_end])
         loss = criterion(output, tgt)
         loss.backward()
         nn.utils.clip_grad_norm_(model.parameters(), max_norm=1.0)  # Gradient clipping
@@ -27,7 +28,8 @@ def validate_epoch(model, val_loader, criterion):
     running_loss = 0.0
     with torch.no_grad():
         for i, batch in enumerate(val_loader):
-            output, tgt = model(batch)
+            loc, vel, edge_attr, charges, loc_end, edges = batch
+            output, tgt = model([loc, vel, charges, loc_end])
             loss = criterion(output, tgt)
             running_loss += loss.item()
     return running_loss / len(val_loader)
@@ -50,8 +52,7 @@ num_samples = 1000
 model = NBodyTransformer(input_dim, d_model, num_heads, num_layers, clifford_algebra)
 criterion = nn.MSELoss()
 optimizer = optim.Adam(model.parameters(), lr=0.001, weight_decay=0.0001)
-#optimizer = optim.Adam(model.parameters(), lr=0.001)  # Check is weight decay equivariant i feel like no...
-#scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, mode='min', factor=0.1, patience=10)
+
 T_0 = 10  # Number of iterations for the first restart
 T_mult = 1  # A factor to increase T_i after a restart
 eta_min = 0.00001  # Minimum learning rate

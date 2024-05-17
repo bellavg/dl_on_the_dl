@@ -22,25 +22,21 @@ class NBodyTransformer(nn.Module):
         self.MV_GP = MVLinear(self.clifford_algebra, d_model * 2, d_model, subspaces=True)
 
     def forward(self, batch):
-        batch_size, n_nodes, _ = batch[0].size()
+        loc_start = batch[0]
+        batch_size, n_nodes, _ = loc_start.size()
 
+        loc_end = batch[-1]
+        new_batch = batch[:-1]
 
         # Generate node and edge embeddings along with the attention mask add back attention mask at smoe point please
-        full_embeddings, loc_end_clifford, attention_mask = self.embedding_layer.embed_nbody_graphs(
-            batch)
+        full_embeddings, attention_mask = self.embedding_layer.embed_nbody_graphs(new_batch)
 
-        # nodes -> [batch_size * n_nodes, d_model, 8]
-        # edges -> [batch_size * n_edges, d_model, 8]
+        src = self.clifford_algebra.geometric_product(full_embeddings, full_embeddings)
 
-        #src = self.clifford_algebra.geometric_product(full_embeddings, full_embeddings)
-
-        # src -> [batch_size * (n_nodes + n_edges), d_model, 8]
-
-        # Apply MVLinear transformation to the combined embeddings
-        src = self.combined_projection(full_embeddings)
-        # src -> [batch_size * (n_nodes + n_edges), d_model*2, 8]
 
         # Pass through GAST layers
         output = self.GAST(src, attention_mask)
+        output_locations = output[:(5 * batch_size), 1, 1:4]
+        new_pos = loc_start + output_locations.view(batch_size, 5, 3)
 
-        return output[:(5 * batch_size), 1, :], loc_end_clifford
+        return new_pos, loc_end

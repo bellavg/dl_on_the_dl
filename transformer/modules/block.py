@@ -14,7 +14,7 @@ class TransformerBlock(nn.Module):
         super(TransformerBlock, self).__init__()
         self.algebra = clifford_algebra
         self.mvlayernorm1 = MVLayerNorm(clifford_algebra, d_model)
-        self.self_attn = SelfAttentionClifford(d_model, 5, 20, clifford_algebra, num_heads)
+        self.self_attn = SelfAttentionClifford(d_model, 5, clifford_algebra, num_heads)
         self.mvlayernorm2 = MVLayerNorm(clifford_algebra, d_model)
         self.mvlayernorm3 = MVLayerNorm(clifford_algebra, d_model)
         self.mvlayernorm4 = MVLayerNorm(clifford_algebra, d_model)
@@ -37,9 +37,9 @@ class TransformerBlock(nn.Module):
         src = self.mvlayernorm2(src)
 
         # # geo prod - possibly to take out - compare
-        # src_gp = self.algebra.geometric_product(src, src)
-        # src = src + src_gp
-        # src = self.mvlayernorm4(src)
+        src_gp = self.algebra.geometric_product(src, src)
+        src = src + src_gp
+        src = self.mvlayernorm4(src)
 
         # MLP
         ff_src = self.mlp(src)
