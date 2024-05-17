@@ -79,11 +79,16 @@ class NBodyGraphEmbedder:
         edge_attributes = torch.cat((node1_features, node2_features, difference), dim=1)
         return edge_attributes
 
-    def get_attention_mask(self,batch_size, n_nodes, edges):
+    def get_attention_mask(self, batch_size, n_nodes, edges):
         num_edges_per_graph = edges[0].size(0) // batch_size
 
         # Initialize an attention mask with zeros for a single batch
         base_attention_mask = torch.zeros(1, 25, 25, device=edges[0].device)
+
+        # Nodes can attend to themselves and to all other nodes within the same graph
+        for i in range(n_nodes):
+            for j in range(n_nodes):
+                base_attention_mask[0, i, j] = 1
 
         for i in range(num_edges_per_graph):
             start_node = edges[0][i].item()
@@ -106,4 +111,36 @@ class NBodyGraphEmbedder:
         attention_mask.masked_fill(attention_mask == 0, float('-inf'))
         attention_mask.masked_fill(attention_mask == 1, float(0.0))
 
+        # Set the diagonal of the attention mask to 0
+        attention_mask[0].fill_diagonal_(float('-inf'))
+
         return attention_mask
+
+    # def get_attention_mask(self,batch_size, n_nodes, edges):
+    #     num_edges_per_graph = edges[0].size(0) // batch_size
+    #
+    #     # Initialize an attention mask with zeros for a single batch
+    #     base_attention_mask = torch.zeros(1, 25, 25, device=edges[0].device)
+    #
+    #     for i in range(num_edges_per_graph):
+    #         start_node = edges[0][i].item()
+    #         end_node = edges[1][i].item()
+    #         edge_idx = n_nodes + i
+    #
+    #         # Edges can attend to their corresponding nodes
+    #         base_attention_mask[0, edge_idx, start_node] = 1
+    #         base_attention_mask[0, edge_idx, end_node] = 1
+    #
+    #         # Nodes can attend to their corresponding edges
+    #         base_attention_mask[0, start_node, edge_idx] = 1
+    #         base_attention_mask[0, end_node, edge_idx] = 1
+    #
+    #     # Stack the masks for each batch
+    #     attention_mask = base_attention_mask.repeat(batch_size, 1, 1)
+    #
+    #     # Convert the mask to float and set masked positions to -inf and allowed positions to 0
+    #     attention_mask = attention_mask.float()
+    #     attention_mask.masked_fill(attention_mask == 0, float('-inf'))
+    #     attention_mask.masked_fill(attention_mask == 1, float(0.0))
+    #
+    #     return attention_mask

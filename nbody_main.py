@@ -44,7 +44,6 @@ num_layers = 6
 embed_in_features = 3
 embed_out_features = 3
 batch_size = 100
-channels = 7
 num_samples = 1000
 
 # Create the model
