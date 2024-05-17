@@ -53,10 +53,10 @@ class NBodyTransformer(nn.Module):
         # Pass through GAST layers
         output = self.GAST(src, attention_mask)
 
-        output = output.reshape(batch_size, (node_embeddings + edge_embeddings), self.d_model, 8)
+        #output = output.reshape(batch_size, (node_embeddings + edge_embeddings), self.d_model, 8)
         #reshape
 
-        output =  og_locations + output[:(5 * batch_size), 1, :]
+        output = output[:(5 * batch_size), 1, :]
 
 
 
