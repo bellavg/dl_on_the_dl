@@ -16,41 +16,23 @@ class NBodyGraphEmbedder:
 
     def embed_nbody_graphs(self, batch):
         batch_size, n_nodes, _ = batch[0].size()
-        full_node_embedding, full_edge_embedding, loc_end_clifford, edges = self.get_embedding(batch, batch_size,
-                                                                                               n_nodes)
+        loc_mean, vel, edge_attr, charges, loc_end, edges = self.preprocess(batch)
+        full_node_embedding, nodes_stack = self.get_node_embedding(loc_mean, vel, charges)
+        full_edge_embedding, edges = self.get_edge_embedding(edge_attr, edges, batch_size, n_nodes, nodes_stack)
+
         attention_mask = self.get_attention_mask(batch_size, n_nodes, edges)
         full_embedding = torch.cat((full_node_embedding, full_edge_embedding), dim=0)
-
-        return full_embedding, loc_end_clifford, attention_mask
-
-    def get_embedding(self, batch, batch_size, n_nodes):
-        loc_mean, vel, edge_attr, charges, loc_end, edges = self.preprocess(batch)
-
-        # Embed data in Clifford space
-        invariants = self.clifford_algebra.embed(charges, (0,))
-        xv = torch.stack([loc_mean, vel], dim=1)
-        covariants = self.clifford_algebra.embed(xv, (1, 2, 3))
-
-        nodes_stack = torch.cat([invariants[:, None], covariants], dim=1)
-        full_node_embedding = self.node_projection(nodes_stack)
-
-        # Get edge nodes and edge features
-        start_nodes, end_nodes = self.get_edge_nodes(edges, n_nodes, batch_size)
-        full_edge_embedding = self.get_full_edge_embedding(edge_attr, nodes_stack, (start_nodes, end_nodes))
 
         # Clifford embeddings for end locations
         loc_end_clifford = self.clifford_algebra.embed(loc_end, (1, 2, 3))
 
-        return full_node_embedding, full_edge_embedding, loc_end_clifford, (start_nodes, end_nodes)
+        return full_embedding, loc_end_clifford, attention_mask
 
     def preprocess(self, batch):
         loc, vel, edge_attr, charges, loc_end, edges = batch
-        # print("before",loc.shape, vel.shape, edge_attr.shape, edges.shape, charges.shape)
         loc_mean = self.compute_mean_centered(loc)
-        loc_end_mean = self.compute_mean_centered(loc_end)
-        loc_mean, vel, edge_attr, charges, loc_end_mean = self.flatten_tensors(loc_mean, vel, edge_attr, charges,
-                                                                               loc_end_mean)
-        return loc_mean, vel, edge_attr, charges, loc_end_mean, edges
+        loc_mean, vel, charges, loc_end = self.flatten_tensors(loc_mean, vel, charges, loc_end)
+        return loc_mean, vel, edge_attr, charges, loc_end, edges
 
     def compute_mean_centered(self, tensor):
         return tensor - tensor.mean(dim=1, keepdim=True)
@@ -58,15 +40,58 @@ class NBodyGraphEmbedder:
     def flatten_tensors(self, *tensors):
         return [tensor.float().view(-1, *tensor.shape[2:]) for tensor in tensors]
 
-    def get_edge_nodes(self, edges, n_nodes, batch_size):
+    def get_node_embedding(self, loc_mean, vel, charges):
+        # Embed data in Clifford space
+        invariants = self.clifford_algebra.embed(charges, (0,))
+        xv = torch.stack([loc_mean, vel], dim=1)
+        covariants = self.clifford_algebra.embed(xv, (1, 2, 3))
+        # stack the node info
+        nodes_stack = torch.cat([invariants[:, None], covariants], dim=1)
+        # project the node embeddings to higher dimensions
+        full_node_embedding = self.node_projection(nodes_stack)
+        return full_node_embedding, nodes_stack
+
+    def get_edge_embedding(self, edge_attr, edges, batch_size, n_nodes, nodes_stack):
+        # Get edge nodes and edge features
+        # edges are batch_size, 2, 20 - number of edges per graph
+        edges = self.get_edge_nodes(edges, batch_size, n_nodes)
+        #edge_attr = edge_attr[:, indices, :]  # batch_size, 20, 1 ->  batch_size, 10, 1 gets rid of duplicate edges
+        full_edge_embedding = self.get_full_edge_embedding(edge_attr, nodes_stack, edges)
+        return full_edge_embedding, edges
+
+    def get_edge_nodes(self, edges, batch_size, n_nodes):
+        # Edge nodes start off as [batch_size, 2, 20] need to be reduced to [batch_size, 2, 10]
         batch_index = torch.arange(batch_size, device=edges.device)
-        edges = edges + n_nodes * batch_index[:, None, None]
+        edges = edges + n_nodes * batch_index[:, None, None]  # [batch_size, 2, 20]
+
+        #edges, indices = self.get_unique_edges_with_indices(edges[0])
+
+        #edges = edges.unsqueeze(0).repeat(batch_size,1,1) # [batch_size, 2, 10]
         edges = tuple(edges.transpose(0, 1).flatten(1))
-        return edges
+        return edges #, indices
+
+    def get_unique_edges_with_indices(self, tensor):
+        edges = set()  # edges before
+        unique_edges = []
+        unique_indices = []
+
+        for i, edge in enumerate(tensor.t()):
+            node1, node2 = sorted(edge.tolist())
+            if (node1, node2) not in edges:
+                edges.add((node1, node2))
+                unique_edges.append((node1, node2))
+                unique_indices.append(i)
+
+        unique_edges_tensor = torch.tensor(unique_edges).t()
+        unique_indices_tensor = torch.tensor(unique_indices)
+
+        return unique_edges_tensor, unique_indices_tensor
 
     def get_full_edge_embedding(self, edge_attr, nodes_in_clifford, edges):
-        orig_edge_attr_clifford = self.clifford_algebra.embed(edge_attr[..., None], (0,))  # now [batch * edges, 1, dim]
-        extra_edge_attr_clifford = self.make_edge_attr(nodes_in_clifford, edges)
+
+        orig_edge_attr_clifford = self.clifford_algebra.embed(edge_attr[..., None], (0,)).view(-1, 1, 8)
+
+        extra_edge_attr_clifford = self.make_edge_attr(nodes_in_clifford, edges)  # should be [batch
         edge_attr_all = torch.cat((orig_edge_attr_clifford, extra_edge_attr_clifford), dim=1)
         # Project the edge features to higher dimensions
         projected_edges = self.edge_projection(edge_attr_all)
@@ -74,9 +99,10 @@ class NBodyGraphEmbedder:
         return projected_edges
 
     def make_edge_attr(self, node_features, edges):
+
         node1_features = node_features[edges[0]]
         node2_features = node_features[edges[1]]
-        #difference = node1_features - node2_features
+        # difference = node1_features - node2_features
         gp = self.clifford_algebra.geometric_product(node1_features, node2_features)
         edge_attributes = torch.cat((node1_features, node2_features, gp), dim=1)
         return edge_attributes
@@ -85,7 +111,7 @@ class NBodyGraphEmbedder:
         num_edges_per_graph = edges[0].size(0) // batch_size
 
         # Initialize an attention mask with zeros for a single batch
-        base_attention_mask = torch.zeros(1, 25, 25, device=edges[0].device)
+        base_attention_mask = torch.zeros(1,  num_edges_per_graph+n_nodes, num_edges_per_graph+n_nodes, device=edges[0].device)
 
         # Nodes can attend to themselves and to all other nodes within the same graph
         for i in range(n_nodes):

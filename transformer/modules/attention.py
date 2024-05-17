@@ -69,11 +69,11 @@ class SelfAttentionClifford(nn.Module):
 
 
 class TransformerBlock(nn.Module):
-    def __init__(self, d_model, num_heads, clifford_algebra):
+    def __init__(self, d_model, num_heads, clifford_algebra, num_edges):
         super(TransformerBlock, self).__init__()
         self.algebra = clifford_algebra
         self.mvlayernorm1 = MVLayerNorm(clifford_algebra, d_model)
-        self.self_attn = SelfAttentionClifford(d_model, 5, 20, clifford_algebra, num_heads)
+        self.self_attn = SelfAttentionClifford(d_model, 5, num_edges, clifford_algebra, num_heads) #undo hardcoding dummy
         self.mvlayernorm2 = MVLayerNorm(clifford_algebra, d_model)
         self.mvlayernorm3 = MVLayerNorm(clifford_algebra, d_model)
         self.mvlayernorm4 = MVLayerNorm(clifford_algebra, d_model)
@@ -95,10 +95,10 @@ class TransformerBlock(nn.Module):
         src = src + attended_src
         src = self.mvlayernorm2(src)
 
-        # geo prod - possibly to take out - compare
-        src_gp = self.algebra.geometric_product(src, src)
-        src = src + src_gp
-        src = self.mvlayernorm4(src)
+        # # geo prod - possibly to take out - compare
+        # src_gp = self.algebra.geometric_product(src, src)
+        # src = src + src_gp
+        # src = self.mvlayernorm4(src)
 
         # MLP
         ff_src = self.mlp(src)
@@ -112,10 +112,10 @@ class TransformerBlock(nn.Module):
 
 
 class MainBody(nn.Module):
-    def __init__(self, num_layers, d_model, num_heads, clifford_algebra):
+    def __init__(self, num_layers, d_model, num_heads, clifford_algebra,num_edges):
         super(MainBody, self).__init__()
         self.layers = nn.ModuleList(
-            [TransformerBlock(d_model, num_heads, clifford_algebra) for _ in range(num_layers)])
+            [TransformerBlock(d_model, num_heads, clifford_algebra, num_edges) for _ in range(num_layers)])
 
     def forward(self, src, src_mask=None):
         for layer in self.layers:

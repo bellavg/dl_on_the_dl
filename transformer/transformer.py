@@ -16,7 +16,7 @@ class NBodyTransformer(nn.Module):
         self.clifford_algebra = clifford_algebra
         # Initialize the embedding layer
         self.embedding_layer = NBodyGraphEmbedder(self.clifford_algebra, in_features=input_dim, embed_dim=d_model)
-        self.GAST = MainBody(num_layers, d_model, num_heads, self.clifford_algebra)
+        self.GAST = MainBody(num_layers, d_model, num_heads, self.clifford_algebra, num_edges=20)
         self.combined_projection = MVLinear(self.clifford_algebra, d_model, d_model, subspaces=True)
         self.MV_input = MVLinear(self.clifford_algebra, input_dim, d_model, subspaces=True)
         self.MV_GP = MVLinear(self.clifford_algebra, d_model * 2, d_model, subspaces=True)
