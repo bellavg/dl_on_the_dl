@@ -16,15 +16,14 @@ class NBodyGraphEmbedder:
 
     def embed_nbody_graphs(self, batch):
         batch_size, n_nodes, _ = batch[0].size()
-        full_node_embedding, full_edge_embedding, loc_end_clifford, edges = self.get_embedding(batch, batch_size,
-                                                                                               n_nodes)
+        full_node_embedding, full_edge_embedding, edges = self.get_embedding(batch, batch_size, n_nodes)
         attention_mask = self.get_attention_mask(batch_size, n_nodes, edges)
         full_embedding = torch.cat((full_node_embedding, full_edge_embedding), dim=0)
 
-        return full_embedding, loc_end_clifford, attention_mask
+        return full_embedding,  attention_mask
 
     def get_embedding(self, batch, batch_size, n_nodes):
-        loc_mean, vel, edge_attr, charges, loc_end, edges = self.preprocess(batch)
+        loc_mean, vel, edge_attr,  charges, edges = self.preprocess(batch)
 
         # Embed data in Clifford space
         invariants = self.clifford_algebra.embed(charges, (0,))
@@ -39,18 +38,17 @@ class NBodyGraphEmbedder:
         full_edge_embedding = self.get_full_edge_embedding(edge_attr, nodes_stack, (start_nodes, end_nodes))
 
         # Clifford embeddings for end locations
-        loc_end_clifford = self.clifford_algebra.embed(loc_end, (1, 2, 3))
 
-        return full_node_embedding, full_edge_embedding, loc_end_clifford, (start_nodes, end_nodes)
+
+        return full_node_embedding, full_edge_embedding, (start_nodes, end_nodes)
 
     def preprocess(self, batch):
-        loc, vel, edge_attr, charges, loc_end, edges = batch
+        loc, vel, edge_attr, charges, _, edges = batch
         # print("before",loc.shape, vel.shape, edge_attr.shape, edges.shape, charges.shape)
         loc_mean = self.compute_mean_centered(loc)
-        loc_end_mean = self.compute_mean_centered(loc_end)
-        loc_mean, vel, edge_attr, charges, loc_end_mean = self.flatten_tensors(loc_mean, vel, edge_attr, charges,
-                                                                               loc_end_mean)
-        return loc_mean, vel, edge_attr, charges, loc_end_mean, edges
+
+        loc_mean, vel, edge_attr, charges = self.flatten_tensors(loc_mean, vel, edge_attr, charges,)
+        return loc_mean, vel, edge_attr, charges, edges
 
     def compute_mean_centered(self, tensor):
         return tensor - tensor.mean(dim=1, keepdim=True)

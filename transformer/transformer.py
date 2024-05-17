@@ -23,10 +23,12 @@ class NBodyTransformer(nn.Module):
 
     def forward(self, batch):
         batch_size, n_nodes, _ = batch[0].size()
+        loc_end = batch[4]
+        loc_start = batch[0]
 
 
         # Generate node and edge embeddings along with the attention mask add back attention mask at smoe point please
-        full_embeddings, loc_end_clifford, attention_mask = self.embedding_layer.embed_nbody_graphs(
+        full_embeddings,  attention_mask = self.embedding_layer.embed_nbody_graphs(
             batch)
 
         # nodes -> [batch_size * n_nodes, d_model, 8]
@@ -43,4 +45,7 @@ class NBodyTransformer(nn.Module):
         # Pass through GAST layers
         output = self.GAST(src, attention_mask)
 
-        return output[:(5 * batch_size), 1, :], loc_end_clifford
+        output_locations = output[:(5 * batch_size), 1, 1:4]
+        new_pos = loc_start + output_locations.view(batch_size, 5, 3)
+
+        return new_pos, loc_end
