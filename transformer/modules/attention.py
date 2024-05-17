@@ -71,10 +71,12 @@ class SelfAttentionClifford(nn.Module):
 class TransformerBlock(nn.Module):
     def __init__(self, d_model, num_heads, clifford_algebra):
         super(TransformerBlock, self).__init__()
+        self.algebra = clifford_algebra
         self.mvlayernorm1 = MVLayerNorm(clifford_algebra, d_model)
         self.self_attn = SelfAttentionClifford(d_model, 5, 20, clifford_algebra, num_heads)
         self.mvlayernorm2 = MVLayerNorm(clifford_algebra, d_model)
         self.mvlayernorm3 = MVLayerNorm(clifford_algebra, d_model)
+        self.mvlayernorm4 = MVLayerNorm(clifford_algebra, d_model)
         self.mlp = nn.Sequential(
             MVLinear(clifford_algebra, d_model, d_model * 2),
             MVSiLU(clifford_algebra, d_model * 2),
@@ -91,8 +93,12 @@ class TransformerBlock(nn.Module):
 
         # Add and norm
         src = src + attended_src
-
         src = self.mvlayernorm2(src)
+
+        # geo prod - possibly to take out - compare
+        src_gp = self.algebra.geometric_product(src, src)
+        src = src + src_gp
+        src = self.mvlayernorm4(src)
 
         # MLP
         ff_src = self.mlp(src)
