@@ -43,8 +43,8 @@ num_heads = 8
 num_layers = 6
 embed_in_features = 3
 embed_out_features = 3
-batch_size = 100
-num_samples = 1000
+batch_size = 1
+num_samples = 1
 
 # Create the model
 model = NBodyTransformer(input_dim, d_model, num_heads, num_layers, clifford_algebra)

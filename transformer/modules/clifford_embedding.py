@@ -24,6 +24,7 @@ class NBodyGraphEmbedder:
 
     def get_embedding(self, batch, batch_size, n_nodes):
         loc_mean, vel, edge_attr,  charges, edges = self.preprocess(batch)
+        print(edges)
 
         # Embed data in Clifford space
         invariants = self.clifford_algebra.embed(charges, (0,))
