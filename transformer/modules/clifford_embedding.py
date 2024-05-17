@@ -7,8 +7,8 @@ from algebra.cliffordalgebra import CliffordAlgebra
 class NBodyGraphEmbedder:
     def __init__(self, clifford_algebra, in_features, embed_dim):
         self.clifford_algebra = clifford_algebra
-        self.embedding = MVLinear(
-            self.clifford_algebra, in_features, int(embed_dim / 2), subspaces=False
+        self.node_projection = MVLinear(
+            self.clifford_algebra, in_features, embed_dim, subspaces=False
         )
         self.edge_projection = MVLinear(
             self.clifford_algebra, 10, embed_dim, subspaces=False
@@ -19,8 +19,9 @@ class NBodyGraphEmbedder:
         full_node_embedding, full_edge_embedding, loc_end_clifford, edges = self.get_embedding(batch, batch_size,
                                                                                                n_nodes)
         attention_mask = self.get_attention_mask(batch_size, n_nodes, edges)
+        full_embedding = torch.cat((full_node_embedding, full_edge_embedding), dim=0)
 
-        return full_node_embedding, full_edge_embedding, loc_end_clifford, attention_mask
+        return full_embedding, loc_end_clifford, attention_mask
 
     def get_embedding(self, batch, batch_size, n_nodes):
         loc_mean, vel, edge_attr, charges, loc_end, edges = self.preprocess(batch)
@@ -31,7 +32,7 @@ class NBodyGraphEmbedder:
         covariants = self.clifford_algebra.embed(xv, (1, 2, 3))
 
         nodes_stack = torch.cat([invariants[:, None], covariants], dim=1)
-        full_node_embedding = self.embedding(nodes_stack)
+        full_node_embedding = self.node_projection(nodes_stack)
 
         # Get edge nodes and edge features
         start_nodes, end_nodes = self.get_edge_nodes(edges, n_nodes, batch_size)

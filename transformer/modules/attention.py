@@ -71,14 +71,14 @@ class SelfAttentionClifford(nn.Module):
 class TransformerBlock(nn.Module):
     def __init__(self, d_model, num_heads, clifford_algebra):
         super(TransformerBlock, self).__init__()
-        self.mvlayernorm1 = MVLayerNorm(clifford_algebra, d_model * 2)
-        self.self_attn = SelfAttentionClifford(d_model * 2, 5, 20, clifford_algebra, num_heads)
-        self.mvlayernorm2 = MVLayerNorm(clifford_algebra, d_model*2)
-        self.mvlayernorm3 = MVLayerNorm(clifford_algebra, d_model*2)
+        self.mvlayernorm1 = MVLayerNorm(clifford_algebra, d_model)
+        self.self_attn = SelfAttentionClifford(d_model, 5, 20, clifford_algebra, num_heads)
+        self.mvlayernorm2 = MVLayerNorm(clifford_algebra, d_model)
+        self.mvlayernorm3 = MVLayerNorm(clifford_algebra, d_model)
         self.mlp = nn.Sequential(
-            MVLinear(clifford_algebra, d_model* 2, d_model * 4),
-            MVSiLU(clifford_algebra, d_model * 4),
-            MVLinear(clifford_algebra, d_model * 4, d_model*2)
+            MVLinear(clifford_algebra, d_model, d_model * 2),
+            MVSiLU(clifford_algebra, d_model * 2),
+            MVLinear(clifford_algebra, d_model * 2, d_model)
         )
         # self.dropout = TBD
 
