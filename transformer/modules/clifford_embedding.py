@@ -14,48 +14,43 @@ class NBodyGraphEmbedder:
             self.clifford_algebra, 10, embed_dim, subspaces=False
         )
 
-    def embed_nbody_graphs(self, batch):
-        batch_size, n_nodes, _ = batch[0].size()
-        full_node_embedding, full_edge_embedding, loc_end_clifford, edges, og_locations = self.get_embedding(batch, batch_size,
-                                                                                               n_nodes)
+    def embed_nbody_graphs(self, loc, vel, edge_attr, charges, loc_end, edges):
+        batch_size, n_nodes, _ = loc.size()
+        loc_mean, vel, edge_attr, charges, loc_end = self.preprocess(loc, vel, edge_attr, charges, loc_end)
+        # Embed nodes
+        full_node_embedding, nodes_stack = self.get_node_embedding(loc_mean, vel, charges)
+
+        full_edge_embedding, edges = self.get_edge_embedding(edge_attr, edges, batch_size, n_nodes, nodes_stack)
         attention_mask = self.get_attention_mask(batch_size, n_nodes, edges)
-
-        return full_node_embedding, full_edge_embedding, loc_end_clifford, attention_mask,  og_locations
-
-    def get_embedding(self, batch, batch_size, n_nodes):
-        loc_mean, vel, edge_attr, charges, loc_end, edges = self.preprocess(batch)
-        og_locations = self.clifford_algebra.embed(batch[0], (1, 2, 3))
-
-        # Embed data in Clifford space
-        invariants = self.clifford_algebra.embed(charges, (0,))
-        xv = torch.stack([loc_mean, vel], dim=1)
-        covariants = self.clifford_algebra.embed(xv, (1, 2, 3))
-
-        nodes_stack = torch.cat([invariants[:, None], covariants], dim=1)
-        full_node_embedding = self.embedding(nodes_stack)
-
-        # Get edge nodes and edge features
-        start_nodes, end_nodes = self.get_edge_nodes(edges, n_nodes, batch_size)
-        full_edge_embedding = self.get_full_edge_embedding(edge_attr, nodes_stack, (start_nodes, end_nodes))
-
-        # Clifford embeddings for end locations
         loc_end_clifford = self.clifford_algebra.embed(loc_end, (1, 2, 3))
 
-        return full_node_embedding, full_edge_embedding, loc_end_clifford, (start_nodes, end_nodes), og_locations
+        return full_node_embedding, full_edge_embedding, loc_end_clifford, attention_mask
 
-    def preprocess(self, batch):
-        loc, vel, edge_attr, charges, loc_end, edges = batch
+    def preprocess(self, loc, vel, edge_attr, charges, loc_end):
         # print("before",loc.shape, vel.shape, edge_attr.shape, edges.shape, charges.shape)
         loc_mean = self.compute_mean_centered(loc)
-        loc_mean, vel, edge_attr, charges, loc_end = self.flatten_tensors(loc_mean, vel, edge_attr, charges,
-                                                                          loc_end)
-        return loc_mean, vel, edge_attr, charges, loc_end, edges
+        loc_mean, vel, edge_attr, charges, loc_end = self.flatten_tensors(loc_mean, vel, edge_attr, charges, loc_end)
+        return loc_mean, vel, edge_attr, charges, loc_end
 
     def compute_mean_centered(self, tensor):
         return tensor - tensor.mean(dim=1, keepdim=True)
 
     def flatten_tensors(self, *tensors):
         return [tensor.float().view(-1, *tensor.shape[2:]) for tensor in tensors]
+
+    def get_node_embedding(self, loc_mean, vel, charges):
+        invariants = self.clifford_algebra.embed(charges, (0,))
+        xv = torch.stack([loc_mean, vel], dim=1)
+        covariants = self.clifford_algebra.embed(xv, (1, 2, 3))
+        nodes_stack = torch.cat([invariants[:, None], covariants], dim=1)
+        full_node_embedding = self.embedding(nodes_stack)
+        return full_node_embedding, nodes_stack
+
+    def get_edge_embedding(self, edge_attr, edges, batch_size, n_nodes, nodes_stack):
+        # Get edge nodes and edge features
+        start_nodes, end_nodes = self.get_edge_nodes(edges, n_nodes, batch_size)
+        full_edge_embedding = self.get_full_edge_embedding(edge_attr, nodes_stack, (start_nodes, end_nodes))
+        return full_edge_embedding, (start_nodes, end_nodes)
 
     def get_edge_nodes(self, edges, n_nodes, batch_size):
         batch_index = torch.arange(batch_size, device=edges.device)
