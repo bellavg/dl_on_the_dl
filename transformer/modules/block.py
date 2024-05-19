@@ -9,6 +9,23 @@ from einops import rearrange
 from transformer.modules.attention import SelfAttentionClifford
 
 
+class GP_Layer(nn.Module):
+        def __init__(self, algebra, in_features_v, hidden_features_v):
+            super().__init__()
+            self.first_layer = MVLinear(algebra, in_features_v, hidden_features_v, subspaces=True, bias=True)
+            self.third_layer = MVLinear(algebra, hidden_features_v, in_features_v, subspaces=True, bias=True)
+            self.norm = MVLayerNorm(algebra, in_features_v)
+            self.algebra = algebra
+
+        def forward(self, x):
+            x = self.first_layer(x)
+            x = self.algebra.geometric_product(x, x)
+            x = self.third_layer(x)
+            x = self.norm(x)
+
+            return x
+
+
 class TransformerBlock(nn.Module):
     def __init__(self, d_model, num_heads, clifford_algebra):
         super(TransformerBlock, self).__init__()
@@ -17,12 +34,12 @@ class TransformerBlock(nn.Module):
         self.self_attn = SelfAttentionClifford(d_model, 5, 20, clifford_algebra, num_heads)
         self.mvlayernorm2 = MVLayerNorm(clifford_algebra, d_model)
         self.mvlayernorm3 = MVLayerNorm(clifford_algebra, d_model)
-        self.mvlayernorm4 = MVLayerNorm(clifford_algebra, d_model)
         self.mlp = nn.Sequential(
             MVLinear(clifford_algebra, d_model, d_model * 2),
             MVSiLU(clifford_algebra, d_model * 2),
             MVLinear(clifford_algebra, d_model * 2, d_model)
         )
+        self.gp = GP_Layer(clifford_algebra, d_model, d_model * 2)
         # self.dropout = TBD
 
     def forward(self, src, src_mask=None):
@@ -36,18 +53,16 @@ class TransformerBlock(nn.Module):
         src = src + attended_src
         src = self.mvlayernorm2(src)
 
-        # # geo prod - possibly to take out - compare
-        # src_gp = self.algebra.geometric_product(src, src)
-        # src = src + src_gp
-        # src = self.mvlayernorm4(src)
+        # geo prod layer
+        gp_src = self.gp(src)
+        src = src + gp_src
+        src = self.mvlayernorm3(src)
 
         # MLP
         ff_src = self.mlp(src)
-        # ff_src = self.dropout(ff_src)
 
         # Add and norm
         src = src + ff_src
-        src = self.mvlayernorm3(src)
 
         return src
 
