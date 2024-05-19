@@ -1,7 +1,6 @@
 import torch
 from original_models.modules.linear import MVLinear
 
-from algebra.cliffordalgebra import CliffordAlgebra
 
 
 class NBodyGraphEmbedder:
@@ -24,7 +23,6 @@ class NBodyGraphEmbedder:
 
     def get_embedding(self, batch, batch_size, n_nodes):
         loc_mean, vel, edge_attr,  charges, edges = self.preprocess(batch)
-        print(edges)
 
         # Embed data in Clifford space
         invariants = self.clifford_algebra.embed(charges, (0,))
@@ -38,16 +36,12 @@ class NBodyGraphEmbedder:
         start_nodes, end_nodes = self.get_edge_nodes(edges, n_nodes, batch_size)
         full_edge_embedding = self.get_full_edge_embedding(edge_attr, nodes_stack, (start_nodes, end_nodes))
 
-        # Clifford embeddings for end locations
-
-
         return full_node_embedding, full_edge_embedding, (start_nodes, end_nodes)
 
     def preprocess(self, batch):
         loc, vel, edge_attr, charges, _, edges = batch
         # print("before",loc.shape, vel.shape, edge_attr.shape, edges.shape, charges.shape)
         loc_mean = self.compute_mean_centered(loc)
-
         loc_mean, vel, edge_attr, charges = self.flatten_tensors(loc_mean, vel, edge_attr, charges,)
         return loc_mean, vel, edge_attr, charges, edges
 
@@ -116,31 +110,3 @@ class NBodyGraphEmbedder:
 
         return attention_mask
 
-    # def get_attention_mask(self,batch_size, n_nodes, edges):
-    #     num_edges_per_graph = edges[0].size(0) // batch_size
-    #
-    #     # Initialize an attention mask with zeros for a single batch
-    #     base_attention_mask = torch.zeros(1, 25, 25, device=edges[0].device)
-    #
-    #     for i in range(num_edges_per_graph):
-    #         start_node = edges[0][i].item()
-    #         end_node = edges[1][i].item()
-    #         edge_idx = n_nodes + i
-    #
-    #         # Edges can attend to their corresponding nodes
-    #         base_attention_mask[0, edge_idx, start_node] = 1
-    #         base_attention_mask[0, edge_idx, end_node] = 1
-    #
-    #         # Nodes can attend to their corresponding edges
-    #         base_attention_mask[0, start_node, edge_idx] = 1
-    #         base_attention_mask[0, end_node, edge_idx] = 1
-    #
-    #     # Stack the masks for each batch
-    #     attention_mask = base_attention_mask.repeat(batch_size, 1, 1)
-    #
-    #     # Convert the mask to float and set masked positions to -inf and allowed positions to 0
-    #     attention_mask = attention_mask.float()
-    #     attention_mask.masked_fill(attention_mask == 0, float('-inf'))
-    #     attention_mask.masked_fill(attention_mask == 1, float(0.0))
-    #
-    #     return attention_mask

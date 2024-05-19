@@ -16,54 +16,47 @@ class SelfAttentionClifford(nn.Module):
         self.num_edges = num_edges
         self.algebra = algebra
         self.num_heads = num_heads
-        self.q_linear = MVLinear(algebra, num_feat, num_feat * num_heads, subspaces=True)
-        self.k_linear = MVLinear(algebra, num_feat, num_feat * num_heads, subspaces=True)
-        self.v_linear = MVLinear(algebra, num_feat, num_feat * num_heads, subspaces=True)
-        self.output_embedding = MVLinear(algebra, num_feat * num_heads, num_feat, subspaces=True)
-        self.concat_layernorm = MVLayerNorm(algebra, num_feat)
+        self.head_dim = num_feat // num_heads
+        self.q_linear = MVLinear(algebra, self.num_feat, self.num_feat, subspaces=True, bias=False)
+        self.k_linear = MVLinear(algebra, self.num_feat, self.num_feat, subspaces=True, bias=False)
+        self.v_linear = MVLinear(algebra, self.num_feat, self.num_feat, subspaces=True, bias=False)
+        self.output_embedding = MVLinear(algebra, self.head_dim * self.num_heads, num_feat, subspaces=True)
 
-    def forward(self, feature_matrix, attention_mask):
+    def forward(self, feature_matrix, attention_mask, test=False):
         bs = feature_matrix.size(0) // (self.num_nodes + self.num_edges)
+        n = self.num_nodes + self.num_edges
 
-        # Compute query, key, and value matrices
-        # feature_matrix -> [batch_size * (n_nodes + n_edges), d_model*2, 8]
+        # Compute query, key, and value using mv linear layers
+        q = self.q_linear(feature_matrix)  # q -> [batch_size, n_nodes + n_edges, num_heads, d_model//num_heads 8]
+        k = self.k_linear(feature_matrix)  # k -> [batch_size, n_nodes + n_edges, num_heads, d_model//num_heads, 8]
+        v = self.v_linear(feature_matrix)
 
-        # Compute query, key, and value matrices using einops rearrange
-        q = rearrange(self.q_linear(feature_matrix), '(bs n) (h d) c -> bs h n (d c)', bs=bs,
-                      n=self.num_nodes + self.num_edges, h=self.num_heads, d=self.num_feat)
-        k = rearrange(self.k_linear(feature_matrix), '(bs n) (h d) c -> bs h n (d c)', bs=bs,
-                      n=self.num_nodes + self.num_edges, h=self.num_heads, d=self.num_feat)
-        v = rearrange(self.v_linear(feature_matrix), '(bs n) (h d) c -> bs h n (d c)', bs=bs,
-                      n=self.num_nodes + self.num_edges, h=self.num_heads, d=self.num_feat)
-        # q, k, v -> [batch_size, num_heads, n_nodes + n_edges, d_model * 8]
+        # rearrange to separate heads and then fold heads into batch dimension
+        q = rearrange(q, '(bs n) (h d) c ->  (bs h) n (d c)', bs=bs, n=n, h=self.num_heads, d=self.head_dim)
+        k = rearrange(k, '(bs n) (h d) c -> (bs h) n (d c)', bs=bs, n=n, h=self.num_heads, d=self.head_dim)
+        v = rearrange(v, '(bs n) (h d) c -> (bs h) n (d c)', bs=bs, n=n, h=self.num_heads, d=self.head_dim)
+
+        # q, k, v -> [batch_size * num_heads, n_nodes + n_edges, head_dim*8]
 
         # Compute dot product for attention
-        q = q / math.sqrt(self.num_feat * 8)  # Scale by sqrt(d_k * 8) 8 from CLIFFORD
-        attn = torch.matmul(q, k.transpose(-2, -1)) # multiple q and k -> [batch_size, num_heads, n_nodes + n_edges, n_nodes + n_edges]
-        #attn = attn + attention_mask.unsqueeze(1).unsqueeze(2)
+        q = q / math.sqrt(self.head_dim * 8)  # Scale by sqrt(d_k * 8) 8 from CLIFFORD
+        attn = torch.matmul(q, k.transpose(-2, -1)) # multiple q and k -> [batch_size * num_heads, n_nodes + n_edges, n_nodes + n_edges]
 
         # Adjust the attention mask
         attention_mask = attention_mask.unsqueeze(1).repeat(1, self.num_heads, 1,
-                                                            1)  # Shape: [batch_size, num_heads, n_nodes + n_edges, n_nodes + n_edges]
+                                                            1).view(-1, n, n)  # Shape: [batch_size, num_heads, n_nodes + n_edges, n_nodes + n_edges]
         attn = attn + attention_mask  # Apply the mask
         attn = F.softmax(attn, dim=-1)
 
-        # Apply attention to value
-        attention_output = torch.matmul(attn, v) # [batch_size, num_heads, n_nodes + n_edges, d_model, 8]
+        if test:
+            return attn
+        else:
+            # Apply attention to value
+            attention_output = torch.matmul(attn, v) # -> [batch_size * num_heads, n_nodes + n_edges, self.head_dim*8]
+            # rearrange to separate heads and then fold heads into feature dimension
+            attention_output = rearrange(attention_output, '(bs h) n (d c) -> (bs n) (h d) c', bs=bs, n=n, h=self.num_heads, d=self.head_dim, c=8)
 
-        attention_output = attention_output.transpose(1, 2).contiguous().view(bs*(self.num_nodes + self.num_edges), self.num_heads * self.num_feat, 8)
-        # attention_output -> [batch_size * (n_nodes + n_edges), d_model*num_heads, 8]
+            output = self.output_embedding(attention_output)
 
-        # Output linear transformation
-        output = self.output_embedding(attention_output)
-        # output -> [batch_size * (n_nodes + n_edges), d_model, 8]
-
-        # # Apply geometric product to attention output
-        # gp_output = self.algebra.geometric_product(attention_output, attention_output)
-        # print("gp_output", gp_output.shape)
-        # # rearrange output
-        # output = output.view(bs * (self.num_nodes + self.num_edges), self.num_feat, 8)
-        # output = self.concat_layernorm(output)
-
-        return output
+            return output
 

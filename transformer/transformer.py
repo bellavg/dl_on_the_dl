@@ -40,7 +40,7 @@ class NBodyTransformer(nn.Module):
 
         # Apply MVLinear transformation to the combined embeddings
         src = self.combined_projection(full_embeddings)
-        # src -> [batch_size * (n_nodes + n_edges), d_model*2, 8]
+        # src -> [batch_size * (n_nodes + n_edges), d_model, 8]
 
         # Pass through GAST layers
         output = self.GAST(src, attention_mask)
