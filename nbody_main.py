@@ -55,7 +55,7 @@ nbody_data = NBody(num_samples=num_samples, batch_size=batch_size)
 
 train_loader = nbody_data.train_loader()
 val_loader = nbody_data.val_loader()  # Assuming you have a validation data loader
-epochs = 100
+epochs = 1000
 
 steps_per_epoch = len(train_loader)  # number of batches per epoch
 steps = epochs * steps_per_epoch
