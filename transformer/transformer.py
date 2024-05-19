@@ -22,15 +22,15 @@ class TwoLayerMLP(nn.Module):
 
 class NBodyTransformer(nn.Module):
     def __init__(self, input_dim, d_model, num_heads, num_layers,
-                 clifford_algebra):
+                 clifford_algebra, unique_edges=False):
         super(NBodyTransformer, self).__init__()
 
         # Initialize the transformer with the given parameters
         # and the Clifford algebra
         self.clifford_algebra = clifford_algebra
         # Initialize the embedding layer
-        self.embedding_layer = NBodyGraphEmbedder(self.clifford_algebra, in_features=input_dim, embed_dim=d_model)
-        self.GAST = MainBody(num_layers, d_model, num_heads, self.clifford_algebra)
+        self.embedding_layer = NBodyGraphEmbedder(self.clifford_algebra, in_features=input_dim, embed_dim=d_model, unique_edges=unique_edges)
+        self.GAST = MainBody(num_layers, d_model, num_heads, self.clifford_algebra, unique_edges=unique_edges)
         self.combined_projection =TwoLayerMLP(self.clifford_algebra, d_model, d_model*4, d_model)
         self.MV_input = MVLinear(self.clifford_algebra, input_dim, d_model, subspaces=True)
 

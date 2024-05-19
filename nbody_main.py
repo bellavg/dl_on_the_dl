@@ -6,6 +6,7 @@ from transformer.transformer import NBodyTransformer
 from algebra.cliffordalgebra import CliffordAlgebra
 from dataset import NBody
 from torch.utils.tensorboard import SummaryWriter
+from torch.optim.lr_scheduler import CosineAnnealingLR
 
 
 def train_epoch(model, train_loader, criterion, optimizer):
@@ -40,34 +41,39 @@ clifford_algebra = CliffordAlgebra(metric)
 input_dim = 3  # feature_dim
 d_model = 16
 num_heads = 8
-num_layers = 6
-embed_in_features = 3
-embed_out_features = 3
+num_layers = 4
+
 batch_size = 100
 num_samples = 3000
 
 # Create the model
-model = NBodyTransformer(input_dim, d_model, num_heads, num_layers, clifford_algebra)
+model = NBodyTransformer(input_dim, d_model, num_heads, num_layers, clifford_algebra, unique_edges=True)
 criterion = nn.MSELoss()
-optimizer = optim.Adam(model.parameters(), lr=0.001, weight_decay=0.0001)
-#optimizer = optim.Adam(model.parameters(), lr=0.001)  # Check is weight decay equivariant i feel like no...
-#scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, mode='min', factor=0.1, patience=10)
-T_0 = 10  # Number of iterations for the first restart
-T_mult = 1  # A factor to increase T_i after a restart
-eta_min = 0.00001  # Minimum learning rate
-
-scheduler = torch.optim.lr_scheduler.CosineAnnealingWarmRestarts(optimizer, T_0, T_mult, eta_min)
+optimizer = optim.Adam(model.parameters(), lr=5e-3, weight_decay=0.0001)
 
 nbody_data = NBody(num_samples=num_samples, batch_size=batch_size)
 
 train_loader = nbody_data.train_loader()
 val_loader = nbody_data.val_loader()  # Assuming you have a validation data loader
+epochs = 100
+
+steps_per_epoch = len(train_loader)  # number of batches per epoch
+steps = epochs * steps_per_epoch
+
+
+scheduler = CosineAnnealingLR(
+        optimizer,
+        steps,
+        warmup_steps=int(1 / 64 * steps),
+        decay_steps=int(1 / 4 * steps),
+    )
+
 
 best_val_loss = float('inf')
 early_stopping_counter = 0
 early_stopping_limit = 10
 
-for epoch in tqdm(range(100)):
+for epoch in tqdm(range(epochs)):
     train_loss = train_epoch(model, train_loader, criterion, optimizer)
     val_loss = validate_epoch(model, val_loader, criterion)
     scheduler.step(epoch)  # Update learning rate based on validation loss
