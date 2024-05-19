@@ -69,7 +69,7 @@ scheduler = CosineAnnealingLR(
 
 best_val_loss = float('inf')
 early_stopping_counter = 0
-early_stopping_limit = 10
+early_stopping_limit = 50
 
 for epoch in tqdm(range(epochs)):
     train_loss = train_epoch(model, train_loader, criterion, optimizer)
