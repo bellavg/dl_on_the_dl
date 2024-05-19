@@ -63,9 +63,7 @@ steps = epochs * steps_per_epoch
 
 scheduler = CosineAnnealingLR(
         optimizer,
-        steps,
-        warmup_steps=int(1 / 64 * steps),
-        decay_steps=int(1 / 4 * steps),
+        steps * epochs
     )
 
 
