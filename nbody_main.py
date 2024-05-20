@@ -9,9 +9,10 @@ from torch.utils.tensorboard import SummaryWriter
 from torch.optim.lr_scheduler import CosineAnnealingLR
 
 
-def train_epoch(model, train_loader, criterion, optimizer):
+def train_epoch(model, train_loader, criterion, optimizer, scheduler):
     model.train()
     running_loss = 0.0
+    step = 0
     for i, batch in enumerate(train_loader):
         optimizer.zero_grad()
         output, tgt = model(batch)
@@ -19,6 +20,8 @@ def train_epoch(model, train_loader, criterion, optimizer):
         loss.backward()
         nn.utils.clip_grad_norm_(model.parameters(), max_norm=1.0)  # Gradient clipping
         optimizer.step()
+        scheduler.step(step)
+        step += 1
         running_loss += loss.item()
     return running_loss / len(train_loader)
 
@@ -37,19 +40,21 @@ def validate_epoch(model, val_loader, criterion):
 metric = [1, 1, 1]
 clifford_algebra = CliffordAlgebra(metric)
 
-# Hyperparameters
+# Hyperparameters Trial 121 finished with value: 0.02221011510118842
+# and parameters:
+# {'d_model': 128, 'num_heads': 4, 'num_layers': 5, 'lr': 0.0002480971516348925, 'batch_size': 50, 'wd': 1.282735873694448e-05}.
 input_dim = 3  # feature_dim
-d_model = 16
-num_heads = 8
-num_layers = 4
+d_model = 128
+num_heads = 4
+num_layers = 5
 
-batch_size = 100
+batch_size = 50
 num_samples = 3000
 
 # Create the model
 model = NBodyTransformer(input_dim, d_model, num_heads, num_layers, clifford_algebra, unique_edges=True)
 criterion = nn.MSELoss()
-optimizer = optim.Adam(model.parameters(), lr=5e-3, weight_decay=0.0001)
+optimizer = optim.Adam(model.parameters(), lr=2e-4, weight_decay=0.00001)
 
 nbody_data = NBody(num_samples=num_samples, batch_size=batch_size)
 
@@ -72,9 +77,8 @@ early_stopping_counter = 0
 early_stopping_limit = 50
 
 for epoch in tqdm(range(epochs)):
-    train_loss = train_epoch(model, train_loader, criterion, optimizer)
+    train_loss = train_epoch(model, train_loader, criterion, optimizer, scheduler)
     val_loss = validate_epoch(model, val_loader, criterion)
-    scheduler.step(epoch)  # Update learning rate based on validation loss
 
     # Save model if validation loss improved
     if val_loss < best_val_loss:
