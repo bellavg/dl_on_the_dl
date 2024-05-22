@@ -4,7 +4,7 @@ from original_models.modules.linear import MVLinear
 
 
 class NBodyGraphEmbedder:
-    def __init__(self, clifford_algebra, in_features, embed_dim, unique_edges=False):
+    def __init__(self, clifford_algebra, in_features, embed_dim, num_edges=20):
         self.clifford_algebra = clifford_algebra
         self.node_projection = MVLinear(
             self.clifford_algebra, in_features, embed_dim, subspaces=False
@@ -12,13 +12,26 @@ class NBodyGraphEmbedder:
         self.edge_projection = MVLinear(
             self.clifford_algebra, 10, embed_dim, subspaces=False
         )
-        self.unique_edges = unique_edges
+        if num_edges == 10:
+            self.unique_edges = True
+            self.with_edges = True
+        elif num_edges == 20:
+            self.unique_edges = False
+            self.with_edges = True
+        else:
+            assert num_edges == 0
+            self.unique_edges = False
+            self.with_edges = False
 
     def embed_nbody_graphs(self, batch):
         batch_size, n_nodes, _ = batch[0].size()
         full_node_embedding, full_edge_embedding, edges = self.get_embedding(batch, batch_size, n_nodes)
-        attention_mask = self.get_attention_mask(batch_size, n_nodes, edges)
-        full_embedding = torch.cat((full_node_embedding, full_edge_embedding), dim=0)
+        if self.with_edges:
+            attention_mask = self.get_attention_mask(batch_size, n_nodes, edges)
+            full_embedding = torch.cat((full_node_embedding, full_edge_embedding), dim=0)
+        else:
+            full_embedding = full_node_embedding
+            attention_mask = None
 
         return full_embedding,  attention_mask
 

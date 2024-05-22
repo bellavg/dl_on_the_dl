@@ -27,12 +27,9 @@ class GP_Layer(nn.Module):
 
 
 class TransformerBlock(nn.Module):
-    def __init__(self, d_model, num_heads, clifford_algebra, unique_edges=False):
+    def __init__(self, d_model, num_heads, clifford_algebra, num_edges=20):
         super(TransformerBlock, self).__init__()
-        if unique_edges:
-            num_edges = 10
-        else:
-            num_edges = 20
+
         self.algebra = clifford_algebra
         self.mvlayernorm1 = MVLayerNorm(clifford_algebra, d_model)
         self.self_attn = SelfAttentionClifford(d_model, 5, num_edges, clifford_algebra, num_heads)
@@ -72,10 +69,10 @@ class TransformerBlock(nn.Module):
 
 
 class MainBody(nn.Module):
-    def __init__(self, num_layers, d_model, num_heads, clifford_algebra, unique_edges=False):
+    def __init__(self, num_layers, d_model, num_heads, clifford_algebra, num_edges=20):
         super(MainBody, self).__init__()
         self.layers = nn.ModuleList(
-            [TransformerBlock(d_model, num_heads, clifford_algebra, unique_edges=unique_edges) for _ in range(num_layers)])
+            [TransformerBlock(d_model, num_heads, clifford_algebra, num_edges=num_edges) for _ in range(num_layers)])
 
     def forward(self, src, src_mask=None):
         for layer in self.layers:

@@ -20,7 +20,7 @@ def train_epoch(model, train_loader, criterion, optimizer, scheduler):
         loss.backward()
         nn.utils.clip_grad_norm_(model.parameters(), max_norm=1.0)  # Gradient clipping
         optimizer.step()
-        scheduler.step(step)
+        scheduler.step()
         step += 1
         running_loss += loss.item()
     return running_loss / len(train_loader)
@@ -49,17 +49,17 @@ num_heads = 4
 num_layers = 5
 
 batch_size = 50
-num_samples = 3000
+num_samples = 3000 # to possible tryout other numbers?
 
 # Create the model
-model = NBodyTransformer(input_dim, d_model, num_heads, num_layers, clifford_algebra, unique_edges=True)
+model = NBodyTransformer(input_dim, d_model, num_heads, num_layers, clifford_algebra, num_edges=0)
 criterion = nn.MSELoss()
 optimizer = optim.Adam(model.parameters(), lr=2e-4, weight_decay=0.00001)
 
 nbody_data = NBody(num_samples=num_samples, batch_size=batch_size)
 
 train_loader = nbody_data.train_loader()
-val_loader = nbody_data.val_loader()  # Assuming you have a validation data loader
+val_loader = nbody_data.val_loader()
 epochs = 1000
 
 steps_per_epoch = len(train_loader)  # number of batches per epoch
