@@ -26,7 +26,7 @@ def objective(trial):
     num_samples = 500
 
     # Create the model
-    model = NBodyTransformer(input_dim, d_model, num_heads, num_layers, clifford_algebra, unique_edges=True)
+    model = NBodyTransformer(input_dim, d_model, num_heads, num_layers, clifford_algebra, num_edges=0)
     criterion = nn.MSELoss()
     optimizer = optim.Adam(model.parameters(), lr=lr, weight_decay=wd)
     nbody_data = NBody(num_samples=num_samples, batch_size=batch_size)
@@ -84,7 +84,7 @@ def objective(trial):
 
 if __name__ == "__main__":
     study = optuna.create_study(direction='minimize')
-    study.optimize(objective, n_trials=1000)
+    study.optimize(objective, n_trials=100)
 
     print("Best hyperparameters: ", study.best_params)
     print("Best validation loss: ", study.best_value)
