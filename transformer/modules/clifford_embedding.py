@@ -4,7 +4,7 @@ from original_models.modules.linear import MVLinear
 
 
 class NBodyGraphEmbedder:
-    def __init__(self, clifford_algebra, in_features, embed_dim, num_edges=20):
+    def __init__(self, clifford_algebra, in_features, embed_dim, num_edges=20, zero_edges=True):
         self.clifford_algebra = clifford_algebra
         self.node_projection = MVLinear(
             self.clifford_algebra, in_features, embed_dim, subspaces=False
@@ -12,6 +12,9 @@ class NBodyGraphEmbedder:
         self.edge_projection = MVLinear(
             self.clifford_algebra, 10, embed_dim, subspaces=False
         )
+        self.embed_dim = embed_dim
+        self.zero_edges = zero_edges
+        self.num_edges = num_edges
         if num_edges == 10:
             self.unique_edges = True
             self.with_edges = True
@@ -54,7 +57,12 @@ class NBodyGraphEmbedder:
             edge_attr = edge_attr[:, indices, :]
         else:
             start_nodes, end_nodes = self.get_edge_nodes(edges, n_nodes, batch_size)
-        full_edge_embedding = self.get_full_edge_embedding(edge_attr, nodes_stack, (start_nodes, end_nodes))
+
+        if self.zero_edges:
+            full_edge_embedding = torch.zeros((batch_size*self.num_edges, self.embed_dim, 8))
+        else:
+            full_edge_embedding = self.get_full_edge_embedding(edge_attr, nodes_stack, (start_nodes, end_nodes), self.zero_edges)
+
 
         return full_node_embedding, full_edge_embedding, (start_nodes, end_nodes)
 
@@ -84,6 +92,7 @@ class NBodyGraphEmbedder:
             return edges
 
     def get_full_edge_embedding(self, edge_attr, nodes_in_clifford, edges):
+
         if self.unique_edges:
             orig_edge_attr_clifford = self.clifford_algebra.embed(edge_attr[..., None], (0,)).view(-1, 1, 8)
         else:
@@ -93,6 +102,8 @@ class NBodyGraphEmbedder:
         edge_attr_all = torch.cat((orig_edge_attr_clifford, extra_edge_attr_clifford), dim=1)
         # Project the edge features to higher dimensions
         projected_edges = self.edge_projection(edge_attr_all)
+        projected_edges = torch.zeros(projected_edges.shape)
+
 
         return projected_edges
 

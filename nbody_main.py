@@ -52,7 +52,7 @@ batch_size = 50
 num_samples = 3000 # to possible tryout other numbers?
 
 # Create the model
-model = NBodyTransformer(input_dim, d_model, num_heads, num_layers, clifford_algebra, num_edges=0)
+model = NBodyTransformer(input_dim, d_model, num_heads, num_layers, clifford_algebra, num_edges=10, zero_edges=True)
 criterion = nn.MSELoss()
 optimizer = optim.Adam(model.parameters(), lr=2e-4, weight_decay=0.00001)
 
