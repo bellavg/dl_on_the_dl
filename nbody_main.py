@@ -54,7 +54,7 @@ def parse_arguments():
 
 
 def save_losses_to_csv(args, train_losses, val_losses, test_loss, filename='losses.csv'):
-    filename = f'./{args.num_edges}_{args.zero_edges}_{filename}'
+    filename = f'results/{args.num_edges}_{args.zero_edges}_{filename}'
     with open(filename, mode='w', newline='') as file:
         writer = csv.writer(file)
         writer.writerow(['Hyperparameters'])

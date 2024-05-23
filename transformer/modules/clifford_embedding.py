@@ -2,7 +2,6 @@ import torch
 from original_models.modules.linear import MVLinear
 
 
-
 class NBodyGraphEmbedder:
     def __init__(self, clifford_algebra, in_features, embed_dim, num_edges=20, zero_edges=True):
         self.clifford_algebra = clifford_algebra
@@ -36,10 +35,10 @@ class NBodyGraphEmbedder:
             full_embedding = full_node_embedding
             attention_mask = None
 
-        return full_embedding,  attention_mask
+        return full_embedding, attention_mask
 
     def get_embedding(self, batch, batch_size, n_nodes):
-        loc_mean, vel, edge_attr,  charges, edges = self.preprocess(batch)
+        loc_mean, vel, edge_attr, charges, edges = self.preprocess(batch)
 
         # Embed data in Clifford space
         invariants = self.clifford_algebra.embed(charges, (0,))
@@ -51,7 +50,7 @@ class NBodyGraphEmbedder:
 
         # Get edge nodes and edge features
         if self.unique_edges:
-            edges, indices = self.get_edge_nodes(edges,  n_nodes, batch_size)
+            edges, indices = self.get_edge_nodes(edges, n_nodes, batch_size)
             start_nodes = edges[0]
             end_nodes = edges[1]
             edge_attr = edge_attr[:, indices, :]
@@ -59,10 +58,9 @@ class NBodyGraphEmbedder:
             start_nodes, end_nodes = self.get_edge_nodes(edges, n_nodes, batch_size)
 
         if self.zero_edges:
-            full_edge_embedding = torch.zeros((batch_size*self.num_edges, self.embed_dim, 8))
+            full_edge_embedding = torch.zeros((batch_size * self.num_edges, self.embed_dim, 8))
         else:
-            full_edge_embedding = self.get_full_edge_embedding(edge_attr, nodes_stack, (start_nodes, end_nodes), self.zero_edges)
-
+            full_edge_embedding = self.get_full_edge_embedding(edge_attr, nodes_stack, (start_nodes, end_nodes))
 
         return full_node_embedding, full_edge_embedding, (start_nodes, end_nodes)
 
@@ -70,7 +68,7 @@ class NBodyGraphEmbedder:
         loc, vel, edge_attr, charges, _, edges = batch
         # print("before",loc.shape, vel.shape, edge_attr.shape, edges.shape, charges.shape)
         loc_mean = self.compute_mean_centered(loc)
-        loc_mean, vel, charges = self.flatten_tensors(loc_mean, vel, charges,)
+        loc_mean, vel, charges = self.flatten_tensors(loc_mean, vel, charges, )
         return loc_mean, vel, edge_attr, charges, edges
 
     def compute_mean_centered(self, tensor):
@@ -97,13 +95,13 @@ class NBodyGraphEmbedder:
             orig_edge_attr_clifford = self.clifford_algebra.embed(edge_attr[..., None], (0,)).view(-1, 1, 8)
         else:
             edge_attr = self.flatten_tensors(edge_attr)[0]  # [batch * edges, dim]
-            orig_edge_attr_clifford = self.clifford_algebra.embed(edge_attr[..., None], (0,))  # now [batch * edges, 1, dim]
+            orig_edge_attr_clifford = self.clifford_algebra.embed(edge_attr[..., None],
+                                                                  (0,))  # now [batch * edges, 1, dim]
         extra_edge_attr_clifford = self.make_edge_attr(nodes_in_clifford, edges)
         edge_attr_all = torch.cat((orig_edge_attr_clifford, extra_edge_attr_clifford), dim=1)
         # Project the edge features to higher dimensions
         projected_edges = self.edge_projection(edge_attr_all)
         projected_edges = torch.zeros(projected_edges.shape)
-
 
         return projected_edges
 
@@ -135,7 +133,8 @@ class NBodyGraphEmbedder:
         num_edges_per_graph = edges[0].size(0) // batch_size
 
         # Initialize an attention mask with zeros for a single batch
-        base_attention_mask = torch.zeros(1, n_nodes+num_edges_per_graph, n_nodes+ num_edges_per_graph, device=edges[0].device)
+        base_attention_mask = torch.zeros(1, n_nodes + num_edges_per_graph, n_nodes + num_edges_per_graph,
+                                          device=edges[0].device)
 
         # Nodes can attend to themselves and to all other nodes within the same graph
         for i in range(n_nodes):
@@ -167,4 +166,3 @@ class NBodyGraphEmbedder:
         attention_mask[0].fill_diagonal_(float('-inf'))
 
         return attention_mask
-

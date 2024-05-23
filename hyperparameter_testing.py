@@ -26,7 +26,8 @@ def objective(trial):
     num_samples = 500
 
     # Create the model
-    model = NBodyTransformer(input_dim, d_model, num_heads, num_layers, clifford_algebra, num_edges=10, zero_edges=True)
+    model = NBodyTransformer(input_dim, d_model, num_heads, num_layers, clifford_algebra, num_edges=0, zero_edges=False)
+    print("With 10 edges, all zeros, HP search")
     criterion = nn.MSELoss()
     optimizer = optim.Adam(model.parameters(), lr=lr, weight_decay=wd)
     nbody_data = NBody(num_samples=num_samples, batch_size=batch_size)
@@ -67,7 +68,7 @@ def objective(trial):
                 running_loss += loss.item()
         return running_loss / len(val_loader)
 
-    epochs = 50
+    epochs = 10
     for epoch in tqdm(range(epochs)):
         train_loss = train_epoch(model, train_loader, criterion, optimizer)
         val_loss = validate_epoch(model, val_loader, criterion)
@@ -84,7 +85,7 @@ def objective(trial):
 
 if __name__ == "__main__":
     study = optuna.create_study(direction='minimize')
-    study.optimize(objective, n_trials=100)
+    study.optimize(objective, n_trials=50)
 
     print("Best hyperparameters: ", study.best_params)
     print("Best validation loss: ", study.best_value)
