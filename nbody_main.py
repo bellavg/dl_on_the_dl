@@ -123,7 +123,7 @@ def main():
         # Save model if validation loss improved
         if val_loss < best_val_loss:
             best_val_loss = val_loss
-            torch.save(model.state_dict(), 'best_model.pth')
+            torch.save(model.state_dict(), f'./{args.num_edges}_{args.zero_edges}_best_model.pth')
             early_stopping_counter = 0
         else:
             early_stopping_counter += 1
