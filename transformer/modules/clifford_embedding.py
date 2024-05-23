@@ -30,7 +30,7 @@ class NBodyGraphEmbedder:
         full_node_embedding, full_edge_embedding, edges = self.get_embedding(batch, batch_size, n_nodes)
         if self.with_edges:
             attention_mask = self.get_attention_mask(batch_size, n_nodes, edges)
-            full_embedding = torch.cat((full_node_embedding, full_edge_embedding), dim=0)
+            full_embedding = torch.cat((full_node_embedding.reshape(batch_size, n_nodes, self.embed_dim, 8), full_edge_embedding.reshape(batch_size, self.num_edges, self.embed_dim, 8)), dim=1)
         else:
             full_embedding = full_node_embedding
             attention_mask = None
@@ -46,6 +46,7 @@ class NBodyGraphEmbedder:
         covariants = self.clifford_algebra.embed(xv, (1, 2, 3))
 
         nodes_stack = torch.cat([invariants[:, None], covariants], dim=1)
+        nodes_stack[:,1,0] += 1
         full_node_embedding = self.node_projection(nodes_stack)
 
         # Get edge nodes and edge features
@@ -58,7 +59,7 @@ class NBodyGraphEmbedder:
             start_nodes, end_nodes = self.get_edge_nodes(edges, n_nodes, batch_size)
 
         if self.zero_edges:
-            full_edge_embedding = torch.zeros((batch_size * self.num_edges, self.embed_dim, 8))
+            full_edge_embedding = torch.zeros((batch_size * self.num_edges, self.embed_dim))
         else:
             full_edge_embedding = self.get_full_edge_embedding(edge_attr, nodes_stack, (start_nodes, end_nodes))
 
@@ -101,7 +102,6 @@ class NBodyGraphEmbedder:
         edge_attr_all = torch.cat((orig_edge_attr_clifford, extra_edge_attr_clifford), dim=1)
         # Project the edge features to higher dimensions
         projected_edges = self.edge_projection(edge_attr_all)
-        projected_edges = torch.zeros(projected_edges.shape)
 
         return projected_edges
 
@@ -109,7 +109,10 @@ class NBodyGraphEmbedder:
         node1_features = node_features[edges[0]]
         node2_features = node_features[edges[1]]
         gp = self.clifford_algebra.geometric_product(node1_features, node2_features)
-        edge_attributes = torch.cat((node1_features, node2_features, gp), dim=1)
+        gp2 = self.clifford_algebra.geometric_product(node2_features, node1_features)
+        gp += gp2
+        abs_diff = torch.abs(node1_features - node2_features)
+        edge_attributes = torch.cat((node1_features + node2_features, abs_diff, gp), dim=1) # changed
         return edge_attributes
 
     def get_unique_edges_with_indices(self, tensor):

@@ -10,21 +10,22 @@ from transformer.modules.attention import SelfAttentionClifford
 
 
 class GP_Layer(nn.Module):
-        def __init__(self, algebra, in_features_v, hidden_features_v):
-            super().__init__()
-            self.first_layer = MVLinear(algebra, in_features_v, hidden_features_v, subspaces=True, bias=True)
-            self.third_layer = MVLinear(algebra, hidden_features_v, in_features_v, subspaces=True, bias=True)
-            self.norm = MVLayerNorm(algebra, in_features_v)
-            self.algebra = algebra
+    def __init__(self, algebra, in_features_v, hidden_features_v):
+        super().__init__()
+        self.first_layer = MVLinear(algebra, in_features_v, hidden_features_v, subspaces=True, bias=True)
+        self.second_layer = MVLinear(algebra, in_features_v, hidden_features_v, subspaces=True, bias=True)
+        self.third_layer = MVLinear(algebra, hidden_features_v, in_features_v, subspaces=True, bias=True)
+        self.norm = MVLayerNorm(algebra, in_features_v)
+        self.algebra = algebra
 
-        def forward(self, x):
-            x = self.first_layer(x)
-            x = self.algebra.geometric_product(x, x)
-            x = self.third_layer(x)
-            x = self.norm(x)
+    def forward(self, x):
+        x_l = self.first_layer(x)
+        x_r = self.second_layer(x)
+        x = self.algebra.geometric_product(x_l, x_r)
+        x = self.third_layer(x)
+        x = self.norm(x)
 
-            return x
-
+        return x
 
 class TransformerBlock(nn.Module):
     def __init__(self, d_model, num_heads, clifford_algebra, num_edges=20):
