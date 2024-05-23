@@ -154,15 +154,14 @@ class NBodyGraphEmbedder:
             base_attention_mask[0, start_node, edge_idx] = 1
             base_attention_mask[0, end_node, edge_idx] = 1
 
-        # Stack the masks for each batch
-        attention_mask = base_attention_mask.repeat(batch_size, 1, 1)
 
         # Convert the mask to float and set masked positions to -inf and allowed positions to 0
-        attention_mask = attention_mask.float()
-        attention_mask.masked_fill(attention_mask == 0, float('-inf'))
-        attention_mask.masked_fill(attention_mask == 1, float(0.0))
+        attention_mask = base_attention_mask.float()
+        attention_mask[0] = attention_mask[0].masked_fill(attention_mask == 0, float('-inf'))
+        attention_mask[0] = attention_mask[0].fill_diagonal_(1)
+        attention_mask[0] = attention_mask[0].masked_fill(attention_mask == 1, float(0.0))
 
-        # Set the diagonal of the attention mask to 0
-        attention_mask[0].fill_diagonal_(float('-inf'))
+        # Stack the masks for each batch
+        attention_mask = base_attention_mask.repeat(batch_size, 1, 1)
 
         return attention_mask
