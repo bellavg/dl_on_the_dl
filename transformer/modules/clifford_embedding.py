@@ -3,13 +3,13 @@ from original_models.modules.linear import MVLinear
 
 
 class NBodyGraphEmbedder:
-    def __init__(self, clifford_algebra, in_features, embed_dim, num_edges=20, zero_edges=True):
+    def __init__(self, clifford_algebra, in_features, embed_dim, num_edges=10, zero_edges=True):
         self.clifford_algebra = clifford_algebra
         self.node_projection = MVLinear(
             self.clifford_algebra, in_features, embed_dim, subspaces=False
         )
         self.edge_projection = MVLinear(
-            self.clifford_algebra, 10, embed_dim, subspaces=False
+            self.clifford_algebra, 7, embed_dim, subspaces=False
         )
         self.embed_dim = embed_dim
         self.zero_edges = zero_edges
@@ -59,7 +59,7 @@ class NBodyGraphEmbedder:
             start_nodes, end_nodes = self.get_edge_nodes(edges, n_nodes, batch_size)
 
         if self.zero_edges:
-            full_edge_embedding = torch.zeros((batch_size * self.num_edges, self.embed_dim))
+            full_edge_embedding = torch.zeros((batch_size, self.num_edges, self.embed_dim,8))
         else:
             full_edge_embedding = self.get_full_edge_embedding(edge_attr, nodes_stack, (start_nodes, end_nodes))
 
@@ -111,8 +111,7 @@ class NBodyGraphEmbedder:
         gp = self.clifford_algebra.geometric_product(node1_features, node2_features)
         gp2 = self.clifford_algebra.geometric_product(node2_features, node1_features)
         gp += gp2
-        abs_diff = torch.abs(node1_features - node2_features)
-        edge_attributes = torch.cat((node1_features + node2_features, abs_diff, gp), dim=1) # changed
+        edge_attributes = torch.cat((node1_features + node2_features,gp), dim=1) # changed
         return edge_attributes
 
     def get_unique_edges_with_indices(self, tensor):

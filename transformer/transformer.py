@@ -22,7 +22,7 @@ class TwoLayerMLP(nn.Module):
 
 class NBodyTransformer(nn.Module):
     def __init__(self, input_dim, d_model, num_heads, num_layers,
-                 clifford_algebra, num_edges=20, zero_edges=False):
+                 clifford_algebra, num_edges=10, zero_edges=False):
         super(NBodyTransformer, self).__init__()
 
         # Initialize the transformer with the given parameters
@@ -50,7 +50,7 @@ class NBodyTransformer(nn.Module):
         src = self.combined_projection(full_embeddings.reshape(batch_size * (n_nodes + self.num_edges), self.d, 8))
         # src -> [batch_size * (n_nodes + n_edges), d_model, 8]
         src_left = self.x_left(src)
-        src = self.clifford_algebra.geometric_product(src_left, src)
+        #src = self.clifford_algebra.geometric_product(src_left, src)
 
         # Pass through GAST layers
         output = self.GAST(src, attention_mask)
