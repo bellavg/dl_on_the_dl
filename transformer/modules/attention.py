@@ -52,7 +52,7 @@ class SelfAttentionClifford(nn.Module):
             return attn
         else:
             # Apply attention to value
-            attention_output = torch.matmul(attn, v) # -> [batch_size * num_heads, n_nodes + n_edges, self.head_dim*8]
+            attention_output = torch.bmm(attn, v) # -> [batch_size * num_heads, n_nodes + n_edges, self.head_dim*8] should this be bmm?
             # rearrange to separate heads and then fold heads into feature dimension
             attention_output = rearrange(attention_output, '(bs h) n (d c) -> (bs n) (h d) c', bs=bs, n=n, h=self.num_heads, d=self.head_dim, c=8)
 
