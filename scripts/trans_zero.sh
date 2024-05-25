@@ -1,10 +1,10 @@
 #!/bin/bash
 #SBATCH --partition=gpu
 #SBATCH --gpus=1
-#SBATCH --job-name=our_gatr
+#SBATCH --job-name=zero
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=18
-#SBATCH --time=06:10:10
+#SBATCH --time=08:10:10
 #SBATCH --output=model_edges_zeros_%A.out
 
 
@@ -16,4 +16,4 @@ module load Anaconda3/2022.05
 # Activate your environment
 source activate dl2023
 cd ..
-srun python nbody_main.py --zero_edges
+srun python nbody_main.py --zero_edges --d_model 128 --num_heads 4 --num_layers 3 --lr 0.0005105373689092852 --batch_size 50 --weight_decay 1.6588802158766295e-05

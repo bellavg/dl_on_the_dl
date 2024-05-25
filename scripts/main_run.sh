@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --partition=gpu
 #SBATCH --gpus=1
-#SBATCH --job-name=our_gatr
+#SBATCH --job-name=main_run
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=18
 #SBATCH --time=08:10:10
@@ -18,4 +18,4 @@ source activate dl2023
 
 cd ..
 
-srun python nbody_main.py
+srun python nbody_main.py --d_model 128 --num_heads 16 --num_layers 2 --lr 0.00029016639028707004 --batch_size 50 --weight_decay 4.296375369629711e-06

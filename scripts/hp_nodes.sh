@@ -1,11 +1,11 @@
 #!/bin/bash
 #SBATCH --partition=gpu
 #SBATCH --gpus=1
-#SBATCH --job-name=node_model_dl2
+#SBATCH --job-name=hpn
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=18
-#SBATCH --time=08:10:10
-#SBATCH --output=model_nodes_%A.out
+#SBATCH --time=06:10:10
+#SBATCH --output=hp_trans_nodes_%A.out
 
 
 module purge
@@ -16,4 +16,4 @@ module load Anaconda3/2022.05
 # Activate your environment
 source activate dl2023
 cd ..
-srun python nbody_main.py --num_edges 0  --d_model 64 --num_heads 4 --num_layers 2 --lr 0.0008669048376082868 --batch_size 50 --weight_decay 9.918335068756377e-06 
+srun python hyperparameter_testing.py --num_edges 0
