@@ -18,4 +18,4 @@ source activate dl2023
 
 cd ..
 
-srun python nbody_main.py --d_model 128 --num_heads 16 --num_layers 2 --lr 0.00029016639028707004 --batch_size 50 --weight_decay 4.296375369629711e-06
+srun python nbody_main.py --d_model 128 --num_heads 4 --num_layers 4 --lr 0.0003 --batch_size 50 --weight_decay 2.3e-06

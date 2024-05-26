@@ -16,4 +16,4 @@ module load Anaconda3/2022.05
 # Activate your environment
 source activate dl2023
 cd ..
-srun python nbody_main.py --zero_edges --d_model 128 --num_heads 4 --num_layers 3 --lr 0.0005105373689092852 --batch_size 50 --weight_decay 1.6588802158766295e-05
+srun python nbody_main.py --zero_edges --d_model 128 --num_heads 4 --num_layers 4 --lr 0.0006 --batch_size 50 --weight_decay 7.04e-06 --num_edges 10
