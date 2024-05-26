@@ -3,7 +3,6 @@ import argparse
 import torch
 import torch.nn as nn
 import torch.optim as optim
-from tqdm import tqdm
 from transformer.transformer import NBodyTransformer
 from algebra.cliffordalgebra import CliffordAlgebra
 from dataset import NBody
@@ -113,7 +112,7 @@ def main():
     train_losses = []
     val_losses = []
 
-    for epoch in tqdm(range(args.epochs)):
+    for epoch in range(args.epochs):
         train_loss = train_epoch(model, train_loader, criterion, optimizer, scheduler)
         val_loss = validate_epoch(model, val_loader, criterion)
 
@@ -135,11 +134,8 @@ def main():
 
         print(f'Epoch {epoch + 1}, Training Loss: {train_loss}, Validation Loss: {val_loss}')
 
-    # Save the training and validation losses to a CSV file
-    save_losses_to_csv(args, train_losses, val_losses)
-
     # Load the best model and test it
-    model.load_state_dict(torch.load('best_model.pth'))
+    model.load_state_dict(torch.load(f'./{args.num_edges}_{args.zero_edges}_best_model.pth'))
     test_loss = test_model(model, test_loader, criterion)
     print(f'Test Loss: {test_loss}')
     # Save the training and validation losses to a CSV file
