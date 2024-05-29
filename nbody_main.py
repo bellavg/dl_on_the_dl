@@ -1,5 +1,4 @@
 import argparse
-
 import torch
 import torch.nn as nn
 import torch.optim as optim
@@ -8,12 +7,18 @@ from algebra.cliffordalgebra import CliffordAlgebra
 from dataset import NBody
 from torch.optim.lr_scheduler import CosineAnnealingLR
 import csv
+import time
 
 
 def train_epoch(model, train_loader, criterion, optimizer, scheduler):
     model.train()
     running_loss = 0.0
+    total_memory = 0
+    total_time = 0
+    num_batches = len(train_loader)
+
     for i, batch in enumerate(train_loader):
+        start_time = time.time()
         optimizer.zero_grad()
         output, tgt = model(batch)
         loss = criterion(output, tgt)
@@ -21,19 +26,54 @@ def train_epoch(model, train_loader, criterion, optimizer, scheduler):
         nn.utils.clip_grad_norm_(model.parameters(), max_norm=1.0)  # Gradient clipping
         optimizer.step()
         scheduler.step()
+        end_time = time.time()
+
+        batch_time = end_time - start_time
+        batch_memory = torch.cuda.memory_allocated() if torch.cuda.is_available() else 0
+
+        total_time += batch_time
+        total_memory += batch_memory
         running_loss += loss.item()
-    return running_loss / len(train_loader)
+
+        print(f'Batch {i + 1}/{num_batches}, Time: {batch_time:.4f}s, Memory: {batch_memory / (1024 ** 2):.2f}MB')
+
+    avg_memory = total_memory / num_batches
+    avg_time = total_time / num_batches
+    print(f'Average Memory Usage per Batch: {avg_memory / (1024 ** 2):.2f}MB')
+    print(f'Average Time per Batch: {avg_time:.4f}s')
+
+    return running_loss / num_batches
 
 
 def validate_epoch(model, val_loader, criterion):
     model.eval()
     running_loss = 0.0
+    total_memory = 0
+    total_time = 0
+    num_batches = len(val_loader)
+
     with torch.no_grad():
         for i, batch in enumerate(val_loader):
+            start_time = time.time()
             output, tgt = model(batch)
             loss = criterion(output, tgt)
+            end_time = time.time()
+
+            batch_time = end_time - start_time
+            batch_memory = torch.cuda.memory_allocated() if torch.cuda.is_available() else 0
+
+            total_time += batch_time
+            total_memory += batch_memory
             running_loss += loss.item()
-    return running_loss / len(val_loader)
+
+            print(f'Batch {i + 1}/{num_batches}, Time: {batch_time:.4f}s, Memory: {batch_memory / (1024 ** 2):.2f}MB')
+
+    avg_memory = total_memory / num_batches
+    avg_time = total_time / num_batches
+    print(f'Average Memory Usage per Batch: {avg_memory / (1024 ** 2):.2f}MB')
+    print(f'Average Time per Batch: {avg_time:.4f}s')
+
+    return running_loss / num_batches
 
 
 def parse_arguments():
@@ -70,12 +110,32 @@ def save_losses_to_csv(args, train_losses, val_losses, test_loss, filename='loss
 def test_model(model, test_loader, criterion):
     model.eval()
     running_loss = 0.0
+    total_memory = 0
+    total_time = 0
+    num_batches = len(test_loader)
+
     with torch.no_grad():
         for i, batch in enumerate(test_loader):
+            start_time = time.time()
             output, tgt = model(batch)
             loss = criterion(output, tgt)
+            end_time = time.time()
+
+            batch_time = end_time - start_time
+            batch_memory = torch.cuda.memory_allocated() if torch.cuda.is_available() else 0
+
+            total_time += batch_time
+            total_memory += batch_memory
             running_loss += loss.item()
-    return running_loss / len(test_loader)
+
+            print(f'Batch {i + 1}/{num_batches}, Time: {batch_time:.4f}s, Memory: {batch_memory / (1024 ** 2):.2f}MB')
+
+    avg_memory = total_memory / num_batches
+    avg_time = total_time / num_batches
+    print(f'Average Memory Usage per Batch: {avg_memory / (1024 ** 2):.2f}MB')
+    print(f'Average Time per Batch: {avg_time:.4f}s')
+
+    return running_loss / num_batches
 
 
 def main():
@@ -131,6 +191,7 @@ def main():
     val_losses = []
 
     for epoch in range(args.epochs):
+        print(f"Epoch {epoch + 1}/{args.epochs}")
         train_loss = train_epoch(model, train_loader, criterion, optimizer, scheduler)
         val_loss = validate_epoch(model, val_loader, criterion)
 
