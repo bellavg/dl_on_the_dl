@@ -9,13 +9,11 @@ from torch.optim.lr_scheduler import CosineAnnealingLR
 import csv
 import time
 
-
 def train_epoch(model, train_loader, criterion, optimizer, scheduler):
     model.train()
     running_loss = 0.0
     total_memory = 0
     total_time = 0
-    num_batches = len(train_loader)
 
     for i, batch in enumerate(train_loader):
         start_time = time.time()
@@ -29,20 +27,28 @@ def train_epoch(model, train_loader, criterion, optimizer, scheduler):
         end_time = time.time()
 
         batch_time = end_time - start_time
-        batch_memory = torch.cuda.memory_allocated() if torch.cuda.is_available() else 0
+
+        # Measure memory usage after CUDA operations
+        if torch.cuda.is_available():
+            torch.cuda.synchronize()  # Ensure all CUDA operations are complete
+            batch_memory = torch.cuda.memory_allocated()
+        else:
+            batch_memory = 0
 
         total_time += batch_time
         total_memory += batch_memory
         running_loss += loss.item()
 
-        print(f'Batch {i + 1}/{num_batches}, Time: {batch_time:.4f}s, Memory: {batch_memory / (1024 ** 2):.2f}MB')
+        print(f'Batch {i + 1}/{len(train_loader)}, Time: {batch_time:.4f}s, Memory: {batch_memory / (1024 ** 2):.2f}MB')
 
-    avg_memory = total_memory / num_batches
-    avg_time = total_time / num_batches
+    avg_memory = total_memory / len(train_loader)
+    avg_time = total_time / len(train_loader)
+    print(f'Total Memory Usage for Training: {total_memory / (1024 ** 2):.2f}MB')
+    print(f'Total Time for Training: {total_time:.4f}s')
     print(f'Average Memory Usage per Batch: {avg_memory / (1024 ** 2):.2f}MB')
     print(f'Average Time per Batch: {avg_time:.4f}s')
 
-    return running_loss / num_batches
+    return running_loss / len(train_loader)
 
 
 def validate_epoch(model, val_loader, criterion):
@@ -50,7 +56,6 @@ def validate_epoch(model, val_loader, criterion):
     running_loss = 0.0
     total_memory = 0
     total_time = 0
-    num_batches = len(val_loader)
 
     with torch.no_grad():
         for i, batch in enumerate(val_loader):
@@ -60,20 +65,28 @@ def validate_epoch(model, val_loader, criterion):
             end_time = time.time()
 
             batch_time = end_time - start_time
-            batch_memory = torch.cuda.memory_allocated() if torch.cuda.is_available() else 0
+
+            # Measure memory usage after CUDA operations
+            if torch.cuda.is_available():
+                torch.cuda.synchronize()  # Ensure all CUDA operations are complete
+                batch_memory = torch.cuda.memory_allocated()
+            else:
+                batch_memory = 0
 
             total_time += batch_time
             total_memory += batch_memory
             running_loss += loss.item()
 
-            print(f'Batch {i + 1}/{num_batches}, Time: {batch_time:.4f}s, Memory: {batch_memory / (1024 ** 2):.2f}MB')
+            print(f'Batch {i + 1}/{len(val_loader)}, Time: {batch_time:.4f}s, Memory: {batch_memory / (1024 ** 2):.2f}MB')
 
-    avg_memory = total_memory / num_batches
-    avg_time = total_time / num_batches
+    avg_memory = total_memory / len(val_loader)
+    avg_time = total_time / len(val_loader)
+    print(f'Total Memory Usage for Validation: {total_memory / (1024 ** 2):.2f}MB')
+    print(f'Total Time for Validation: {total_time:.4f}s')
     print(f'Average Memory Usage per Batch: {avg_memory / (1024 ** 2):.2f}MB')
     print(f'Average Time per Batch: {avg_time:.4f}s')
 
-    return running_loss / num_batches
+    return running_loss / len(val_loader)
 
 
 def parse_arguments():
@@ -84,7 +97,7 @@ def parse_arguments():
     parser.add_argument('--lr', type=float, default=0.000248, help='Learning rate')
     parser.add_argument('--batch_size', type=int, default=50, help='Batch size')
     parser.add_argument('--num_samples', type=int, default=3000, help='Number of samples')
-    parser.add_argument('--epochs', type=int, default=1000, help='Number of epochs')
+    parser.add_argument('--epochs', type=int, default=1, help='Number of epochs')  # Set to 1 epoch
     parser.add_argument('--num_edges', type=int, choices=[0, 10, 20], default=10, help='Number of edges')
     parser.add_argument('--weight_decay', type=float, default=0.00001, help='Weight decay')
     parser.add_argument('--early_stopping_limit', type=int, default=50, help='Early stopping limit')
@@ -112,7 +125,6 @@ def test_model(model, test_loader, criterion):
     running_loss = 0.0
     total_memory = 0
     total_time = 0
-    num_batches = len(test_loader)
 
     with torch.no_grad():
         for i, batch in enumerate(test_loader):
@@ -122,20 +134,28 @@ def test_model(model, test_loader, criterion):
             end_time = time.time()
 
             batch_time = end_time - start_time
-            batch_memory = torch.cuda.memory_allocated() if torch.cuda.is_available() else 0
+
+            # Measure memory usage after CUDA operations
+            if torch.cuda.is_available():
+                torch.cuda.synchronize()  # Ensure all CUDA operations are complete
+                batch_memory = torch.cuda.memory_allocated()
+            else:
+                batch_memory = 0
 
             total_time += batch_time
             total_memory += batch_memory
             running_loss += loss.item()
 
-            print(f'Batch {i + 1}/{num_batches}, Time: {batch_time:.4f}s, Memory: {batch_memory / (1024 ** 2):.2f}MB')
+            print(f'Batch {i + 1}/{len(test_loader)}, Time: {batch_time:.4f}s, Memory: {batch_memory / (1024 ** 2):.2f}MB')
 
-    avg_memory = total_memory / num_batches
-    avg_time = total_time / num_batches
+    avg_memory = total_memory / len(test_loader)
+    avg_time = total_time / len(test_loader)
+    print(f'Total Memory Usage for Testing: {total_memory / (1024 ** 2):.2f}MB')
+    print(f'Total Time for Testing: {total_time:.4f}s')
     print(f'Average Memory Usage per Batch: {avg_memory / (1024 ** 2):.2f}MB')
     print(f'Average Time per Batch: {avg_time:.4f}s')
 
-    return running_loss / num_batches
+    return running_loss / len(test_loader)
 
 
 def main():
