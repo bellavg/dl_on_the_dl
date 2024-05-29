@@ -1,0 +1,4815 @@
+train/loss: 0.0041
+train/s_it: 0.1257
+train/lr: 0.0040
+train/epoch: 2662.0000
+
+Step: 79872 (Validation) Batch: 0 / 20
+
+val/loss: 0.0048
+val/s_it: 0.0516
+
+Step: 79904 (Training) Loss: 0.0041
+Step: 79936 (Training) Loss: 0.0051
+Step: 79968 (Training) Loss: 0.0033
+Step: 80000 (Training) Loss: 0.0021
+Step: 80000 (Validation) Batch: 0 / 20
+
+val/loss: 0.0041
+val/s_it: 0.0516
+
+Step: 80032 (Training) Loss: 0.0053
+Step: 80064 (Training) Loss: 0.0039
+Step: 80096 (Training) Loss: 0.0046
+Step: 80128 (Training) Loss: 0.0051
+
+train/loss: 0.0042
+train/s_it: 0.1257
+train/lr: 0.0040
+train/epoch: 2670.0000
+
+Step: 80128 (Validation) Batch: 0 / 20
+
+val/loss: 0.0043
+val/s_it: 0.0514
+
+Step: 80160 (Training) Loss: 0.0028
+Step: 80192 (Training) Loss: 0.0027
+Step: 80224 (Training) Loss: 0.0058
+Step: 80256 (Training) Loss: 0.0035
+Step: 80256 (Validation) Batch: 0 / 20
+
+val/loss: 0.0042
+val/s_it: 0.0513
+
+Step: 80288 (Training) Loss: 0.0048
+Step: 80320 (Training) Loss: 0.0019
+Step: 80352 (Training) Loss: 0.0071
+Step: 80384 (Training) Loss: 0.0037
+
+train/loss: 0.0042
+train/s_it: 0.1259
+train/lr: 0.0040
+train/epoch: 2679.0000
+
+Step: 80384 (Validation) Batch: 0 / 20
+
+val/loss: 0.0043
+val/s_it: 0.0511
+
+Step: 80416 (Training) Loss: 0.0023
+Step: 80448 (Training) Loss: 0.0033
+Step: 80480 (Training) Loss: 0.0025
+Step: 80512 (Training) Loss: 0.0054
+Step: 80512 (Validation) Batch: 0 / 20
+
+val/loss: 0.0043
+val/s_it: 0.0511
+
+Step: 80544 (Training) Loss: 0.0044
+Step: 80576 (Training) Loss: 0.0016
+Step: 80608 (Training) Loss: 0.0062
+Step: 80640 (Training) Loss: 0.0053
+
+train/loss: 0.0041
+train/s_it: 0.1251
+train/lr: 0.0040
+train/epoch: 2688.0000
+
+Step: 80640 (Validation) Batch: 0 / 20
+
+val/loss: 0.0044
+val/s_it: 0.0508
+
+Step: 80672 (Training) Loss: 0.0026
+Step: 80704 (Training) Loss: 0.0030
+Step: 80736 (Training) Loss: 0.0028
+Step: 80768 (Training) Loss: 0.0025
+Step: 80768 (Validation) Batch: 0 / 20
+
+val/loss: 0.0040
+val/s_it: 0.0509
+
+Step: 80800 (Training) Loss: 0.0037
+Step: 80832 (Training) Loss: 0.0062
+Step: 80864 (Training) Loss: 0.0062
+Step: 80896 (Training) Loss: 0.0036
+
+train/loss: 0.0041
+train/s_it: 0.1253
+train/lr: 0.0040
+train/epoch: 2696.0000
+
+Step: 80896 (Validation) Batch: 0 / 20
+
+val/loss: 0.0041
+val/s_it: 0.0517
+
+Step: 80928 (Training) Loss: 0.0022
+Step: 80960 (Training) Loss: 0.0033
+Step: 80992 (Training) Loss: 0.0020
+Step: 81024 (Training) Loss: 0.0045
+Step: 81024 (Validation) Batch: 0 / 20
+
+val/loss: 0.0041
+val/s_it: 0.0513
+
+Step: 81056 (Training) Loss: 0.0028
+Step: 81088 (Training) Loss: 0.0034
+Step: 81120 (Training) Loss: 0.0061
+Step: 81152 (Training) Loss: 0.0030
+
+train/loss: 0.0041
+train/s_it: 0.1261
+train/lr: 0.0040
+train/epoch: 2705.0000
+
+Step: 81152 (Validation) Batch: 0 / 20
+
+val/loss: 0.0041
+val/s_it: 0.0520
+
+Step: 81184 (Training) Loss: 0.0033
+Step: 81216 (Training) Loss: 0.0023
+Step: 81248 (Training) Loss: 0.0051
+Step: 81280 (Training) Loss: 0.0059
+Step: 81280 (Validation) Batch: 0 / 20
+
+val/loss: 0.0046
+val/s_it: 0.0517
+
+Step: 81312 (Training) Loss: 0.0049
+Step: 81344 (Training) Loss: 0.0058
+Step: 81376 (Training) Loss: 0.0040
+Step: 81408 (Training) Loss: 0.0020
+
+train/loss: 0.0042
+train/s_it: 0.1260
+train/lr: 0.0040
+train/epoch: 2713.0000
+
+Step: 81408 (Validation) Batch: 0 / 20
+
+val/loss: 0.0041
+val/s_it: 0.0515
+
+Step: 81440 (Training) Loss: 0.0021
+Step: 81472 (Training) Loss: 0.0038
+Step: 81504 (Training) Loss: 0.0053
+Step: 81536 (Training) Loss: 0.0026
+Step: 81536 (Validation) Batch: 0 / 20
+
+val/loss: 0.0040
+val/s_it: 0.0514
+
+Step: 81568 (Training) Loss: 0.0024
+Step: 81600 (Training) Loss: 0.0056
+Step: 81632 (Training) Loss: 0.0042
+Step: 81664 (Training) Loss: 0.0072
+
+train/loss: 0.0045
+train/s_it: 0.1253
+train/lr: 0.0040
+train/epoch: 2722.0000
+
+Step: 81664 (Validation) Batch: 0 / 20
+
+val/loss: 0.0041
+val/s_it: 0.0508
+
+Step: 81696 (Training) Loss: 0.0030
+Step: 81728 (Training) Loss: 0.0036
+Step: 81760 (Training) Loss: 0.0039
+Step: 81792 (Training) Loss: 0.0061
+Step: 81792 (Validation) Batch: 0 / 20
+
+val/loss: 0.0043
+val/s_it: 0.0515
+
+Step: 81824 (Training) Loss: 0.0026
+Step: 81856 (Training) Loss: 0.0030
+Step: 81888 (Training) Loss: 0.0038
+Step: 81920 (Training) Loss: 0.0027
+
+train/loss: 0.0041
+train/s_it: 0.1254
+train/lr: 0.0040
+train/epoch: 2730.0000
+
+Step: 81920 (Validation) Batch: 0 / 20
+
+val/loss: 0.0042
+val/s_it: 0.0519
+
+Step: 81952 (Training) Loss: 0.0028
+Step: 81984 (Training) Loss: 0.0054
+Step: 82016 (Training) Loss: 0.0026
+Step: 82048 (Training) Loss: 0.0044
+Step: 82048 (Validation) Batch: 0 / 20
+
+val/loss: 0.0041
+val/s_it: 0.0516
+
+Step: 82080 (Training) Loss: 0.0033
+Step: 82112 (Training) Loss: 0.0051
+Step: 82144 (Training) Loss: 0.0049
+Step: 82176 (Training) Loss: 0.0049
+
+train/loss: 0.0043
+train/s_it: 0.1255
+train/lr: 0.0040
+train/epoch: 2739.0000
+
+Step: 82176 (Validation) Batch: 0 / 20
+
+val/loss: 0.0050
+val/s_it: 0.0517
+
+Step: 82208 (Training) Loss: 0.0060
+Step: 82240 (Training) Loss: 0.0036
+Step: 82272 (Training) Loss: 0.0051
+Step: 82304 (Training) Loss: 0.0068
+Step: 82304 (Validation) Batch: 0 / 20
+
+val/loss: 0.0041
+val/s_it: 0.0512
+
+Step: 82336 (Training) Loss: 0.0030
+Step: 82368 (Training) Loss: 0.0029
+Step: 82400 (Training) Loss: 0.0037
+Step: 82432 (Training) Loss: 0.0053
+
+train/loss: 0.0041
+train/s_it: 0.1256
+train/lr: 0.0040
+train/epoch: 2747.0000
+
+Step: 82432 (Validation) Batch: 0 / 20
+
+val/loss: 0.0043
+val/s_it: 0.0514
+
+Step: 82464 (Training) Loss: 0.0058
+Step: 82496 (Training) Loss: 0.0027
+Step: 82528 (Training) Loss: 0.0044
+Step: 82560 (Training) Loss: 0.0034
+Step: 82560 (Validation) Batch: 0 / 20
+
+val/loss: 0.0041
+val/s_it: 0.0515
+
+Step: 82592 (Training) Loss: 0.0043
+Step: 82624 (Training) Loss: 0.0044
+Step: 82656 (Training) Loss: 0.0028
+Step: 82688 (Training) Loss: 0.0033
+
+train/loss: 0.0040
+train/s_it: 0.1251
+train/lr: 0.0040
+train/epoch: 2756.0000
+
+Step: 82688 (Validation) Batch: 0 / 20
+
+val/loss: 0.0047
+val/s_it: 0.0516
+
+Step: 82720 (Training) Loss: 0.0031
+Step: 82752 (Training) Loss: 0.0072
+Step: 82784 (Training) Loss: 0.0038
+Step: 82816 (Training) Loss: 0.0039
+Step: 82816 (Validation) Batch: 0 / 20
+
+val/loss: 0.0046
+val/s_it: 0.0517
+
+Step: 82848 (Training) Loss: 0.0030
+Step: 82880 (Training) Loss: 0.0071
+Step: 82912 (Training) Loss: 0.0093
+Step: 82944 (Training) Loss: 0.0048
+
+train/loss: 0.0043
+train/s_it: 0.1253
+train/lr: 0.0040
+train/epoch: 2764.0000
+
+Step: 82944 (Validation) Batch: 0 / 20
+
+val/loss: 0.0051
+val/s_it: 0.0516
+
+Step: 82976 (Training) Loss: 0.0032
+Step: 83008 (Training) Loss: 0.0064
+Step: 83040 (Training) Loss: 0.0032
+Step: 83072 (Training) Loss: 0.0056
+Step: 83072 (Validation) Batch: 0 / 20
+
+val/loss: 0.0045
+val/s_it: 0.0512
+
+Step: 83104 (Training) Loss: 0.0022
+Step: 83136 (Training) Loss: 0.0012
+Step: 83168 (Training) Loss: 0.0028
+Step: 83200 (Training) Loss: 0.0046
+
+train/loss: 0.0041
+train/s_it: 0.1253
+train/lr: 0.0040
+train/epoch: 2773.0000
+
+Step: 83200 (Validation) Batch: 0 / 20
+
+val/loss: 0.0044
+val/s_it: 0.0513
+
+Step: 83232 (Training) Loss: 0.0025
+Step: 83264 (Training) Loss: 0.0053
+Step: 83296 (Training) Loss: 0.0048
+Step: 83328 (Training) Loss: 0.0048
+Step: 83328 (Validation) Batch: 0 / 20
+
+val/loss: 0.0043
+val/s_it: 0.0513
+
+Step: 83360 (Training) Loss: 0.0034
+Step: 83392 (Training) Loss: 0.0037
+Step: 83424 (Training) Loss: 0.0053
+Step: 83456 (Training) Loss: 0.0053
+
+train/loss: 0.0042
+train/s_it: 0.1255
+train/lr: 0.0040
+train/epoch: 2781.0000
+
+Step: 83456 (Validation) Batch: 0 / 20
+
+val/loss: 0.0041
+val/s_it: 0.0507
+
+Step: 83488 (Training) Loss: 0.0040
+Step: 83520 (Training) Loss: 0.0047
+Step: 83552 (Training) Loss: 0.0035
+Step: 83584 (Training) Loss: 0.0032
+Step: 83584 (Validation) Batch: 0 / 20
+
+val/loss: 0.0044
+val/s_it: 0.0517
+
+Step: 83616 (Training) Loss: 0.0031
+Step: 83648 (Training) Loss: 0.0033
+Step: 83680 (Training) Loss: 0.0023
+Step: 83712 (Training) Loss: 0.0042
+
+train/loss: 0.0042
+train/s_it: 0.1248
+train/lr: 0.0040
+train/epoch: 2790.0000
+
+Step: 83712 (Validation) Batch: 0 / 20
+
+val/loss: 0.0045
+val/s_it: 0.0508
+
+Step: 83744 (Training) Loss: 0.0047
+Step: 83776 (Training) Loss: 0.0031
+Step: 83808 (Training) Loss: 0.0034
+Step: 83840 (Training) Loss: 0.0037
+Step: 83840 (Validation) Batch: 0 / 20
+
+val/loss: 0.0044
+val/s_it: 0.0514
+
+Step: 83872 (Training) Loss: 0.0026
+Step: 83904 (Training) Loss: 0.0053
+Step: 83936 (Training) Loss: 0.0032
+Step: 83968 (Training) Loss: 0.0070
+
+train/loss: 0.0042
+train/s_it: 0.1238
+train/lr: 0.0040
+train/epoch: 2798.0000
+
+Step: 83968 (Validation) Batch: 0 / 20
+
+val/loss: 0.0040
+val/s_it: 0.0513
+
+Step: 84000 (Training) Loss: 0.0040
+Step: 84032 (Training) Loss: 0.0059
+Step: 84064 (Training) Loss: 0.0037
+Step: 84096 (Training) Loss: 0.0038
+Step: 84096 (Validation) Batch: 0 / 20
+
+val/loss: 0.0046
+val/s_it: 0.0511
+
+Step: 84128 (Training) Loss: 0.0035
+Step: 84160 (Training) Loss: 0.0028
+Step: 84192 (Training) Loss: 0.0037
+Step: 84224 (Training) Loss: 0.0046
+
+train/loss: 0.0043
+train/s_it: 0.1247
+train/lr: 0.0040
+train/epoch: 2807.0000
+
+Step: 84224 (Validation) Batch: 0 / 20
+
+val/loss: 0.0041
+val/s_it: 0.0513
+
+Step: 84256 (Training) Loss: 0.0075
+Step: 84288 (Training) Loss: 0.0079
+Step: 84320 (Training) Loss: 0.0027
+Step: 84352 (Training) Loss: 0.0057
+Step: 84352 (Validation) Batch: 0 / 20
+
+val/loss: 0.0044
+val/s_it: 0.0508
+
+Step: 84384 (Training) Loss: 0.0052
+Step: 84416 (Training) Loss: 0.0024
+Step: 84448 (Training) Loss: 0.0031
+Step: 84480 (Training) Loss: 0.0027
+
+train/loss: 0.0041
+train/s_it: 0.1247
+train/lr: 0.0040
+train/epoch: 2816.0000
+
+Step: 84480 (Validation) Batch: 0 / 20
+
+val/loss: 0.0042
+val/s_it: 0.0514
+
+Step: 84512 (Training) Loss: 0.0037
+Step: 84544 (Training) Loss: 0.0040
+Step: 84576 (Training) Loss: 0.0042
+Step: 84608 (Training) Loss: 0.0060
+Step: 84608 (Validation) Batch: 0 / 20
+
+val/loss: 0.0043
+val/s_it: 0.0511
+
+Step: 84640 (Training) Loss: 0.0037
+Step: 84672 (Training) Loss: 0.0060
+Step: 84704 (Training) Loss: 0.0027
+Step: 84736 (Training) Loss: 0.0031
+
+train/loss: 0.0041
+train/s_it: 0.1251
+train/lr: 0.0040
+train/epoch: 2824.0000
+
+Step: 84736 (Validation) Batch: 0 / 20
+
+val/loss: 0.0048
+val/s_it: 0.0515
+
+Step: 84768 (Training) Loss: 0.0025
+Step: 84800 (Training) Loss: 0.0081
+Step: 84832 (Training) Loss: 0.0038
+Step: 84864 (Training) Loss: 0.0030
+Step: 84864 (Validation) Batch: 0 / 20
+
+val/loss: 0.0042
+val/s_it: 0.0513
+
+Step: 84896 (Training) Loss: 0.0032
+Step: 84928 (Training) Loss: 0.0037
+Step: 84960 (Training) Loss: 0.0039
+Step: 84992 (Training) Loss: 0.0024
+
+train/loss: 0.0042
+train/s_it: 0.1243
+train/lr: 0.0040
+train/epoch: 2833.0000
+
+Step: 84992 (Validation) Batch: 0 / 20
+
+val/loss: 0.0040
+val/s_it: 0.0514
+
+Step: 85024 (Training) Loss: 0.0059
+Step: 85056 (Training) Loss: 0.0058
+Step: 85088 (Training) Loss: 0.0064
+Step: 85120 (Training) Loss: 0.0027
+Step: 85120 (Validation) Batch: 0 / 20
+
+val/loss: 0.0044
+val/s_it: 0.0514
+
+Step: 85152 (Training) Loss: 0.0043
+Step: 85184 (Training) Loss: 0.0043
+Step: 85216 (Training) Loss: 0.0033
+Step: 85248 (Training) Loss: 0.0022
+
+train/loss: 0.0040
+train/s_it: 0.1251
+train/lr: 0.0040
+train/epoch: 2841.0000
+
+Step: 85248 (Validation) Batch: 0 / 20
+
+val/loss: 0.0048
+val/s_it: 0.0518
+
+Step: 85280 (Training) Loss: 0.0022
+Step: 85312 (Training) Loss: 0.0027
+Step: 85344 (Training) Loss: 0.0020
+Step: 85376 (Training) Loss: 0.0047
+Step: 85376 (Validation) Batch: 0 / 20
+
+val/loss: 0.0046
+val/s_it: 0.0509
+
+Step: 85408 (Training) Loss: 0.0088
+Step: 85440 (Training) Loss: 0.0067
+Step: 85472 (Training) Loss: 0.0043
+Step: 85504 (Training) Loss: 0.0034
+
+train/loss: 0.0041
+train/s_it: 0.1254
+train/lr: 0.0040
+train/epoch: 2850.0000
+
+Step: 85504 (Validation) Batch: 0 / 20
+
+val/loss: 0.0042
+val/s_it: 0.0517
+
+Step: 85536 (Training) Loss: 0.0040
+Step: 85568 (Training) Loss: 0.0041
+Step: 85600 (Training) Loss: 0.0046
+Step: 85632 (Training) Loss: 0.0070
+Step: 85632 (Validation) Batch: 0 / 20
+
+val/loss: 0.0049
+val/s_it: 0.0507
+
+Step: 85664 (Training) Loss: 0.0042
+Step: 85696 (Training) Loss: 0.0044
+Step: 85728 (Training) Loss: 0.0038
+Step: 85760 (Training) Loss: 0.0033
+
+train/loss: 0.0047
+train/s_it: 0.1233
+train/lr: 0.0040
+train/epoch: 2858.0000
+
+Step: 85760 (Validation) Batch: 0 / 20
+
+val/loss: 0.0038
+val/s_it: 0.0513
+
+Step: 85792 (Training) Loss: 0.0054
+Step: 85824 (Training) Loss: 0.0066
+Step: 85856 (Training) Loss: 0.0058
+Step: 85888 (Training) Loss: 0.0056
+Step: 85888 (Validation) Batch: 0 / 20
+
+val/loss: 0.0047
+val/s_it: 0.0518
+
+Step: 85920 (Training) Loss: 0.0041
+Step: 85952 (Training) Loss: 0.0021
+Step: 85984 (Training) Loss: 0.0030
+Step: 86016 (Training) Loss: 0.0031
+
+train/loss: 0.0041
+train/s_it: 0.1242
+train/lr: 0.0040
+train/epoch: 2867.0000
+
+Step: 86016 (Validation) Batch: 0 / 20
+
+val/loss: 0.0039
+val/s_it: 0.0517
+
+Step: 86048 (Training) Loss: 0.0043
+Step: 86080 (Training) Loss: 0.0026
+Step: 86112 (Training) Loss: 0.0050
+Step: 86144 (Training) Loss: 0.0031
+Step: 86144 (Validation) Batch: 0 / 20
+
+val/loss: 0.0045
+val/s_it: 0.0510
+
+Step: 86176 (Training) Loss: 0.0022
+Step: 86208 (Training) Loss: 0.0045
+Step: 86240 (Training) Loss: 0.0052
+Step: 86272 (Training) Loss: 0.0036
+
+train/loss: 0.0040
+train/s_it: 0.1253
+train/lr: 0.0040
+train/epoch: 2875.0000
+
+Step: 86272 (Validation) Batch: 0 / 20
+
+val/loss: 0.0046
+val/s_it: 0.0516
+
+Step: 86304 (Training) Loss: 0.0061
+Step: 86336 (Training) Loss: 0.0054
+Step: 86368 (Training) Loss: 0.0035
+Step: 86400 (Training) Loss: 0.0053
+Step: 86400 (Validation) Batch: 0 / 20
+
+val/loss: 0.0048
+val/s_it: 0.0518
+
+Step: 86432 (Training) Loss: 0.0035
+Step: 86464 (Training) Loss: 0.0045
+Step: 86496 (Training) Loss: 0.0027
+Step: 86528 (Training) Loss: 0.0027
+
+train/loss: 0.0041
+train/s_it: 0.1255
+train/lr: 0.0040
+train/epoch: 2884.0000
+
+Step: 86528 (Validation) Batch: 0 / 20
+
+val/loss: 0.0044
+val/s_it: 0.0516
+
+Step: 86560 (Training) Loss: 0.0037
+Step: 86592 (Training) Loss: 0.0031
+Step: 86624 (Training) Loss: 0.0035
+Step: 86656 (Training) Loss: 0.0032
+Step: 86656 (Validation) Batch: 0 / 20
+
+val/loss: 0.0045
+val/s_it: 0.0511
+
+Step: 86688 (Training) Loss: 0.0041
+Step: 86720 (Training) Loss: 0.0034
+Step: 86752 (Training) Loss: 0.0032
+Step: 86784 (Training) Loss: 0.0047
+
+train/loss: 0.0042
+train/s_it: 0.1244
+train/lr: 0.0040
+train/epoch: 2892.0000
+
+Step: 86784 (Validation) Batch: 0 / 20
+
+val/loss: 0.0042
+val/s_it: 0.0515
+
+Step: 86816 (Training) Loss: 0.0031
+Step: 86848 (Training) Loss: 0.0038
+Step: 86880 (Training) Loss: 0.0045
+Step: 86912 (Training) Loss: 0.0022
+Step: 86912 (Validation) Batch: 0 / 20
+
+val/loss: 0.0046
+val/s_it: 0.0509
+
+Step: 86944 (Training) Loss: 0.0035
+Step: 86976 (Training) Loss: 0.0034
+Step: 87008 (Training) Loss: 0.0038
+Step: 87040 (Training) Loss: 0.0063
+
+train/loss: 0.0042
+train/s_it: 0.1247
+train/lr: 0.0040
+train/epoch: 2901.0000
+
+Step: 87040 (Validation) Batch: 0 / 20
+
+val/loss: 0.0045
+val/s_it: 0.0520
+
+Step: 87072 (Training) Loss: 0.0029
+Step: 87104 (Training) Loss: 0.0050
+Step: 87136 (Training) Loss: 0.0058
+Step: 87168 (Training) Loss: 0.0028
+Step: 87168 (Validation) Batch: 0 / 20
+
+val/loss: 0.0043
+val/s_it: 0.0513
+
+Step: 87200 (Training) Loss: 0.0041
+Step: 87232 (Training) Loss: 0.0029
+Step: 87264 (Training) Loss: 0.0050
+Step: 87296 (Training) Loss: 0.0022
+
+train/loss: 0.0041
+train/s_it: 0.1251
+train/lr: 0.0040
+train/epoch: 2909.0000
+
+Step: 87296 (Validation) Batch: 0 / 20
+
+val/loss: 0.0043
+val/s_it: 0.0516
+
+Step: 87328 (Training) Loss: 0.0052
+Step: 87360 (Training) Loss: 0.0046
+Step: 87392 (Training) Loss: 0.0018
+Step: 87424 (Training) Loss: 0.0026
+Step: 87424 (Validation) Batch: 0 / 20
+
+val/loss: 0.0045
+val/s_it: 0.0516
+
+Step: 87456 (Training) Loss: 0.0013
+Step: 87488 (Training) Loss: 0.0045
+Step: 87520 (Training) Loss: 0.0060
+Step: 87552 (Training) Loss: 0.0043
+
+train/loss: 0.0041
+train/s_it: 0.1252
+train/lr: 0.0040
+train/epoch: 2918.0000
+
+Step: 87552 (Validation) Batch: 0 / 20
+
+val/loss: 0.0045
+val/s_it: 0.0512
+
+Step: 87584 (Training) Loss: 0.0030
+Step: 87616 (Training) Loss: 0.0051
+Step: 87648 (Training) Loss: 0.0038
+Step: 87680 (Training) Loss: 0.0050
+Step: 87680 (Validation) Batch: 0 / 20
+
+val/loss: 0.0048
+val/s_it: 0.0512
+
+Step: 87712 (Training) Loss: 0.0040
+Step: 87744 (Training) Loss: 0.0018
+Step: 87776 (Training) Loss: 0.0055
+Step: 87808 (Training) Loss: 0.0029
+
+train/loss: 0.0043
+train/s_it: 0.1236
+train/lr: 0.0040
+train/epoch: 2926.0000
+
+Step: 87808 (Validation) Batch: 0 / 20
+
+val/loss: 0.0042
+val/s_it: 0.0516
+
+Step: 87840 (Training) Loss: 0.0038
+Step: 87872 (Training) Loss: 0.0034
+Step: 87904 (Training) Loss: 0.0067
+Step: 87936 (Training) Loss: 0.0047
+Step: 87936 (Validation) Batch: 0 / 20
+
+val/loss: 0.0042
+val/s_it: 0.0513
+
+Step: 87968 (Training) Loss: 0.0048
+Step: 88000 (Training) Loss: 0.0029
+Step: 88032 (Training) Loss: 0.0047
+Step: 88064 (Training) Loss: 0.0062
+
+train/loss: 0.0041
+train/s_it: 0.1255
+train/lr: 0.0040
+train/epoch: 2935.0000
+
+Step: 88064 (Validation) Batch: 0 / 20
+
+val/loss: 0.0041
+val/s_it: 0.0522
+
+Step: 88096 (Training) Loss: 0.0048
+Step: 88128 (Training) Loss: 0.0028
+Step: 88160 (Training) Loss: 0.0033
+Step: 88192 (Training) Loss: 0.0025
+Step: 88192 (Validation) Batch: 0 / 20
+
+val/loss: 0.0042
+val/s_it: 0.0512
+
+Step: 88224 (Training) Loss: 0.0035
+Step: 88256 (Training) Loss: 0.0042
+Step: 88288 (Training) Loss: 0.0065
+Step: 88320 (Training) Loss: 0.0045
+
+train/loss: 0.0042
+train/s_it: 0.1250
+train/lr: 0.0040
+train/epoch: 2944.0000
+
+Step: 88320 (Validation) Batch: 0 / 20
+
+val/loss: 0.0043
+val/s_it: 0.0512
+
+Step: 88352 (Training) Loss: 0.0038
+Step: 88384 (Training) Loss: 0.0049
+Step: 88416 (Training) Loss: 0.0030
+Step: 88448 (Training) Loss: 0.0036
+Step: 88448 (Validation) Batch: 0 / 20
+
+val/loss: 0.0043
+val/s_it: 0.0507
+
+Step: 88480 (Training) Loss: 0.0031
+Step: 88512 (Training) Loss: 0.0041
+Step: 88544 (Training) Loss: 0.0076
+Step: 88576 (Training) Loss: 0.0035
+
+train/loss: 0.0041
+train/s_it: 0.1239
+train/lr: 0.0040
+train/epoch: 2952.0000
+
+Step: 88576 (Validation) Batch: 0 / 20
+
+val/loss: 0.0041
+val/s_it: 0.0511
+
+Step: 88608 (Training) Loss: 0.0062
+Step: 88640 (Training) Loss: 0.0025
+Step: 88672 (Training) Loss: 0.0043
+Step: 88704 (Training) Loss: 0.0029
+Step: 88704 (Validation) Batch: 0 / 20
+
+val/loss: 0.0044
+val/s_it: 0.0514
+
+Step: 88736 (Training) Loss: 0.0054
+Step: 88768 (Training) Loss: 0.0056
+Step: 88800 (Training) Loss: 0.0057
+Step: 88832 (Training) Loss: 0.0038
+
+train/loss: 0.0042
+train/s_it: 0.1261
+train/lr: 0.0040
+train/epoch: 2961.0000
+
+Step: 88832 (Validation) Batch: 0 / 20
+
+val/loss: 0.0041
+val/s_it: 0.0511
+
+Step: 88864 (Training) Loss: 0.0032
+Step: 88896 (Training) Loss: 0.0046
+Step: 88928 (Training) Loss: 0.0031
+Step: 88960 (Training) Loss: 0.0041
+Step: 88960 (Validation) Batch: 0 / 20
+
+val/loss: 0.0041
+val/s_it: 0.0514
+
+Step: 88992 (Training) Loss: 0.0055
+Step: 89024 (Training) Loss: 0.0031
+Step: 89056 (Training) Loss: 0.0035
+Step: 89088 (Training) Loss: 0.0029
+
+train/loss: 0.0041
+train/s_it: 0.1241
+train/lr: 0.0040
+train/epoch: 2969.0000
+
+Step: 89088 (Validation) Batch: 0 / 20
+
+val/loss: 0.0043
+val/s_it: 0.0512
+
+Step: 89120 (Training) Loss: 0.0063
+Step: 89152 (Training) Loss: 0.0023
+Step: 89184 (Training) Loss: 0.0039
+Step: 89216 (Training) Loss: 0.0032
+Step: 89216 (Validation) Batch: 0 / 20
+
+val/loss: 0.0044
+val/s_it: 0.0511
+
+Step: 89248 (Training) Loss: 0.0032
+Step: 89280 (Training) Loss: 0.0056
+Step: 89312 (Training) Loss: 0.0043
+Step: 89344 (Training) Loss: 0.0033
+
+train/loss: 0.0041
+train/s_it: 0.1246
+train/lr: 0.0040
+train/epoch: 2978.0000
+
+Step: 89344 (Validation) Batch: 0 / 20
+
+val/loss: 0.0040
+val/s_it: 0.0518
+
+Step: 89376 (Training) Loss: 0.0053
+Step: 89408 (Training) Loss: 0.0040
+Step: 89440 (Training) Loss: 0.0040
+Step: 89472 (Training) Loss: 0.0043
+Step: 89472 (Validation) Batch: 0 / 20
+
+val/loss: 0.0052
+val/s_it: 0.0507
+
+Step: 89504 (Training) Loss: 0.0051
+Step: 89536 (Training) Loss: 0.0043
+Step: 89568 (Training) Loss: 0.0063
+Step: 89600 (Training) Loss: 0.0047
+
+train/loss: 0.0043
+train/s_it: 0.1259
+train/lr: 0.0040
+train/epoch: 2986.0000
+
+Step: 89600 (Validation) Batch: 0 / 20
+
+val/loss: 0.0040
+val/s_it: 0.0515
+
+Step: 89632 (Training) Loss: 0.0043
+Step: 89664 (Training) Loss: 0.0017
+Step: 89696 (Training) Loss: 0.0069
+Step: 89728 (Training) Loss: 0.0046
+Step: 89728 (Validation) Batch: 0 / 20
+
+val/loss: 0.0042
+val/s_it: 0.0515
+
+Step: 89760 (Training) Loss: 0.0054
+Step: 89792 (Training) Loss: 0.0034
+Step: 89824 (Training) Loss: 0.0051
+Step: 89856 (Training) Loss: 0.0032
+
+train/loss: 0.0042
+train/s_it: 0.1264
+train/lr: 0.0040
+train/epoch: 2995.0000
+
+Step: 89856 (Validation) Batch: 0 / 20
+
+val/loss: 0.0050
+val/s_it: 0.0519
+
+Step: 89888 (Training) Loss: 0.0034
+Step: 89920 (Training) Loss: 0.0071
+Step: 89952 (Training) Loss: 0.0067
+Step: 89984 (Training) Loss: 0.0026
+Step: 89984 (Validation) Batch: 0 / 20
+
+val/loss: 0.0047
+val/s_it: 0.0510
+
+Step: 90016 (Training) Loss: 0.0035
+Step: 90048 (Training) Loss: 0.0023
+Step: 90080 (Training) Loss: 0.0028
+Step: 90112 (Training) Loss: 0.0019
+
+train/loss: 0.0041
+train/s_it: 0.1262
+train/lr: 0.0040
+train/epoch: 3003.0000
+
+Step: 90112 (Validation) Batch: 0 / 20
+
+val/loss: 0.0043
+val/s_it: 0.0512
+
+Step: 90144 (Training) Loss: 0.0032
+Step: 90176 (Training) Loss: 0.0036
+Step: 90208 (Training) Loss: 0.0045
+Step: 90240 (Training) Loss: 0.0023
+Step: 90240 (Validation) Batch: 0 / 20
+
+val/loss: 0.0043
+val/s_it: 0.0511
+
+Step: 90272 (Training) Loss: 0.0032
+Step: 90304 (Training) Loss: 0.0022
+Step: 90336 (Training) Loss: 0.0025
+Step: 90368 (Training) Loss: 0.0054
+
+train/loss: 0.0041
+train/s_it: 0.1256
+train/lr: 0.0040
+train/epoch: 3012.0000
+
+Step: 90368 (Validation) Batch: 0 / 20
+
+val/loss: 0.0043
+val/s_it: 0.0506
+
+Step: 90400 (Training) Loss: 0.0041
+Step: 90432 (Training) Loss: 0.0044
+Step: 90464 (Training) Loss: 0.0037
+Step: 90496 (Training) Loss: 0.0041
+Step: 90496 (Validation) Batch: 0 / 20
+
+val/loss: 0.0041
+val/s_it: 0.0503
+
+Step: 90528 (Training) Loss: 0.0046
+Step: 90560 (Training) Loss: 0.0039
+Step: 90592 (Training) Loss: 0.0043
+Step: 90624 (Training) Loss: 0.0025
+
+train/loss: 0.0043
+train/s_it: 0.1245
+train/lr: 0.0040
+train/epoch: 3020.0000
+
+Step: 90624 (Validation) Batch: 0 / 20
+
+val/loss: 0.0043
+val/s_it: 0.0508
+
+Step: 90656 (Training) Loss: 0.0048
+Step: 90688 (Training) Loss: 0.0069
+Step: 90720 (Training) Loss: 0.0057
+Step: 90752 (Training) Loss: 0.0023
+Step: 90752 (Validation) Batch: 0 / 20
+
+val/loss: 0.0044
+val/s_it: 0.0507
+
+Step: 90784 (Training) Loss: 0.0052
+Step: 90816 (Training) Loss: 0.0057
+Step: 90848 (Training) Loss: 0.0045
+Step: 90880 (Training) Loss: 0.0030
+
+train/loss: 0.0040
+train/s_it: 0.1252
+train/lr: 0.0040
+train/epoch: 3029.0000
+
+Step: 90880 (Validation) Batch: 0 / 20
+
+val/loss: 0.0042
+val/s_it: 0.0521
+
+Step: 90912 (Training) Loss: 0.0040
+Step: 90944 (Training) Loss: 0.0065
+Step: 90976 (Training) Loss: 0.0032
+Step: 91008 (Training) Loss: 0.0037
+Step: 91008 (Validation) Batch: 0 / 20
+
+val/loss: 0.0041
+val/s_it: 0.0509
+
+Step: 91040 (Training) Loss: 0.0049
+Step: 91072 (Training) Loss: 0.0049
+Step: 91104 (Training) Loss: 0.0044
+Step: 91136 (Training) Loss: 0.0043
+
+train/loss: 0.0041
+train/s_it: 0.1257
+train/lr: 0.0040
+train/epoch: 3037.0000
+
+Step: 91136 (Validation) Batch: 0 / 20
+
+val/loss: 0.0042
+val/s_it: 0.0518
+
+Step: 91168 (Training) Loss: 0.0032
+Step: 91200 (Training) Loss: 0.0050
+Step: 91232 (Training) Loss: 0.0045
+Step: 91264 (Training) Loss: 0.0037
+Step: 91264 (Validation) Batch: 0 / 20
+
+val/loss: 0.0049
+val/s_it: 0.0519
+
+Step: 91296 (Training) Loss: 0.0029
+Step: 91328 (Training) Loss: 0.0026
+Step: 91360 (Training) Loss: 0.0046
+Step: 91392 (Training) Loss: 0.0052
+
+train/loss: 0.0042
+train/s_it: 0.1261
+train/lr: 0.0040
+train/epoch: 3046.0000
+
+Step: 91392 (Validation) Batch: 0 / 20
+
+val/loss: 0.0045
+val/s_it: 0.0520
+
+Step: 91424 (Training) Loss: 0.0036
+Step: 91456 (Training) Loss: 0.0040
+Step: 91488 (Training) Loss: 0.0070
+Step: 91520 (Training) Loss: 0.0025
+Step: 91520 (Validation) Batch: 0 / 20
+
+val/loss: 0.0041
+val/s_it: 0.0517
+
+Step: 91552 (Training) Loss: 0.0024
+Step: 91584 (Training) Loss: 0.0046
+Step: 91616 (Training) Loss: 0.0053
+Step: 91648 (Training) Loss: 0.0066
+
+train/loss: 0.0041
+train/s_it: 0.1255
+train/lr: 0.0040
+train/epoch: 3054.0000
+
+Step: 91648 (Validation) Batch: 0 / 20
+
+val/loss: 0.0044
+val/s_it: 0.0518
+
+Step: 91680 (Training) Loss: 0.0020
+Step: 91712 (Training) Loss: 0.0032
+Step: 91744 (Training) Loss: 0.0028
+Step: 91776 (Training) Loss: 0.0027
+Step: 91776 (Validation) Batch: 0 / 20
+
+val/loss: 0.0040
+val/s_it: 0.0512
+
+Step: 91808 (Training) Loss: 0.0031
+Step: 91840 (Training) Loss: 0.0042
+Step: 91872 (Training) Loss: 0.0029
+Step: 91904 (Training) Loss: 0.0050
+
+train/loss: 0.0042
+train/s_it: 0.1261
+train/lr: 0.0040
+train/epoch: 3063.0000
+
+Step: 91904 (Validation) Batch: 0 / 20
+
+val/loss: 0.0041
+val/s_it: 0.0513
+
+Step: 91936 (Training) Loss: 0.0075
+Step: 91968 (Training) Loss: 0.0033
+Step: 92000 (Training) Loss: 0.0062
+Step: 92032 (Training) Loss: 0.0054
+Step: 92032 (Validation) Batch: 0 / 20
+
+val/loss: 0.0041
+val/s_it: 0.0514
+
+Step: 92064 (Training) Loss: 0.0068
+Step: 92096 (Training) Loss: 0.0029
+Step: 92128 (Training) Loss: 0.0047
+Step: 92160 (Training) Loss: 0.0028
+
+train/loss: 0.0041
+train/s_it: 0.1264
+train/lr: 0.0040
+train/epoch: 3072.0000
+
+Step: 92160 (Validation) Batch: 0 / 20
+
+val/loss: 0.0040
+val/s_it: 0.0517
+
+Step: 92192 (Training) Loss: 0.0030
+Step: 92224 (Training) Loss: 0.0078
+Step: 92256 (Training) Loss: 0.0041
+Step: 92288 (Training) Loss: 0.0023
+Step: 92288 (Validation) Batch: 0 / 20
+
+val/loss: 0.0038
+val/s_it: 0.0507
+
+Step: 92320 (Training) Loss: 0.0030
+Step: 92352 (Training) Loss: 0.0061
+Step: 92384 (Training) Loss: 0.0038
+Step: 92416 (Training) Loss: 0.0026
+
+train/loss: 0.0041
+train/s_it: 0.1249
+train/lr: 0.0040
+train/epoch: 3080.0000
+
+Step: 92416 (Validation) Batch: 0 / 20
+
+val/loss: 0.0042
+val/s_it: 0.0518
+
+Step: 92448 (Training) Loss: 0.0029
+Step: 92480 (Training) Loss: 0.0031
+Step: 92512 (Training) Loss: 0.0038
+Step: 92544 (Training) Loss: 0.0057
+Step: 92544 (Validation) Batch: 0 / 20
+
+val/loss: 0.0043
+val/s_it: 0.0519
+
+Step: 92576 (Training) Loss: 0.0033
+Step: 92608 (Training) Loss: 0.0040
+Step: 92640 (Training) Loss: 0.0074
+Step: 92672 (Training) Loss: 0.0030
+
+train/loss: 0.0042
+train/s_it: 0.1267
+train/lr: 0.0040
+train/epoch: 3089.0000
+
+Step: 92672 (Validation) Batch: 0 / 20
+
+val/loss: 0.0044
+val/s_it: 0.0515
+
+Step: 92704 (Training) Loss: 0.0032
+Step: 92736 (Training) Loss: 0.0054
+Step: 92768 (Training) Loss: 0.0021
+Step: 92800 (Training) Loss: 0.0060
+Step: 92800 (Validation) Batch: 0 / 20
+
+val/loss: 0.0046
+val/s_it: 0.0510
+
+Step: 92832 (Training) Loss: 0.0074
+Step: 92864 (Training) Loss: 0.0051
+Step: 92896 (Training) Loss: 0.0059
+Step: 92928 (Training) Loss: 0.0027
+
+train/loss: 0.0042
+train/s_it: 0.1257
+train/lr: 0.0040
+train/epoch: 3097.0000
+
+Step: 92928 (Validation) Batch: 0 / 20
+
+val/loss: 0.0043
+val/s_it: 0.0513
+
+Step: 92960 (Training) Loss: 0.0031
+Step: 92992 (Training) Loss: 0.0048
+Step: 93024 (Training) Loss: 0.0054
+Step: 93056 (Training) Loss: 0.0026
+Step: 93056 (Validation) Batch: 0 / 20
+
+val/loss: 0.0043
+val/s_it: 0.0509
+
+Step: 93088 (Training) Loss: 0.0042
+Step: 93120 (Training) Loss: 0.0032
+Step: 93152 (Training) Loss: 0.0030
+Step: 93184 (Training) Loss: 0.0026
+
+train/loss: 0.0040
+train/s_it: 0.1249
+train/lr: 0.0040
+train/epoch: 3106.0000
+
+Step: 93184 (Validation) Batch: 0 / 20
+
+val/loss: 0.0043
+val/s_it: 0.0518
+
+Step: 93216 (Training) Loss: 0.0052
+Step: 93248 (Training) Loss: 0.0029
+Step: 93280 (Training) Loss: 0.0034
+Step: 93312 (Training) Loss: 0.0051
+Step: 93312 (Validation) Batch: 0 / 20
+
+val/loss: 0.0043
+val/s_it: 0.0513
+
+Step: 93344 (Training) Loss: 0.0023
+Step: 93376 (Training) Loss: 0.0062
+Step: 93408 (Training) Loss: 0.0040
+Step: 93440 (Training) Loss: 0.0038
+
+train/loss: 0.0041
+train/s_it: 0.1245
+train/lr: 0.0040
+train/epoch: 3114.0000
+
+Step: 93440 (Validation) Batch: 0 / 20
+
+val/loss: 0.0043
+val/s_it: 0.0514
+
+Step: 93472 (Training) Loss: 0.0035
+Step: 93504 (Training) Loss: 0.0025
+Step: 93536 (Training) Loss: 0.0055
+Step: 93568 (Training) Loss: 0.0050
+Step: 93568 (Validation) Batch: 0 / 20
+
+val/loss: 0.0040
+val/s_it: 0.0516
+
+Step: 93600 (Training) Loss: 0.0048
+Step: 93632 (Training) Loss: 0.0025
+Step: 93664 (Training) Loss: 0.0054
+Step: 93696 (Training) Loss: 0.0086
+
+train/loss: 0.0049
+train/s_it: 0.1262
+train/lr: 0.0040
+train/epoch: 3123.0000
+
+Step: 93696 (Validation) Batch: 0 / 20
+
+val/loss: 0.0085
+val/s_it: 0.0521
+
+Step: 93728 (Training) Loss: 0.0041
+Step: 93760 (Training) Loss: 0.0033
+Step: 93792 (Training) Loss: 0.0053
+Step: 93824 (Training) Loss: 0.0036
+Step: 93824 (Validation) Batch: 0 / 20
+
+val/loss: 0.0043
+val/s_it: 0.0515
+
+Step: 93856 (Training) Loss: 0.0018
+Step: 93888 (Training) Loss: 0.0039
+Step: 93920 (Training) Loss: 0.0042
+Step: 93952 (Training) Loss: 0.0044
+
+train/loss: 0.0046
+train/s_it: 0.1252
+train/lr: 0.0040
+train/epoch: 3131.0000
+
+Step: 93952 (Validation) Batch: 0 / 20
+
+val/loss: 0.0043
+val/s_it: 0.0505
+
+Step: 93984 (Training) Loss: 0.0037
+Step: 94016 (Training) Loss: 0.0053
+Step: 94048 (Training) Loss: 0.0037
+Step: 94080 (Training) Loss: 0.0038
+Step: 94080 (Validation) Batch: 0 / 20
+
+val/loss: 0.0043
+val/s_it: 0.0518
+
+Step: 94112 (Training) Loss: 0.0030
+Step: 94144 (Training) Loss: 0.0058
+Step: 94176 (Training) Loss: 0.0035
+Step: 94208 (Training) Loss: 0.0037
+
+train/loss: 0.0042
+train/s_it: 0.1246
+train/lr: 0.0040
+train/epoch: 3140.0000
+
+Step: 94208 (Validation) Batch: 0 / 20
+
+val/loss: 0.0046
+val/s_it: 0.0518
+
+Step: 94240 (Training) Loss: 0.0045
+Step: 94272 (Training) Loss: 0.0082
+Step: 94304 (Training) Loss: 0.0025
+Step: 94336 (Training) Loss: 0.0038
+Step: 94336 (Validation) Batch: 0 / 20
+
+val/loss: 0.0040
+val/s_it: 0.0513
+
+Step: 94368 (Training) Loss: 0.0034
+Step: 94400 (Training) Loss: 0.0016
+Step: 94432 (Training) Loss: 0.0067
+Step: 94464 (Training) Loss: 0.0036
+
+train/loss: 0.0041
+train/s_it: 0.1246
+train/lr: 0.0040
+train/epoch: 3148.0000
+
+Step: 94464 (Validation) Batch: 0 / 20
+
+val/loss: 0.0041
+val/s_it: 0.0511
+
+Step: 94496 (Training) Loss: 0.0057
+Step: 94528 (Training) Loss: 0.0032
+Step: 94560 (Training) Loss: 0.0046
+Step: 94592 (Training) Loss: 0.0035
+Step: 94592 (Validation) Batch: 0 / 20
+
+val/loss: 0.0042
+val/s_it: 0.0508
+
+Step: 94624 (Training) Loss: 0.0029
+Step: 94656 (Training) Loss: 0.0026
+Step: 94688 (Training) Loss: 0.0028
+Step: 94720 (Training) Loss: 0.0054
+
+train/loss: 0.0041
+train/s_it: 0.1246
+train/lr: 0.0040
+train/epoch: 3157.0000
+
+Step: 94720 (Validation) Batch: 0 / 20
+
+val/loss: 0.0044
+val/s_it: 0.0514
+
+Step: 94752 (Training) Loss: 0.0022
+Step: 94784 (Training) Loss: 0.0028
+Step: 94816 (Training) Loss: 0.0030
+Step: 94848 (Training) Loss: 0.0042
+Step: 94848 (Validation) Batch: 0 / 20
+
+val/loss: 0.0039
+val/s_it: 0.0518
+
+Step: 94880 (Training) Loss: 0.0028
+Step: 94912 (Training) Loss: 0.0033
+Step: 94944 (Training) Loss: 0.0033
+Step: 94976 (Training) Loss: 0.0045
+
+train/loss: 0.0040
+train/s_it: 0.1266
+train/lr: 0.0040
+train/epoch: 3165.0000
+
+Step: 94976 (Validation) Batch: 0 / 20
+
+val/loss: 0.0043
+val/s_it: 0.0522
+
+Step: 95008 (Training) Loss: 0.0043
+Step: 95040 (Training) Loss: 0.0026
+Step: 95072 (Training) Loss: 0.0031
+Step: 95104 (Training) Loss: 0.0034
+Step: 95104 (Validation) Batch: 0 / 20
+
+val/loss: 0.0046
+val/s_it: 0.0510
+
+Step: 95136 (Training) Loss: 0.0055
+Step: 95168 (Training) Loss: 0.0038
+Step: 95200 (Training) Loss: 0.0030
+Step: 95232 (Training) Loss: 0.0051
+
+train/loss: 0.0042
+train/s_it: 0.1252
+train/lr: 0.0040
+train/epoch: 3174.0000
+
+Step: 95232 (Validation) Batch: 0 / 20
+
+val/loss: 0.0041
+val/s_it: 0.0519
+
+Step: 95264 (Training) Loss: 0.0031
+Step: 95296 (Training) Loss: 0.0027
+Step: 95328 (Training) Loss: 0.0048
+Step: 95360 (Training) Loss: 0.0048
+Step: 95360 (Validation) Batch: 0 / 20
+
+val/loss: 0.0048
+val/s_it: 0.0514
+
+Step: 95392 (Training) Loss: 0.0020
+Step: 95424 (Training) Loss: 0.0042
+Step: 95456 (Training) Loss: 0.0025
+Step: 95488 (Training) Loss: 0.0073
+
+train/loss: 0.0041
+train/s_it: 0.1254
+train/lr: 0.0040
+train/epoch: 3182.0000
+
+Step: 95488 (Validation) Batch: 0 / 20
+
+val/loss: 0.0047
+val/s_it: 0.0514
+
+Step: 95520 (Training) Loss: 0.0063
+Step: 95552 (Training) Loss: 0.0046
+Step: 95584 (Training) Loss: 0.0041
+Step: 95616 (Training) Loss: 0.0036
+Step: 95616 (Validation) Batch: 0 / 20
+
+val/loss: 0.0042
+val/s_it: 0.0512
+
+Step: 95648 (Training) Loss: 0.0032
+Step: 95680 (Training) Loss: 0.0035
+Step: 95712 (Training) Loss: 0.0028
+Step: 95744 (Training) Loss: 0.0029
+
+train/loss: 0.0043
+train/s_it: 0.1249
+train/lr: 0.0040
+train/epoch: 3191.0000
+
+Step: 95744 (Validation) Batch: 0 / 20
+
+val/loss: 0.0041
+val/s_it: 0.0509
+
+Step: 95776 (Training) Loss: 0.0075
+Step: 95808 (Training) Loss: 0.0027
+Step: 95840 (Training) Loss: 0.0050
+Step: 95872 (Training) Loss: 0.0029
+Step: 95872 (Validation) Batch: 0 / 20
+
+val/loss: 0.0046
+val/s_it: 0.0511
+
+Step: 95904 (Training) Loss: 0.0057
+Step: 95936 (Training) Loss: 0.0019
+Step: 95968 (Training) Loss: 0.0041
+Step: 96000 (Training) Loss: 0.0031
+
+train/loss: 0.0040
+train/s_it: 0.1261
+train/lr: 0.0040
+train/epoch: 3200.0000
+
+Step: 96000 (Validation) Batch: 0 / 20
+
+val/loss: 0.0045
+val/s_it: 0.0523
+
+Step: 96032 (Training) Loss: 0.0048
+Step: 96064 (Training) Loss: 0.0043
+Step: 96096 (Training) Loss: 0.0041
+Step: 96128 (Training) Loss: 0.0027
+Step: 96128 (Validation) Batch: 0 / 20
+
+val/loss: 0.0042
+val/s_it: 0.0517
+
+Step: 96160 (Training) Loss: 0.0055
+Step: 96192 (Training) Loss: 0.0043
+Step: 96224 (Training) Loss: 0.0047
+Step: 96256 (Training) Loss: 0.0025
+
+train/loss: 0.0041
+train/s_it: 0.1242
+train/lr: 0.0040
+train/epoch: 3208.0000
+
+Step: 96256 (Validation) Batch: 0 / 20
+
+val/loss: 0.0047
+val/s_it: 0.0512
+
+Step: 96288 (Training) Loss: 0.0023
+Step: 96320 (Training) Loss: 0.0041
+Step: 96352 (Training) Loss: 0.0057
+Step: 96384 (Training) Loss: 0.0049
+Step: 96384 (Validation) Batch: 0 / 20
+
+val/loss: 0.0043
+val/s_it: 0.0512
+
+Step: 96416 (Training) Loss: 0.0034
+Step: 96448 (Training) Loss: 0.0046
+Step: 96480 (Training) Loss: 0.0043
+Step: 96512 (Training) Loss: 0.0037
+
+train/loss: 0.0041
+train/s_it: 0.1243
+train/lr: 0.0040
+train/epoch: 3217.0000
+
+Step: 96512 (Validation) Batch: 0 / 20
+
+val/loss: 0.0041
+val/s_it: 0.0509
+
+Step: 96544 (Training) Loss: 0.0039
+Step: 96576 (Training) Loss: 0.0047
+Step: 96608 (Training) Loss: 0.0043
+Step: 96640 (Training) Loss: 0.0050
+Step: 96640 (Validation) Batch: 0 / 20
+
+val/loss: 0.0045
+val/s_it: 0.0513
+
+Step: 96672 (Training) Loss: 0.0018
+Step: 96704 (Training) Loss: 0.0055
+Step: 96736 (Training) Loss: 0.0034
+Step: 96768 (Training) Loss: 0.0030
+
+train/loss: 0.0041
+train/s_it: 0.1247
+train/lr: 0.0040
+train/epoch: 3225.0000
+
+Step: 96768 (Validation) Batch: 0 / 20
+
+val/loss: 0.0041
+val/s_it: 0.0521
+
+Step: 96800 (Training) Loss: 0.0039
+Step: 96832 (Training) Loss: 0.0065
+Step: 96864 (Training) Loss: 0.0018
+Step: 96896 (Training) Loss: 0.0023
+Step: 96896 (Validation) Batch: 0 / 20
+
+val/loss: 0.0039
+val/s_it: 0.0509
+
+Step: 96928 (Training) Loss: 0.0023
+Step: 96960 (Training) Loss: 0.0032
+Step: 96992 (Training) Loss: 0.0058
+Step: 97024 (Training) Loss: 0.0024
+
+train/loss: 0.0041
+train/s_it: 0.1245
+train/lr: 0.0040
+train/epoch: 3234.0000
+
+Step: 97024 (Validation) Batch: 0 / 20
+
+val/loss: 0.0039
+val/s_it: 0.0506
+
+Step: 97056 (Training) Loss: 0.0042
+Step: 97088 (Training) Loss: 0.0036
+Step: 97120 (Training) Loss: 0.0033
+Step: 97152 (Training) Loss: 0.0031
+Step: 97152 (Validation) Batch: 0 / 20
+
+val/loss: 0.0043
+val/s_it: 0.0514
+
+Step: 97184 (Training) Loss: 0.0055
+Step: 97216 (Training) Loss: 0.0041
+Step: 97248 (Training) Loss: 0.0048
+Step: 97280 (Training) Loss: 0.0066
+
+train/loss: 0.0045
+train/s_it: 0.1253
+train/lr: 0.0040
+train/epoch: 3242.0000
+
+Step: 97280 (Validation) Batch: 0 / 20
+
+val/loss: 0.0045
+val/s_it: 0.0516
+
+Step: 97312 (Training) Loss: 0.0031
+Step: 97344 (Training) Loss: 0.0042
+Step: 97376 (Training) Loss: 0.0066
+Step: 97408 (Training) Loss: 0.0075
+Step: 97408 (Validation) Batch: 0 / 20
+
+val/loss: 0.0043
+val/s_it: 0.0514
+
+Step: 97440 (Training) Loss: 0.0064
+Step: 97472 (Training) Loss: 0.0025
+Step: 97504 (Training) Loss: 0.0029
+Step: 97536 (Training) Loss: 0.0062
+
+train/loss: 0.0041
+train/s_it: 0.1246
+train/lr: 0.0040
+train/epoch: 3251.0000
+
+Step: 97536 (Validation) Batch: 0 / 20
+
+val/loss: 0.0040
+val/s_it: 0.0516
+
+Step: 97568 (Training) Loss: 0.0029
+Step: 97600 (Training) Loss: 0.0017
+Step: 97632 (Training) Loss: 0.0034
+Step: 97664 (Training) Loss: 0.0034
+Step: 97664 (Validation) Batch: 0 / 20
+
+val/loss: 0.0045
+val/s_it: 0.0521
+
+Step: 97696 (Training) Loss: 0.0045
+Step: 97728 (Training) Loss: 0.0034
+Step: 97760 (Training) Loss: 0.0043
+Step: 97792 (Training) Loss: 0.0053
+
+train/loss: 0.0040
+train/s_it: 0.1246
+train/lr: 0.0040
+train/epoch: 3259.0000
+
+Step: 97792 (Validation) Batch: 0 / 20
+
+val/loss: 0.0054
+val/s_it: 0.0516
+
+Step: 97824 (Training) Loss: 0.0034
+Step: 97856 (Training) Loss: 0.0033
+Step: 97888 (Training) Loss: 0.0047
+Step: 97920 (Training) Loss: 0.0030
+Step: 97920 (Validation) Batch: 0 / 20
+
+val/loss: 0.0045
+val/s_it: 0.0506
+
+Step: 97952 (Training) Loss: 0.0034
+Step: 97984 (Training) Loss: 0.0063
+Step: 98016 (Training) Loss: 0.0034
+Step: 98048 (Training) Loss: 0.0026
+
+train/loss: 0.0042
+train/s_it: 0.1253
+train/lr: 0.0040
+train/epoch: 3268.0000
+
+Step: 98048 (Validation) Batch: 0 / 20
+
+val/loss: 0.0042
+val/s_it: 0.0514
+
+Step: 98080 (Training) Loss: 0.0045
+Step: 98112 (Training) Loss: 0.0039
+Step: 98144 (Training) Loss: 0.0035
+Step: 98176 (Training) Loss: 0.0029
+Step: 98176 (Validation) Batch: 0 / 20
+
+val/loss: 0.0042
+val/s_it: 0.0507
+
+Step: 98208 (Training) Loss: 0.0030
+Step: 98240 (Training) Loss: 0.0031
+Step: 98272 (Training) Loss: 0.0050
+Step: 98304 (Training) Loss: 0.0021
+
+train/loss: 0.0041
+train/s_it: 0.1259
+train/lr: 0.0040
+train/epoch: 3276.0000
+
+Step: 98304 (Validation) Batch: 0 / 20
+
+val/loss: 0.0041
+val/s_it: 0.0509
+
+Step: 98336 (Training) Loss: 0.0028
+Step: 98368 (Training) Loss: 0.0035
+Step: 98400 (Training) Loss: 0.0037
+Step: 98432 (Training) Loss: 0.0044
+Step: 98432 (Validation) Batch: 0 / 20
+
+val/loss: 0.0039
+val/s_it: 0.0515
+
+Step: 98464 (Training) Loss: 0.0054
+Step: 98496 (Training) Loss: 0.0021
+Step: 98528 (Training) Loss: 0.0028
+Step: 98560 (Training) Loss: 0.0041
+
+train/loss: 0.0041
+train/s_it: 0.1252
+train/lr: 0.0040
+train/epoch: 3285.0000
+
+Step: 98560 (Validation) Batch: 0 / 20
+
+val/loss: 0.0057
+val/s_it: 0.0512
+
+Step: 98592 (Training) Loss: 0.0039
+Step: 98624 (Training) Loss: 0.0034
+Step: 98656 (Training) Loss: 0.0038
+Step: 98688 (Training) Loss: 0.0067
+Step: 98688 (Validation) Batch: 0 / 20
+
+val/loss: 0.0047
+val/s_it: 0.0508
+
+Step: 98720 (Training) Loss: 0.0085
+Step: 98752 (Training) Loss: 0.0035
+Step: 98784 (Training) Loss: 0.0035
+Step: 98816 (Training) Loss: 0.0038
+
+train/loss: 0.0042
+train/s_it: 0.1247
+train/lr: 0.0040
+train/epoch: 3293.0000
+
+Step: 98816 (Validation) Batch: 0 / 20
+
+val/loss: 0.0043
+val/s_it: 0.0512
+
+Step: 98848 (Training) Loss: 0.0031
+Step: 98880 (Training) Loss: 0.0029
+Step: 98912 (Training) Loss: 0.0043
+Step: 98944 (Training) Loss: 0.0011
+Step: 98944 (Validation) Batch: 0 / 20
+
+val/loss: 0.0041
+val/s_it: 0.0510
+
+Step: 98976 (Training) Loss: 0.0056
+Step: 99008 (Training) Loss: 0.0044
+Step: 99040 (Training) Loss: 0.0043
+Step: 99072 (Training) Loss: 0.0026
+
+train/loss: 0.0042
+train/s_it: 0.1247
+train/lr: 0.0040
+train/epoch: 3302.0000
+
+Step: 99072 (Validation) Batch: 0 / 20
+
+val/loss: 0.0044
+val/s_it: 0.0512
+
+Step: 99104 (Training) Loss: 0.0028
+Step: 99136 (Training) Loss: 0.0030
+Step: 99168 (Training) Loss: 0.0055
+Step: 99200 (Training) Loss: 0.0041
+Step: 99200 (Validation) Batch: 0 / 20
+
+val/loss: 0.0042
+val/s_it: 0.0512
+
+Step: 99232 (Training) Loss: 0.0057
+Step: 99264 (Training) Loss: 0.0021
+Step: 99296 (Training) Loss: 0.0050
+Step: 99328 (Training) Loss: 0.0072
+
+train/loss: 0.0041
+train/s_it: 0.1256
+train/lr: 0.0040
+train/epoch: 3310.0000
+
+Step: 99328 (Validation) Batch: 0 / 20
+
+val/loss: 0.0045
+val/s_it: 0.0515
+
+Step: 99360 (Training) Loss: 0.0047
+Step: 99392 (Training) Loss: 0.0074
+Step: 99424 (Training) Loss: 0.0024
+Step: 99456 (Training) Loss: 0.0027
+Step: 99456 (Validation) Batch: 0 / 20
+
+val/loss: 0.0042
+val/s_it: 0.0511
+
+Step: 99488 (Training) Loss: 0.0033
+Step: 99520 (Training) Loss: 0.0077
+Step: 99552 (Training) Loss: 0.0030
+Step: 99584 (Training) Loss: 0.0036
+
+train/loss: 0.0040
+train/s_it: 0.1251
+train/lr: 0.0040
+train/epoch: 3319.0000
+
+Step: 99584 (Validation) Batch: 0 / 20
+
+val/loss: 0.0046
+val/s_it: 0.0517
+
+Step: 99616 (Training) Loss: 0.0057
+Step: 99648 (Training) Loss: 0.0036
+Step: 99680 (Training) Loss: 0.0066
+Step: 99712 (Training) Loss: 0.0026
+Step: 99712 (Validation) Batch: 0 / 20
+
+val/loss: 0.0045
+val/s_it: 0.0510
+
+Step: 99744 (Training) Loss: 0.0038
+Step: 99776 (Training) Loss: 0.0039
+Step: 99808 (Training) Loss: 0.0034
+Step: 99840 (Training) Loss: 0.0014
+
+train/loss: 0.0042
+train/s_it: 0.1250
+train/lr: 0.0040
+train/epoch: 3328.0000
+
+Step: 99840 (Validation) Batch: 0 / 20
+
+val/loss: 0.0042
+val/s_it: 0.0519
+
+Step: 99872 (Training) Loss: 0.0031
+Step: 99904 (Training) Loss: 0.0051
+Step: 99936 (Training) Loss: 0.0055
+Step: 99968 (Training) Loss: 0.0044
+Step: 99968 (Validation) Batch: 0 / 20
+
+val/loss: 0.0040
+val/s_it: 0.0515
+
+Step: 100000 (Training) Loss: 0.0048
+Step: 100032 (Training) Loss: 0.0074
+Step: 100064 (Training) Loss: 0.0026
+Step: 100096 (Training) Loss: 0.0048
+
+train/loss: 0.0040
+train/s_it: 0.1253
+train/lr: 0.0040
+train/epoch: 3336.0000
+
+Step: 100096 (Validation) Batch: 0 / 20
+
+val/loss: 0.0048
+val/s_it: 0.0511
+
+Step: 100128 (Training) Loss: 0.0043
+Step: 100160 (Training) Loss: 0.0032
+Step: 100192 (Training) Loss: 0.0027
+Step: 100224 (Training) Loss: 0.0021
+Step: 100224 (Validation) Batch: 0 / 20
+
+val/loss: 0.0042
+val/s_it: 0.0517
+
+Step: 100256 (Training) Loss: 0.0044
+Step: 100288 (Training) Loss: 0.0014
+Step: 100320 (Training) Loss: 0.0054
+Step: 100352 (Training) Loss: 0.0033
+
+train/loss: 0.0042
+train/s_it: 0.1258
+train/lr: 0.0040
+train/epoch: 3345.0000
+
+Step: 100352 (Validation) Batch: 0 / 20
+
+val/loss: 0.0041
+val/s_it: 0.0519
+
+Step: 100384 (Training) Loss: 0.0027
+Step: 100416 (Training) Loss: 0.0045
+Step: 100448 (Training) Loss: 0.0075
+Step: 100480 (Training) Loss: 0.0030
+Step: 100480 (Validation) Batch: 0 / 20
+
+val/loss: 0.0047
+val/s_it: 0.0512
+
+Step: 100512 (Training) Loss: 0.0056
+Step: 100544 (Training) Loss: 0.0042
+Step: 100576 (Training) Loss: 0.0041
+Step: 100608 (Training) Loss: 0.0050
+
+train/loss: 0.0040
+train/s_it: 0.1250
+train/lr: 0.0040
+train/epoch: 3353.0000
+
+Step: 100608 (Validation) Batch: 0 / 20
+
+val/loss: 0.0041
+val/s_it: 0.0519
+
+Step: 100640 (Training) Loss: 0.0058
+Step: 100672 (Training) Loss: 0.0028
+Step: 100704 (Training) Loss: 0.0023
+Step: 100736 (Training) Loss: 0.0034
+Step: 100736 (Validation) Batch: 0 / 20
+
+val/loss: 0.0043
+val/s_it: 0.0511
+
+Step: 100768 (Training) Loss: 0.0067
+Step: 100800 (Training) Loss: 0.0045
+Step: 100832 (Training) Loss: 0.0036
+Step: 100864 (Training) Loss: 0.0028
+
+train/loss: 0.0042
+train/s_it: 0.1242
+train/lr: 0.0039
+train/epoch: 3362.0000
+
+Step: 100864 (Validation) Batch: 0 / 20
+
+val/loss: 0.0043
+val/s_it: 0.0516
+
+Step: 100896 (Training) Loss: 0.0016
+Step: 100928 (Training) Loss: 0.0023
+Step: 100960 (Training) Loss: 0.0050
+Step: 100992 (Training) Loss: 0.0047
+Step: 100992 (Validation) Batch: 0 / 20
+
+val/loss: 0.0044
+val/s_it: 0.0509
+
+Step: 101024 (Training) Loss: 0.0018
+Step: 101056 (Training) Loss: 0.0022
+Step: 101088 (Training) Loss: 0.0042
+Step: 101120 (Training) Loss: 0.0023
+
+train/loss: 0.0041
+train/s_it: 0.1264
+train/lr: 0.0039
+train/epoch: 3370.0000
+
+Step: 101120 (Validation) Batch: 0 / 20
+
+val/loss: 0.0041
+val/s_it: 0.0515
+
+Step: 101152 (Training) Loss: 0.0031
+Step: 101184 (Training) Loss: 0.0033
+Step: 101216 (Training) Loss: 0.0041
+Step: 101248 (Training) Loss: 0.0029
+Step: 101248 (Validation) Batch: 0 / 20
+
+val/loss: 0.0046
+val/s_it: 0.0515
+
+Step: 101280 (Training) Loss: 0.0036
+Step: 101312 (Training) Loss: 0.0050
+Step: 101344 (Training) Loss: 0.0029
+Step: 101376 (Training) Loss: 0.0052
+
+train/loss: 0.0041
+train/s_it: 0.1258
+train/lr: 0.0039
+train/epoch: 3379.0000
+
+Step: 101376 (Validation) Batch: 0 / 20
+
+val/loss: 0.0042
+val/s_it: 0.0523
+
+Step: 101408 (Training) Loss: 0.0022
+Step: 101440 (Training) Loss: 0.0054
+Step: 101472 (Training) Loss: 0.0034
+Step: 101504 (Training) Loss: 0.0027
+Step: 101504 (Validation) Batch: 0 / 20
+
+val/loss: 0.0048
+val/s_it: 0.0502
+
+Step: 101536 (Training) Loss: 0.0043
+Step: 101568 (Training) Loss: 0.0029
+Step: 101600 (Training) Loss: 0.0052
+Step: 101632 (Training) Loss: 0.0042
+
+train/loss: 0.0042
+train/s_it: 0.1247
+train/lr: 0.0039
+train/epoch: 3387.0000
+
+Step: 101632 (Validation) Batch: 0 / 20
+
+val/loss: 0.0042
+val/s_it: 0.0519
+
+Step: 101664 (Training) Loss: 0.0038
+Step: 101696 (Training) Loss: 0.0031
+Step: 101728 (Training) Loss: 0.0036
+Step: 101760 (Training) Loss: 0.0044
+Step: 101760 (Validation) Batch: 0 / 20
+
+val/loss: 0.0041
+val/s_it: 0.0515
+
+Step: 101792 (Training) Loss: 0.0028
+Step: 101824 (Training) Loss: 0.0054
+Step: 101856 (Training) Loss: 0.0049
+Step: 101888 (Training) Loss: 0.0019
+
+train/loss: 0.0042
+train/s_it: 0.1250
+train/lr: 0.0039
+train/epoch: 3396.0000
+
+Step: 101888 (Validation) Batch: 0 / 20
+
+val/loss: 0.0047
+val/s_it: 0.0517
+
+Step: 101920 (Training) Loss: 0.0025
+Step: 101952 (Training) Loss: 0.0040
+Step: 101984 (Training) Loss: 0.0041
+Step: 102016 (Training) Loss: 0.0029
+Step: 102016 (Validation) Batch: 0 / 20
+
+val/loss: 0.0041
+val/s_it: 0.0512
+
+Step: 102048 (Training) Loss: 0.0032
+Step: 102080 (Training) Loss: 0.0039
+Step: 102112 (Training) Loss: 0.0025
+Step: 102144 (Training) Loss: 0.0022
+
+train/loss: 0.0041
+train/s_it: 0.1253
+train/lr: 0.0039
+train/epoch: 3404.0000
+
+Step: 102144 (Validation) Batch: 0 / 20
+
+val/loss: 0.0042
+val/s_it: 0.0509
+
+Step: 102176 (Training) Loss: 0.0024
+Step: 102208 (Training) Loss: 0.0034
+Step: 102240 (Training) Loss: 0.0054
+Step: 102272 (Training) Loss: 0.0060
+Step: 102272 (Validation) Batch: 0 / 20
+
+val/loss: 0.0060
+val/s_it: 0.0503
+
+Step: 102304 (Training) Loss: 0.0051
+Step: 102336 (Training) Loss: 0.0041
+Step: 102368 (Training) Loss: 0.0032
+Step: 102400 (Training) Loss: 0.0044
+
+train/loss: 0.0044
+train/s_it: 0.1249
+train/lr: 0.0038
+train/epoch: 3413.0000
+
+Step: 102400 (Validation) Batch: 0 / 20
+
+val/loss: 0.0041
+val/s_it: 0.0514
+
+Step: 102432 (Training) Loss: 0.0045
+Step: 102464 (Training) Loss: 0.0025
+Step: 102496 (Training) Loss: 0.0018
+Step: 102528 (Training) Loss: 0.0046
+Step: 102528 (Validation) Batch: 0 / 20
+
+val/loss: 0.0047
+val/s_it: 0.0514
+
+Step: 102560 (Training) Loss: 0.0026
+Step: 102592 (Training) Loss: 0.0036
+Step: 102624 (Training) Loss: 0.0047
+Step: 102656 (Training) Loss: 0.0061
+
+train/loss: 0.0041
+train/s_it: 0.1231
+train/lr: 0.0038
+train/epoch: 3421.0000
+
+Step: 102656 (Validation) Batch: 0 / 20
+
+val/loss: 0.0043
+val/s_it: 0.0506
+
+Step: 102688 (Training) Loss: 0.0029
+Step: 102720 (Training) Loss: 0.0043
+Step: 102752 (Training) Loss: 0.0046
+Step: 102784 (Training) Loss: 0.0025
+Step: 102784 (Validation) Batch: 0 / 20
+
+val/loss: 0.0042
+val/s_it: 0.0514
+
+Step: 102816 (Training) Loss: 0.0052
+Step: 102848 (Training) Loss: 0.0022
+Step: 102880 (Training) Loss: 0.0054
+Step: 102912 (Training) Loss: 0.0036
+
+train/loss: 0.0041
+train/s_it: 0.1249
+train/lr: 0.0038
+train/epoch: 3430.0000
+
+Step: 102912 (Validation) Batch: 0 / 20
+
+val/loss: 0.0050
+val/s_it: 0.0508
+
+Step: 102944 (Training) Loss: 0.0027
+Step: 102976 (Training) Loss: 0.0095
+Step: 103008 (Training) Loss: 0.0025
+Step: 103040 (Training) Loss: 0.0038
+Step: 103040 (Validation) Batch: 0 / 20
+
+val/loss: 0.0042
+val/s_it: 0.0515
+
+Step: 103072 (Training) Loss: 0.0036
+Step: 103104 (Training) Loss: 0.0024
+Step: 103136 (Training) Loss: 0.0037
+Step: 103168 (Training) Loss: 0.0089
+
+train/loss: 0.0041
+train/s_it: 0.1250
+train/lr: 0.0038
+train/epoch: 3438.0000
+
+Step: 103168 (Validation) Batch: 0 / 20
+
+val/loss: 0.0045
+val/s_it: 0.0511
+
+Step: 103200 (Training) Loss: 0.0041
+Step: 103232 (Training) Loss: 0.0026
+Step: 103264 (Training) Loss: 0.0040
+Step: 103296 (Training) Loss: 0.0070
+Step: 103296 (Validation) Batch: 0 / 20
+
+val/loss: 0.0063
+val/s_it: 0.0512
+
+Step: 103328 (Training) Loss: 0.0048
+Step: 103360 (Training) Loss: 0.0028
+Step: 103392 (Training) Loss: 0.0049
+Step: 103424 (Training) Loss: 0.0053
+
+train/loss: 0.0043
+train/s_it: 0.1247
+train/lr: 0.0038
+train/epoch: 3447.0000
+
+Step: 103424 (Validation) Batch: 0 / 20
+
+val/loss: 0.0040
+val/s_it: 0.0506
+
+Step: 103456 (Training) Loss: 0.0032
+Step: 103488 (Training) Loss: 0.0034
+Step: 103520 (Training) Loss: 0.0037
+Step: 103552 (Training) Loss: 0.0021
+Step: 103552 (Validation) Batch: 0 / 20
+
+val/loss: 0.0041
+val/s_it: 0.0510
+
+Step: 103584 (Training) Loss: 0.0027
+Step: 103616 (Training) Loss: 0.0039
+Step: 103648 (Training) Loss: 0.0031
+Step: 103680 (Training) Loss: 0.0039
+
+train/loss: 0.0040
+train/s_it: 0.1250
+train/lr: 0.0037
+train/epoch: 3456.0000
+
+Step: 103680 (Validation) Batch: 0 / 20
+
+val/loss: 0.0042
+val/s_it: 0.0516
+
+Step: 103712 (Training) Loss: 0.0040
+Step: 103744 (Training) Loss: 0.0042
+Step: 103776 (Training) Loss: 0.0039
+Step: 103808 (Training) Loss: 0.0065
+Step: 103808 (Validation) Batch: 0 / 20
+
+val/loss: 0.0044
+val/s_it: 0.0510
+
+Step: 103840 (Training) Loss: 0.0024
+Step: 103872 (Training) Loss: 0.0020
+Step: 103904 (Training) Loss: 0.0044
+Step: 103936 (Training) Loss: 0.0053
+
+train/loss: 0.0041
+train/s_it: 0.1256
+train/lr: 0.0037
+train/epoch: 3464.0000
+
+Step: 103936 (Validation) Batch: 0 / 20
+
+val/loss: 0.0042
+val/s_it: 0.0514
+
+Step: 103968 (Training) Loss: 0.0045
+Step: 104000 (Training) Loss: 0.0055
+Step: 104032 (Training) Loss: 0.0038
+Step: 104064 (Training) Loss: 0.0035
+Step: 104064 (Validation) Batch: 0 / 20
+
+val/loss: 0.0048
+val/s_it: 0.0518
+
+Step: 104096 (Training) Loss: 0.0029
+Step: 104128 (Training) Loss: 0.0048
+Step: 104160 (Training) Loss: 0.0036
+Step: 104192 (Training) Loss: 0.0041
+
+train/loss: 0.0041
+train/s_it: 0.1251
+train/lr: 0.0037
+train/epoch: 3473.0000
+
+Step: 104192 (Validation) Batch: 0 / 20
+
+val/loss: 0.0045
+val/s_it: 0.0515
+
+Step: 104224 (Training) Loss: 0.0046
+Step: 104256 (Training) Loss: 0.0041
+Step: 104288 (Training) Loss: 0.0028
+Step: 104320 (Training) Loss: 0.0051
+Step: 104320 (Validation) Batch: 0 / 20
+
+val/loss: 0.0040
+val/s_it: 0.0516
+
+Step: 104352 (Training) Loss: 0.0026
+Step: 104384 (Training) Loss: 0.0049
+Step: 104416 (Training) Loss: 0.0048
+Step: 104448 (Training) Loss: 0.0023
+
+train/loss: 0.0041
+train/s_it: 0.1248
+train/lr: 0.0037
+train/epoch: 3481.0000
+
+Step: 104448 (Validation) Batch: 0 / 20
+
+val/loss: 0.0041
+val/s_it: 0.0510
+
+Step: 104480 (Training) Loss: 0.0045
+Step: 104512 (Training) Loss: 0.0032
+Step: 104544 (Training) Loss: 0.0053
+Step: 104576 (Training) Loss: 0.0026
+Step: 104576 (Validation) Batch: 0 / 20
+
+val/loss: 0.0041
+val/s_it: 0.0511
+
+Step: 104608 (Training) Loss: 0.0021
+Step: 104640 (Training) Loss: 0.0019
+Step: 104672 (Training) Loss: 0.0064
+Step: 104704 (Training) Loss: 0.0040
+
+train/loss: 0.0040
+train/s_it: 0.1255
+train/lr: 0.0036
+train/epoch: 3490.0000
+
+Step: 104704 (Validation) Batch: 0 / 20
+
+val/loss: 0.0043
+val/s_it: 0.0515
+
+Step: 104736 (Training) Loss: 0.0038
+Step: 104768 (Training) Loss: 0.0035
+Step: 104800 (Training) Loss: 0.0027
+Step: 104832 (Training) Loss: 0.0029
+Step: 104832 (Validation) Batch: 0 / 20
+
+val/loss: 0.0043
+val/s_it: 0.0513
+
+Step: 104864 (Training) Loss: 0.0029
+Step: 104896 (Training) Loss: 0.0037
+Step: 104928 (Training) Loss: 0.0039
+Step: 104960 (Training) Loss: 0.0045
+
+train/loss: 0.0040
+train/s_it: 0.1258
+train/lr: 0.0036
+train/epoch: 3498.0000
+
+Step: 104960 (Validation) Batch: 0 / 20
+
+val/loss: 0.0039
+val/s_it: 0.0511
+
+Step: 104992 (Training) Loss: 0.0038
+Step: 105024 (Training) Loss: 0.0036
+Step: 105056 (Training) Loss: 0.0029
+Step: 105088 (Training) Loss: 0.0030
+Step: 105088 (Validation) Batch: 0 / 20
+
+val/loss: 0.0040
+val/s_it: 0.0517
+
+Step: 105120 (Training) Loss: 0.0049
+Step: 105152 (Training) Loss: 0.0035
+Step: 105184 (Training) Loss: 0.0029
+Step: 105216 (Training) Loss: 0.0039
+
+train/loss: 0.0040
+train/s_it: 0.1249
+train/lr: 0.0036
+train/epoch: 3507.0000
+
+Step: 105216 (Validation) Batch: 0 / 20
+
+val/loss: 0.0045
+val/s_it: 0.0516
+
+Step: 105248 (Training) Loss: 0.0030
+Step: 105280 (Training) Loss: 0.0032
+Step: 105312 (Training) Loss: 0.0034
+Step: 105344 (Training) Loss: 0.0048
+Step: 105344 (Validation) Batch: 0 / 20
+
+val/loss: 0.0046
+val/s_it: 0.0513
+
+Step: 105376 (Training) Loss: 0.0028
+Step: 105408 (Training) Loss: 0.0051
+Step: 105440 (Training) Loss: 0.0046
+Step: 105472 (Training) Loss: 0.0055
+
+train/loss: 0.0042
+train/s_it: 0.1255
+train/lr: 0.0035
+train/epoch: 3515.0000
+
+Step: 105472 (Validation) Batch: 0 / 20
+
+val/loss: 0.0043
+val/s_it: 0.0511
+
+Step: 105504 (Training) Loss: 0.0055
+Step: 105536 (Training) Loss: 0.0033
+Step: 105568 (Training) Loss: 0.0030
+Step: 105600 (Training) Loss: 0.0048
+Step: 105600 (Validation) Batch: 0 / 20
+
+val/loss: 0.0043
+val/s_it: 0.0517
+
+Step: 105632 (Training) Loss: 0.0067
+Step: 105664 (Training) Loss: 0.0019
+Step: 105696 (Training) Loss: 0.0070
+Step: 105728 (Training) Loss: 0.0042
+
+train/loss: 0.0043
+train/s_it: 0.1263
+train/lr: 0.0035
+train/epoch: 3524.0000
+
+Step: 105728 (Validation) Batch: 0 / 20
+
+val/loss: 0.0040
+val/s_it: 0.0515
+
+Step: 105760 (Training) Loss: 0.0029
+Step: 105792 (Training) Loss: 0.0073
+Step: 105824 (Training) Loss: 0.0075
+Step: 105856 (Training) Loss: 0.0045
+Step: 105856 (Validation) Batch: 0 / 20
+
+val/loss: 0.0042
+val/s_it: 0.0516
+
+Step: 105888 (Training) Loss: 0.0018
+Step: 105920 (Training) Loss: 0.0052
+Step: 105952 (Training) Loss: 0.0044
+Step: 105984 (Training) Loss: 0.0037
+
+train/loss: 0.0040
+train/s_it: 0.1246
+train/lr: 0.0035
+train/epoch: 3532.0000
+
+Step: 105984 (Validation) Batch: 0 / 20
+
+val/loss: 0.0042
+val/s_it: 0.0516
+
+Step: 106016 (Training) Loss: 0.0025
+Step: 106048 (Training) Loss: 0.0030
+Step: 106080 (Training) Loss: 0.0028
+Step: 106112 (Training) Loss: 0.0037
+Step: 106112 (Validation) Batch: 0 / 20
+
+val/loss: 0.0040
+val/s_it: 0.0508
+
+Step: 106144 (Training) Loss: 0.0036
+Step: 106176 (Training) Loss: 0.0038
+Step: 106208 (Training) Loss: 0.0036
+Step: 106240 (Training) Loss: 0.0056
+
+train/loss: 0.0041
+train/s_it: 0.1247
+train/lr: 0.0034
+train/epoch: 3541.0000
+
+Step: 106240 (Validation) Batch: 0 / 20
+
+val/loss: 0.0041
+val/s_it: 0.0514
+
+Step: 106272 (Training) Loss: 0.0046
+Step: 106304 (Training) Loss: 0.0034
+Step: 106336 (Training) Loss: 0.0052
+Step: 106368 (Training) Loss: 0.0029
+Step: 106368 (Validation) Batch: 0 / 20
+
+val/loss: 0.0042
+val/s_it: 0.0515
+
+Step: 106400 (Training) Loss: 0.0061
+Step: 106432 (Training) Loss: 0.0029
+Step: 106464 (Training) Loss: 0.0023
+Step: 106496 (Training) Loss: 0.0043
+
+train/loss: 0.0040
+train/s_it: 0.1254
+train/lr: 0.0034
+train/epoch: 3549.0000
+
+Step: 106496 (Validation) Batch: 0 / 20
+
+val/loss: 0.0040
+val/s_it: 0.0517
+
+Step: 106528 (Training) Loss: 0.0038
+Step: 106560 (Training) Loss: 0.0045
+Step: 106592 (Training) Loss: 0.0018
+Step: 106624 (Training) Loss: 0.0040
+Step: 106624 (Validation) Batch: 0 / 20
+
+val/loss: 0.0042
+val/s_it: 0.0515
+
+Step: 106656 (Training) Loss: 0.0064
+Step: 106688 (Training) Loss: 0.0015
+Step: 106720 (Training) Loss: 0.0057
+Step: 106752 (Training) Loss: 0.0037
+
+train/loss: 0.0040
+train/s_it: 0.1259
+train/lr: 0.0034
+train/epoch: 3558.0000
+
+Step: 106752 (Validation) Batch: 0 / 20
+
+val/loss: 0.0040
+val/s_it: 0.0524
+
+Step: 106784 (Training) Loss: 0.0033
+Step: 106816 (Training) Loss: 0.0044
+Step: 106848 (Training) Loss: 0.0049
+Step: 106880 (Training) Loss: 0.0059
+Step: 106880 (Validation) Batch: 0 / 20
+
+val/loss: 0.0043
+val/s_it: 0.0514
+
+Step: 106912 (Training) Loss: 0.0037
+Step: 106944 (Training) Loss: 0.0035
+Step: 106976 (Training) Loss: 0.0035
+Step: 107008 (Training) Loss: 0.0051
+
+train/loss: 0.0040
+train/s_it: 0.1244
+train/lr: 0.0033
+train/epoch: 3566.0000
+
+Step: 107008 (Validation) Batch: 0 / 20
+
+val/loss: 0.0041
+val/s_it: 0.0508
+
+Step: 107040 (Training) Loss: 0.0023
+Step: 107072 (Training) Loss: 0.0080
+Step: 107104 (Training) Loss: 0.0061
+Step: 107136 (Training) Loss: 0.0085
+Step: 107136 (Validation) Batch: 0 / 20
+
+val/loss: 0.0045
+val/s_it: 0.0506
+
+Step: 107168 (Training) Loss: 0.0031
+Step: 107200 (Training) Loss: 0.0030
+Step: 107232 (Training) Loss: 0.0020
+Step: 107264 (Training) Loss: 0.0032
+
+train/loss: 0.0042
+train/s_it: 0.1259
+train/lr: 0.0033
+train/epoch: 3575.0000
+
+Step: 107264 (Validation) Batch: 0 / 20
+
+val/loss: 0.0044
+val/s_it: 0.0509
+
+Step: 107296 (Training) Loss: 0.0023
+Step: 107328 (Training) Loss: 0.0028
+Step: 107360 (Training) Loss: 0.0034
+Step: 107392 (Training) Loss: 0.0036
+Step: 107392 (Validation) Batch: 0 / 20
+
+val/loss: 0.0043
+val/s_it: 0.0518
+
+Step: 107424 (Training) Loss: 0.0035
+Step: 107456 (Training) Loss: 0.0041
+Step: 107488 (Training) Loss: 0.0029
+Step: 107520 (Training) Loss: 0.0015
+
+train/loss: 0.0040
+train/s_it: 0.1247
+train/lr: 0.0033
+train/epoch: 3584.0000
+
+Step: 107520 (Validation) Batch: 0 / 20
+
+val/loss: 0.0043
+val/s_it: 0.0519
+
+Step: 107552 (Training) Loss: 0.0047
+Step: 107584 (Training) Loss: 0.0041
+Step: 107616 (Training) Loss: 0.0037
+Step: 107648 (Training) Loss: 0.0028
+Step: 107648 (Validation) Batch: 0 / 20
+
+val/loss: 0.0040
+val/s_it: 0.0517
+
+Step: 107680 (Training) Loss: 0.0044
+Step: 107712 (Training) Loss: 0.0027
+Step: 107744 (Training) Loss: 0.0034
+Step: 107776 (Training) Loss: 0.0025
+
+train/loss: 0.0039
+train/s_it: 0.1251
+train/lr: 0.0032
+train/epoch: 3592.0000
+
+Step: 107776 (Validation) Batch: 0 / 20
+
+val/loss: 0.0041
+val/s_it: 0.0510
+
+Step: 107808 (Training) Loss: 0.0042
+Step: 107840 (Training) Loss: 0.0044
+Step: 107872 (Training) Loss: 0.0036
+Step: 107904 (Training) Loss: 0.0047
+Step: 107904 (Validation) Batch: 0 / 20
+
+val/loss: 0.0041
+val/s_it: 0.0516
+
+Step: 107936 (Training) Loss: 0.0050
+Step: 107968 (Training) Loss: 0.0094
+Step: 108000 (Training) Loss: 0.0031
+Step: 108032 (Training) Loss: 0.0022
+
+train/loss: 0.0040
+train/s_it: 0.1240
+train/lr: 0.0032
+train/epoch: 3601.0000
+
+Step: 108032 (Validation) Batch: 0 / 20
+
+val/loss: 0.0041
+val/s_it: 0.0512
+
+Step: 108064 (Training) Loss: 0.0020
+Step: 108096 (Training) Loss: 0.0030
+Step: 108128 (Training) Loss: 0.0048
+Step: 108160 (Training) Loss: 0.0033
+Step: 108160 (Validation) Batch: 0 / 20
+
+val/loss: 0.0045
+val/s_it: 0.0513
+
+Step: 108192 (Training) Loss: 0.0032
+Step: 108224 (Training) Loss: 0.0039
+Step: 108256 (Training) Loss: 0.0061
+Step: 108288 (Training) Loss: 0.0025
+
+train/loss: 0.0040
+train/s_it: 0.1252
+train/lr: 0.0032
+train/epoch: 3609.0000
+
+Step: 108288 (Validation) Batch: 0 / 20
+
+val/loss: 0.0042
+val/s_it: 0.0517
+
+Step: 108320 (Training) Loss: 0.0037
+Step: 108352 (Training) Loss: 0.0038
+Step: 108384 (Training) Loss: 0.0054
+Step: 108416 (Training) Loss: 0.0045
+Step: 108416 (Validation) Batch: 0 / 20
+
+val/loss: 0.0046
+val/s_it: 0.0519
+
+Step: 108448 (Training) Loss: 0.0030
+Step: 108480 (Training) Loss: 0.0056
+Step: 108512 (Training) Loss: 0.0040
+Step: 108544 (Training) Loss: 0.0038
+
+train/loss: 0.0042
+train/s_it: 0.1250
+train/lr: 0.0031
+train/epoch: 3618.0000
+
+Step: 108544 (Validation) Batch: 0 / 20
+
+val/loss: 0.0042
+val/s_it: 0.0523
+
+Step: 108576 (Training) Loss: 0.0038
+Step: 108608 (Training) Loss: 0.0042
+Step: 108640 (Training) Loss: 0.0066
+Step: 108672 (Training) Loss: 0.0025
+Step: 108672 (Validation) Batch: 0 / 20
+
+val/loss: 0.0042
+val/s_it: 0.0510
+
+Step: 108704 (Training) Loss: 0.0095
+Step: 108736 (Training) Loss: 0.0058
+Step: 108768 (Training) Loss: 0.0034
+Step: 108800 (Training) Loss: 0.0048
+
+train/loss: 0.0039
+train/s_it: 0.1254
+train/lr: 0.0031
+train/epoch: 3626.0000
+
+Step: 108800 (Validation) Batch: 0 / 20
+
+val/loss: 0.0039
+val/s_it: 0.0519
+
+Step: 108832 (Training) Loss: 0.0054
+Step: 108864 (Training) Loss: 0.0028
+Step: 108896 (Training) Loss: 0.0048
+Step: 108928 (Training) Loss: 0.0062
+Step: 108928 (Validation) Batch: 0 / 20
+
+val/loss: 0.0047
+val/s_it: 0.0513
+
+Step: 108960 (Training) Loss: 0.0072
+Step: 108992 (Training) Loss: 0.0051
+Step: 109024 (Training) Loss: 0.0047
+Step: 109056 (Training) Loss: 0.0067
+
+train/loss: 0.0041
+train/s_it: 0.1237
+train/lr: 0.0030
+train/epoch: 3635.0000
+
+Step: 109056 (Validation) Batch: 0 / 20
+
+val/loss: 0.0040
+val/s_it: 0.0511
+
+Step: 109088 (Training) Loss: 0.0019
+Step: 109120 (Training) Loss: 0.0019
+Step: 109152 (Training) Loss: 0.0040
+Step: 109184 (Training) Loss: 0.0021
+Step: 109184 (Validation) Batch: 0 / 20
+
+val/loss: 0.0042
+val/s_it: 0.0518
+
+Step: 109216 (Training) Loss: 0.0044
+Step: 109248 (Training) Loss: 0.0030
+Step: 109280 (Training) Loss: 0.0046
+Step: 109312 (Training) Loss: 0.0034
+
+train/loss: 0.0039
+train/s_it: 0.1258
+train/lr: 0.0030
+train/epoch: 3643.0000
+
+Step: 109312 (Validation) Batch: 0 / 20
+
+val/loss: 0.0044
+val/s_it: 0.0517
+
+Step: 109344 (Training) Loss: 0.0028
+Step: 109376 (Training) Loss: 0.0027
+Step: 109408 (Training) Loss: 0.0028
+Step: 109440 (Training) Loss: 0.0025
+Step: 109440 (Validation) Batch: 0 / 20
+
+val/loss: 0.0044
+val/s_it: 0.0518
+
+Step: 109472 (Training) Loss: 0.0059
+Step: 109504 (Training) Loss: 0.0023
+Step: 109536 (Training) Loss: 0.0049
+Step: 109568 (Training) Loss: 0.0040
+
+train/loss: 0.0040
+train/s_it: 0.1246
+train/lr: 0.0029
+train/epoch: 3652.0000
+
+Step: 109568 (Validation) Batch: 0 / 20
+
+val/loss: 0.0040
+val/s_it: 0.0513
+
+Step: 109600 (Training) Loss: 0.0030
+Step: 109632 (Training) Loss: 0.0031
+Step: 109664 (Training) Loss: 0.0025
+Step: 109696 (Training) Loss: 0.0059
+Step: 109696 (Validation) Batch: 0 / 20
+
+val/loss: 0.0045
+val/s_it: 0.0511
+
+Step: 109728 (Training) Loss: 0.0037
+Step: 109760 (Training) Loss: 0.0022
+Step: 109792 (Training) Loss: 0.0024
+Step: 109824 (Training) Loss: 0.0027
+
+train/loss: 0.0040
+train/s_it: 0.1243
+train/lr: 0.0029
+train/epoch: 3660.0000
+
+Step: 109824 (Validation) Batch: 0 / 20
+
+val/loss: 0.0041
+val/s_it: 0.0514
+
+Step: 109856 (Training) Loss: 0.0030
+Step: 109888 (Training) Loss: 0.0035
+Step: 109920 (Training) Loss: 0.0029
+Step: 109952 (Training) Loss: 0.0043
+Step: 109952 (Validation) Batch: 0 / 20
+
+val/loss: 0.0040
+val/s_it: 0.0511
+
+Step: 109984 (Training) Loss: 0.0042
+Step: 110016 (Training) Loss: 0.0046
+Step: 110048 (Training) Loss: 0.0023
+Step: 110080 (Training) Loss: 0.0036
+
+train/loss: 0.0040
+train/s_it: 0.1257
+train/lr: 0.0029
+train/epoch: 3669.0000
+
+Step: 110080 (Validation) Batch: 0 / 20
+
+val/loss: 0.0042
+val/s_it: 0.0512
+
+Step: 110112 (Training) Loss: 0.0022
+Step: 110144 (Training) Loss: 0.0048
+Step: 110176 (Training) Loss: 0.0044
+Step: 110208 (Training) Loss: 0.0026
+Step: 110208 (Validation) Batch: 0 / 20
+
+val/loss: 0.0042
+val/s_it: 0.0511
+
+Step: 110240 (Training) Loss: 0.0030
+Step: 110272 (Training) Loss: 0.0039
+Step: 110304 (Training) Loss: 0.0036
+Step: 110336 (Training) Loss: 0.0035
+
+train/loss: 0.0039
+train/s_it: 0.1255
+train/lr: 0.0028
+train/epoch: 3677.0000
+
+Step: 110336 (Validation) Batch: 0 / 20
+
+val/loss: 0.0042
+val/s_it: 0.0513
+
+Step: 110368 (Training) Loss: 0.0043
+Step: 110400 (Training) Loss: 0.0024
+Step: 110432 (Training) Loss: 0.0029
+Step: 110464 (Training) Loss: 0.0035
+Step: 110464 (Validation) Batch: 0 / 20
+
+val/loss: 0.0041
+val/s_it: 0.0517
+
+Step: 110496 (Training) Loss: 0.0034
+Step: 110528 (Training) Loss: 0.0047
+Step: 110560 (Training) Loss: 0.0032
+Step: 110592 (Training) Loss: 0.0022
+
+train/loss: 0.0040
+train/s_it: 0.1247
+train/lr: 0.0028
+train/epoch: 3686.0000
+
+Step: 110592 (Validation) Batch: 0 / 20
+
+val/loss: 0.0043
+val/s_it: 0.0514
+
+Step: 110624 (Training) Loss: 0.0024
+Step: 110656 (Training) Loss: 0.0029
+Step: 110688 (Training) Loss: 0.0043
+Step: 110720 (Training) Loss: 0.0035
+Step: 110720 (Validation) Batch: 0 / 20
+
+val/loss: 0.0042
+val/s_it: 0.0513
+
+Step: 110752 (Training) Loss: 0.0034
+Step: 110784 (Training) Loss: 0.0035
+Step: 110816 (Training) Loss: 0.0042
+Step: 110848 (Training) Loss: 0.0038
+
+train/loss: 0.0038
+train/s_it: 0.1243
+train/lr: 0.0027
+train/epoch: 3694.0000
+
+Step: 110848 (Validation) Batch: 0 / 20
+
+val/loss: 0.0040
+val/s_it: 0.0518
+
+Step: 110880 (Training) Loss: 0.0056
+Step: 110912 (Training) Loss: 0.0017
+Step: 110944 (Training) Loss: 0.0018
+Step: 110976 (Training) Loss: 0.0038
+Step: 110976 (Validation) Batch: 0 / 20
+
+val/loss: 0.0048
+val/s_it: 0.0516
+
+Step: 111008 (Training) Loss: 0.0047
+Step: 111040 (Training) Loss: 0.0049
+Step: 111072 (Training) Loss: 0.0041
+Step: 111104 (Training) Loss: 0.0044
+
+train/loss: 0.0040
+train/s_it: 0.1262
+train/lr: 0.0027
+train/epoch: 3703.0000
+
+Step: 111104 (Validation) Batch: 0 / 20
+
+val/loss: 0.0042
+val/s_it: 0.0520
+
+Step: 111136 (Training) Loss: 0.0051
+Step: 111168 (Training) Loss: 0.0053
+Step: 111200 (Training) Loss: 0.0056
+Step: 111232 (Training) Loss: 0.0047
+Step: 111232 (Validation) Batch: 0 / 20
+
+val/loss: 0.0044
+val/s_it: 0.0515
+
+Step: 111264 (Training) Loss: 0.0019
+Step: 111296 (Training) Loss: 0.0039
+Step: 111328 (Training) Loss: 0.0021
+Step: 111360 (Training) Loss: 0.0036
+
+train/loss: 0.0039
+train/s_it: 0.1247
+train/lr: 0.0026
+train/epoch: 3712.0000
+
+Step: 111360 (Validation) Batch: 0 / 20
+
+val/loss: 0.0040
+val/s_it: 0.0517
+
+Step: 111392 (Training) Loss: 0.0027
+Step: 111424 (Training) Loss: 0.0079
+Step: 111456 (Training) Loss: 0.0077
+Step: 111488 (Training) Loss: 0.0032
+Step: 111488 (Validation) Batch: 0 / 20
+
+val/loss: 0.0042
+val/s_it: 0.0517
+
+Step: 111520 (Training) Loss: 0.0039
+Step: 111552 (Training) Loss: 0.0064
+Step: 111584 (Training) Loss: 0.0026
+Step: 111616 (Training) Loss: 0.0026
+
+train/loss: 0.0039
+train/s_it: 0.1255
+train/lr: 0.0026
+train/epoch: 3720.0000
+
+Step: 111616 (Validation) Batch: 0 / 20
+
+val/loss: 0.0040
+val/s_it: 0.0509
+
+Step: 111648 (Training) Loss: 0.0046
+Step: 111680 (Training) Loss: 0.0047
+Step: 111712 (Training) Loss: 0.0034
+Step: 111744 (Training) Loss: 0.0015
+Step: 111744 (Validation) Batch: 0 / 20
+
+val/loss: 0.0040
+val/s_it: 0.0515
+
+Step: 111776 (Training) Loss: 0.0038
+Step: 111808 (Training) Loss: 0.0061
+Step: 111840 (Training) Loss: 0.0024
+Step: 111872 (Training) Loss: 0.0045
+
+train/loss: 0.0039
+train/s_it: 0.1258
+train/lr: 0.0025
+train/epoch: 3729.0000
+
+Step: 111872 (Validation) Batch: 0 / 20
+
+val/loss: 0.0044
+val/s_it: 0.0516
+
+Step: 111904 (Training) Loss: 0.0013
+Step: 111936 (Training) Loss: 0.0056
+Step: 111968 (Training) Loss: 0.0021
+Step: 112000 (Training) Loss: 0.0057
+Step: 112000 (Validation) Batch: 0 / 20
+
+val/loss: 0.0042
+val/s_it: 0.0513
+
+Step: 112032 (Training) Loss: 0.0045
+Step: 112064 (Training) Loss: 0.0024
+Step: 112096 (Training) Loss: 0.0035
+Step: 112128 (Training) Loss: 0.0046
+
+train/loss: 0.0038
+train/s_it: 0.1253
+train/lr: 0.0025
+train/epoch: 3737.0000
+
+Step: 112128 (Validation) Batch: 0 / 20
+
+val/loss: 0.0041
+val/s_it: 0.0524
+
+Step: 112160 (Training) Loss: 0.0036
+Step: 112192 (Training) Loss: 0.0064
+Step: 112224 (Training) Loss: 0.0041
+Step: 112256 (Training) Loss: 0.0025
+Step: 112256 (Validation) Batch: 0 / 20
+
+val/loss: 0.0040
+val/s_it: 0.0511
+
+Step: 112288 (Training) Loss: 0.0026
+Step: 112320 (Training) Loss: 0.0030
+Step: 112352 (Training) Loss: 0.0009
+Step: 112384 (Training) Loss: 0.0054
+
+train/loss: 0.0038
+train/s_it: 0.1257
+train/lr: 0.0024
+train/epoch: 3746.0000
+
+Step: 112384 (Validation) Batch: 0 / 20
+
+val/loss: 0.0042
+val/s_it: 0.0517
+
+Step: 112416 (Training) Loss: 0.0047
+Step: 112448 (Training) Loss: 0.0030
+Step: 112480 (Training) Loss: 0.0055
+Step: 112512 (Training) Loss: 0.0043
+Step: 112512 (Validation) Batch: 0 / 20
+
+val/loss: 0.0039
+val/s_it: 0.0519
+
+Step: 112544 (Training) Loss: 0.0054
+Step: 112576 (Training) Loss: 0.0072
+Step: 112608 (Training) Loss: 0.0055
+Step: 112640 (Training) Loss: 0.0044
+
+train/loss: 0.0039
+train/s_it: 0.1253
+train/lr: 0.0024
+train/epoch: 3754.0000
+
+Step: 112640 (Validation) Batch: 0 / 20
+
+val/loss: 0.0040
+val/s_it: 0.0518
+
+Step: 112672 (Training) Loss: 0.0025
+Step: 112704 (Training) Loss: 0.0048
+Step: 112736 (Training) Loss: 0.0031
+Step: 112768 (Training) Loss: 0.0020
+Step: 112768 (Validation) Batch: 0 / 20
+
+val/loss: 0.0040
+val/s_it: 0.0510
+
+Step: 112800 (Training) Loss: 0.0049
+Step: 112832 (Training) Loss: 0.0040
+Step: 112864 (Training) Loss: 0.0032
+Step: 112896 (Training) Loss: 0.0032
+
+train/loss: 0.0038
+train/s_it: 0.1246
+train/lr: 0.0023
+train/epoch: 3763.0000
+
+Step: 112896 (Validation) Batch: 0 / 20
+
+val/loss: 0.0042
+val/s_it: 0.0518
+
+Step: 112928 (Training) Loss: 0.0027
+Step: 112960 (Training) Loss: 0.0018
+Step: 112992 (Training) Loss: 0.0054
+Step: 113024 (Training) Loss: 0.0022
+Step: 113024 (Validation) Batch: 0 / 20
+
+val/loss: 0.0041
+val/s_it: 0.0512
+
+Step: 113056 (Training) Loss: 0.0022
+Step: 113088 (Training) Loss: 0.0053
+Step: 113120 (Training) Loss: 0.0036
+Step: 113152 (Training) Loss: 0.0051
+
+train/loss: 0.0038
+train/s_it: 0.1250
+train/lr: 0.0023
+train/epoch: 3771.0000
+
+Step: 113152 (Validation) Batch: 0 / 20
+
+val/loss: 0.0042
+val/s_it: 0.0515
+
+Step: 113184 (Training) Loss: 0.0023
+Step: 113216 (Training) Loss: 0.0025
+Step: 113248 (Training) Loss: 0.0018
+Step: 113280 (Training) Loss: 0.0015
+Step: 113280 (Validation) Batch: 0 / 20
+
+val/loss: 0.0040
+val/s_it: 0.0514
+
+Step: 113312 (Training) Loss: 0.0051
+Step: 113344 (Training) Loss: 0.0044
+Step: 113376 (Training) Loss: 0.0026
+Step: 113408 (Training) Loss: 0.0032
+
+train/loss: 0.0038
+train/s_it: 0.1241
+train/lr: 0.0022
+train/epoch: 3780.0000
+
+Step: 113408 (Validation) Batch: 0 / 20
+
+val/loss: 0.0041
+val/s_it: 0.0513
+
+Step: 113440 (Training) Loss: 0.0042
+Step: 113472 (Training) Loss: 0.0022
+Step: 113504 (Training) Loss: 0.0018
+Step: 113536 (Training) Loss: 0.0041
+Step: 113536 (Validation) Batch: 0 / 20
+
+val/loss: 0.0041
+val/s_it: 0.0515
+
+Step: 113568 (Training) Loss: 0.0042
+Step: 113600 (Training) Loss: 0.0044
+Step: 113632 (Training) Loss: 0.0034
+Step: 113664 (Training) Loss: 0.0051
+
+train/loss: 0.0039
+train/s_it: 0.1258
+train/lr: 0.0022
+train/epoch: 3788.0000
+
+Step: 113664 (Validation) Batch: 0 / 20
+
+val/loss: 0.0046
+val/s_it: 0.0516
+
+Step: 113696 (Training) Loss: 0.0064
+Step: 113728 (Training) Loss: 0.0036
+Step: 113760 (Training) Loss: 0.0032
+Step: 113792 (Training) Loss: 0.0040
+Step: 113792 (Validation) Batch: 0 / 20
+
+val/loss: 0.0042
+val/s_it: 0.0517
+
+Step: 113824 (Training) Loss: 0.0052
+Step: 113856 (Training) Loss: 0.0026
+Step: 113888 (Training) Loss: 0.0049
+Step: 113920 (Training) Loss: 0.0060
+
+train/loss: 0.0039
+train/s_it: 0.1266
+train/lr: 0.0021
+train/epoch: 3797.0000
+
+Step: 113920 (Validation) Batch: 0 / 20
+
+val/loss: 0.0039
+val/s_it: 0.0513
+
+Step: 113952 (Training) Loss: 0.0037
+Step: 113984 (Training) Loss: 0.0025
+Step: 114016 (Training) Loss: 0.0048
+Step: 114048 (Training) Loss: 0.0041
+Step: 114048 (Validation) Batch: 0 / 20
+
+val/loss: 0.0044
+val/s_it: 0.0512
+
+Step: 114080 (Training) Loss: 0.0030
+Step: 114112 (Training) Loss: 0.0051
+Step: 114144 (Training) Loss: 0.0016
+Step: 114176 (Training) Loss: 0.0026
+
+train/loss: 0.0039
+train/s_it: 0.1259
+train/lr: 0.0021
+train/epoch: 3805.0000
+
+Step: 114176 (Validation) Batch: 0 / 20
+
+val/loss: 0.0041
+val/s_it: 0.0521
+
+Step: 114208 (Training) Loss: 0.0044
+Step: 114240 (Training) Loss: 0.0042
+Step: 114272 (Training) Loss: 0.0048
+Step: 114304 (Training) Loss: 0.0060
+Step: 114304 (Validation) Batch: 0 / 20
+
+val/loss: 0.0039
+val/s_it: 0.0505
+
+Step: 114336 (Training) Loss: 0.0061
+Step: 114368 (Training) Loss: 0.0017
+Step: 114400 (Training) Loss: 0.0065
+Step: 114432 (Training) Loss: 0.0022
+
+train/loss: 0.0038
+train/s_it: 0.1245
+train/lr: 0.0020
+train/epoch: 3814.0000
+
+Step: 114432 (Validation) Batch: 0 / 20
+
+val/loss: 0.0041
+val/s_it: 0.0518
+
+Step: 114464 (Training) Loss: 0.0045
+Step: 114496 (Training) Loss: 0.0029
+Step: 114528 (Training) Loss: 0.0068
+Step: 114560 (Training) Loss: 0.0054
+Step: 114560 (Validation) Batch: 0 / 20
+
+val/loss: 0.0040
+val/s_it: 0.0518
+
+Step: 114592 (Training) Loss: 0.0054
+Step: 114624 (Training) Loss: 0.0019
+Step: 114656 (Training) Loss: 0.0044
+Step: 114688 (Training) Loss: 0.0044
+
+train/loss: 0.0037
+train/s_it: 0.1253
+train/lr: 0.0020
+train/epoch: 3822.0000
+
+Step: 114688 (Validation) Batch: 0 / 20
+
+val/loss: 0.0042
+val/s_it: 0.0516
+
+Step: 114720 (Training) Loss: 0.0036
+Step: 114752 (Training) Loss: 0.0017
+Step: 114784 (Training) Loss: 0.0053
+Step: 114816 (Training) Loss: 0.0016
+Step: 114816 (Validation) Batch: 0 / 20
+
+val/loss: 0.0040
+val/s_it: 0.0508
+
+Step: 114848 (Training) Loss: 0.0040
+Step: 114880 (Training) Loss: 0.0044
+Step: 114912 (Training) Loss: 0.0031
+Step: 114944 (Training) Loss: 0.0022
+
+train/loss: 0.0037
+train/s_it: 0.1260
+train/lr: 0.0020
+train/epoch: 3831.0000
+
+Step: 114944 (Validation) Batch: 0 / 20
+
+val/loss: 0.0041
+val/s_it: 0.0521
+
+Step: 114976 (Training) Loss: 0.0045
+Step: 115008 (Training) Loss: 0.0030
+Step: 115040 (Training) Loss: 0.0035
+Step: 115072 (Training) Loss: 0.0060
+Step: 115072 (Validation) Batch: 0 / 20
+
+val/loss: 0.0041
+val/s_it: 0.0512
+
+Step: 115104 (Training) Loss: 0.0021
+Step: 115136 (Training) Loss: 0.0029
+Step: 115168 (Training) Loss: 0.0055
+Step: 115200 (Training) Loss: 0.0039
+
+train/loss: 0.0038
+train/s_it: 0.1253
+train/lr: 0.0019
+train/epoch: 3840.0000
+
+Step: 115200 (Validation) Batch: 0 / 20
+
+val/loss: 0.0042
+val/s_it: 0.0514
+
+Step: 115232 (Training) Loss: 0.0025
+Step: 115264 (Training) Loss: 0.0031
+Step: 115296 (Training) Loss: 0.0040
+Step: 115328 (Training) Loss: 0.0071
+Step: 115328 (Validation) Batch: 0 / 20
+
+val/loss: 0.0041
+val/s_it: 0.0507
+
+Step: 115360 (Training) Loss: 0.0063
+Step: 115392 (Training) Loss: 0.0043
+Step: 115424 (Training) Loss: 0.0068
+Step: 115456 (Training) Loss: 0.0046
+
+train/loss: 0.0038
+train/s_it: 0.1239
+train/lr: 0.0019
+train/epoch: 3848.0000
+
+Step: 115456 (Validation) Batch: 0 / 20
+
+val/loss: 0.0046
+val/s_it: 0.0516
+
+Step: 115488 (Training) Loss: 0.0054
+Step: 115520 (Training) Loss: 0.0023
+Step: 115552 (Training) Loss: 0.0031
+Step: 115584 (Training) Loss: 0.0044
+Step: 115584 (Validation) Batch: 0 / 20
+
+val/loss: 0.0040
+val/s_it: 0.0513
+
+Step: 115616 (Training) Loss: 0.0024
+Step: 115648 (Training) Loss: 0.0036
+Step: 115680 (Training) Loss: 0.0057
+Step: 115712 (Training) Loss: 0.0041
+
+train/loss: 0.0038
+train/s_it: 0.1245
+train/lr: 0.0018
+train/epoch: 3857.0000
+
+Step: 115712 (Validation) Batch: 0 / 20
+
+val/loss: 0.0042
+val/s_it: 0.0511
+
+Step: 115744 (Training) Loss: 0.0045
+Step: 115776 (Training) Loss: 0.0077
+Step: 115808 (Training) Loss: 0.0026
+Step: 115840 (Training) Loss: 0.0047
+Step: 115840 (Validation) Batch: 0 / 20
+
+val/loss: 0.0039
+val/s_it: 0.0518
+
+Step: 115872 (Training) Loss: 0.0018
+Step: 115904 (Training) Loss: 0.0032
+Step: 115936 (Training) Loss: 0.0045
+Step: 115968 (Training) Loss: 0.0024
+
+train/loss: 0.0037
+train/s_it: 0.1249
+train/lr: 0.0018
+train/epoch: 3865.0000
+
+Step: 115968 (Validation) Batch: 0 / 20
+
+val/loss: 0.0041
+val/s_it: 0.0511
+
+Step: 116000 (Training) Loss: 0.0049
+Step: 116032 (Training) Loss: 0.0052
+Step: 116064 (Training) Loss: 0.0037
+Step: 116096 (Training) Loss: 0.0028
+Step: 116096 (Validation) Batch: 0 / 20
+
+val/loss: 0.0039
+val/s_it: 0.0514
+
+Step: 116128 (Training) Loss: 0.0025
+Step: 116160 (Training) Loss: 0.0031
+Step: 116192 (Training) Loss: 0.0011
+Step: 116224 (Training) Loss: 0.0035
+
+train/loss: 0.0037
+train/s_it: 0.1245
+train/lr: 0.0017
+train/epoch: 3874.0000
+
+Step: 116224 (Validation) Batch: 0 / 20
+
+val/loss: 0.0041
+val/s_it: 0.0523
+
+Step: 116256 (Training) Loss: 0.0018
+Step: 116288 (Training) Loss: 0.0021
+Step: 116320 (Training) Loss: 0.0019
+Step: 116352 (Training) Loss: 0.0030
+Step: 116352 (Validation) Batch: 0 / 20
+
+val/loss: 0.0040
+val/s_it: 0.0524
+
+Step: 116384 (Training) Loss: 0.0028
+Step: 116416 (Training) Loss: 0.0043
+Step: 116448 (Training) Loss: 0.0043
+Step: 116480 (Training) Loss: 0.0020
+
+train/loss: 0.0038
+train/s_it: 0.1245
+train/lr: 0.0017
+train/epoch: 3882.0000
+
+Step: 116480 (Validation) Batch: 0 / 20
+
+val/loss: 0.0040
+val/s_it: 0.0514
+
+Step: 116512 (Training) Loss: 0.0049
+Step: 116544 (Training) Loss: 0.0041
+Step: 116576 (Training) Loss: 0.0034
+Step: 116608 (Training) Loss: 0.0062
+Step: 116608 (Validation) Batch: 0 / 20
+
+val/loss: 0.0038
+val/s_it: 0.0515
+
+Step: 116640 (Training) Loss: 0.0061
+Step: 116672 (Training) Loss: 0.0034
+Step: 116704 (Training) Loss: 0.0051
+Step: 116736 (Training) Loss: 0.0063
+
+train/loss: 0.0037
+train/s_it: 0.1243
+train/lr: 0.0016
+train/epoch: 3891.0000
+
+Step: 116736 (Validation) Batch: 0 / 20
+
+val/loss: 0.0041
+val/s_it: 0.0505
+
+Step: 116768 (Training) Loss: 0.0032
+Step: 116800 (Training) Loss: 0.0048
+Step: 116832 (Training) Loss: 0.0050
+Step: 116864 (Training) Loss: 0.0021
+Step: 116864 (Validation) Batch: 0 / 20
+
+val/loss: 0.0038
+val/s_it: 0.0509
+
+Step: 116896 (Training) Loss: 0.0029
+Step: 116928 (Training) Loss: 0.0029
+Step: 116960 (Training) Loss: 0.0034
+Step: 116992 (Training) Loss: 0.0039
+
+train/loss: 0.0037
+train/s_it: 0.1249
+train/lr: 0.0016
+train/epoch: 3899.0000
+
+Step: 116992 (Validation) Batch: 0 / 20
+
+val/loss: 0.0040
+val/s_it: 0.0520
+
+Step: 117024 (Training) Loss: 0.0037
+Step: 117056 (Training) Loss: 0.0048
+Step: 117088 (Training) Loss: 0.0034
+Step: 117120 (Training) Loss: 0.0023
+Step: 117120 (Validation) Batch: 0 / 20
+
+val/loss: 0.0040
+val/s_it: 0.0505
+
+Step: 117152 (Training) Loss: 0.0036
+Step: 117184 (Training) Loss: 0.0038
+Step: 117216 (Training) Loss: 0.0044
+Step: 117248 (Training) Loss: 0.0020
+
+train/loss: 0.0037
+train/s_it: 0.1252
+train/lr: 0.0015
+train/epoch: 3908.0000
+
+Step: 117248 (Validation) Batch: 0 / 20
+
+val/loss: 0.0042
+val/s_it: 0.0508
+
+Step: 117280 (Training) Loss: 0.0029
+Step: 117312 (Training) Loss: 0.0024
+Step: 117344 (Training) Loss: 0.0050
+Step: 117376 (Training) Loss: 0.0055
+Step: 117376 (Validation) Batch: 0 / 20
+
+val/loss: 0.0039
+val/s_it: 0.0508
+
+Step: 117408 (Training) Loss: 0.0033
+Step: 117440 (Training) Loss: 0.0010
+Step: 117472 (Training) Loss: 0.0031
+Step: 117504 (Training) Loss: 0.0038
+
+train/loss: 0.0037
+train/s_it: 0.1251
+train/lr: 0.0015
+train/epoch: 3916.0000
+
+Step: 117504 (Validation) Batch: 0 / 20
+
+val/loss: 0.0041
+val/s_it: 0.0510
+
+Step: 117536 (Training) Loss: 0.0027
+Step: 117568 (Training) Loss: 0.0039
+Step: 117600 (Training) Loss: 0.0045
+Step: 117632 (Training) Loss: 0.0039
+Step: 117632 (Validation) Batch: 0 / 20
+
+val/loss: 0.0040
+val/s_it: 0.0511
+
+Step: 117664 (Training) Loss: 0.0033
+Step: 117696 (Training) Loss: 0.0035
+Step: 117728 (Training) Loss: 0.0031
+Step: 117760 (Training) Loss: 0.0034
+
+train/loss: 0.0036
+train/s_it: 0.1254
+train/lr: 0.0014
+train/epoch: 3925.0000
+
+Step: 117760 (Validation) Batch: 0 / 20
+
+val/loss: 0.0039
+val/s_it: 0.0513
+
+Step: 117792 (Training) Loss: 0.0049
+Step: 117824 (Training) Loss: 0.0017
+Step: 117856 (Training) Loss: 0.0028
+Step: 117888 (Training) Loss: 0.0063
+Step: 117888 (Validation) Batch: 0 / 20
+
+val/loss: 0.0040
+val/s_it: 0.0511
+
+Step: 117920 (Training) Loss: 0.0036
+Step: 117952 (Training) Loss: 0.0033
+Step: 117984 (Training) Loss: 0.0040
+Step: 118016 (Training) Loss: 0.0061
+
+train/loss: 0.0037
+train/s_it: 0.1244
+train/lr: 0.0014
+train/epoch: 3933.0000
+
+Step: 118016 (Validation) Batch: 0 / 20
+
+val/loss: 0.0040
+val/s_it: 0.0509
+
+Step: 118048 (Training) Loss: 0.0039
+Step: 118080 (Training) Loss: 0.0037
+Step: 118112 (Training) Loss: 0.0039
+Step: 118144 (Training) Loss: 0.0033
+Step: 118144 (Validation) Batch: 0 / 20
+
+val/loss: 0.0041
+val/s_it: 0.0512
+
+Step: 118176 (Training) Loss: 0.0032
+Step: 118208 (Training) Loss: 0.0032
+Step: 118240 (Training) Loss: 0.0043
+Step: 118272 (Training) Loss: 0.0021
+
+train/loss: 0.0036
+train/s_it: 0.1245
+train/lr: 0.0013
+train/epoch: 3942.0000
+
+Step: 118272 (Validation) Batch: 0 / 20
+
+val/loss: 0.0039
+val/s_it: 0.0513
+
+Step: 118304 (Training) Loss: 0.0021
+Step: 118336 (Training) Loss: 0.0052
+Step: 118368 (Training) Loss: 0.0034
+Step: 118400 (Training) Loss: 0.0044
+Step: 118400 (Validation) Batch: 0 / 20
+
+val/loss: 0.0042
+val/s_it: 0.0506
+
+Step: 118432 (Training) Loss: 0.0043
+Step: 118464 (Training) Loss: 0.0023
+Step: 118496 (Training) Loss: 0.0014
+Step: 118528 (Training) Loss: 0.0029
+
+train/loss: 0.0036
+train/s_it: 0.1252
+train/lr: 0.0013
+train/epoch: 3950.0000
+
+Step: 118528 (Validation) Batch: 0 / 20
+
+val/loss: 0.0039
+val/s_it: 0.0514
+
+Step: 118560 (Training) Loss: 0.0040
+Step: 118592 (Training) Loss: 0.0061
+Step: 118624 (Training) Loss: 0.0043
+Step: 118656 (Training) Loss: 0.0029
+Step: 118656 (Validation) Batch: 0 / 20
+
+val/loss: 0.0041
+val/s_it: 0.0506
+
+Step: 118688 (Training) Loss: 0.0060
+Step: 118720 (Training) Loss: 0.0043
+Step: 118752 (Training) Loss: 0.0041
+Step: 118784 (Training) Loss: 0.0051
+
+train/loss: 0.0037
+train/s_it: 0.1244
+train/lr: 0.0012
+train/epoch: 3959.0000
+
+Step: 118784 (Validation) Batch: 0 / 20
+
+val/loss: 0.0039
+val/s_it: 0.0514
+
+Step: 118816 (Training) Loss: 0.0028
+Step: 118848 (Training) Loss: 0.0038
+Step: 118880 (Training) Loss: 0.0019
+Step: 118912 (Training) Loss: 0.0034
+Step: 118912 (Validation) Batch: 0 / 20
+
+val/loss: 0.0040
+val/s_it: 0.0513
+
+Step: 118944 (Training) Loss: 0.0019
+Step: 118976 (Training) Loss: 0.0033
+Step: 119008 (Training) Loss: 0.0020
+Step: 119040 (Training) Loss: 0.0033
+
+train/loss: 0.0036
+train/s_it: 0.1243
+train/lr: 0.0012
+train/epoch: 3968.0000
+
+Step: 119040 (Validation) Batch: 0 / 20
+
+val/loss: 0.0041
+val/s_it: 0.0517
+
+Step: 119072 (Training) Loss: 0.0033
+Step: 119104 (Training) Loss: 0.0046
+Step: 119136 (Training) Loss: 0.0022
+Step: 119168 (Training) Loss: 0.0029
+Step: 119168 (Validation) Batch: 0 / 20
+
+val/loss: 0.0040
+val/s_it: 0.0517
+
+Step: 119200 (Training) Loss: 0.0021
+Step: 119232 (Training) Loss: 0.0021
+Step: 119264 (Training) Loss: 0.0026
+Step: 119296 (Training) Loss: 0.0045
+
+train/loss: 0.0036
+train/s_it: 0.1250
+train/lr: 0.0011
+train/epoch: 3976.0000
+
+Step: 119296 (Validation) Batch: 0 / 20
+
+val/loss: 0.0039
+val/s_it: 0.0517
+
+Step: 119328 (Training) Loss: 0.0037
+Step: 119360 (Training) Loss: 0.0025
+Step: 119392 (Training) Loss: 0.0037
+Step: 119424 (Training) Loss: 0.0024
+Step: 119424 (Validation) Batch: 0 / 20
+
+val/loss: 0.0039
+val/s_it: 0.0517
+
+Step: 119456 (Training) Loss: 0.0054
+Step: 119488 (Training) Loss: 0.0039
+Step: 119520 (Training) Loss: 0.0029
+Step: 119552 (Training) Loss: 0.0047
+
+train/loss: 0.0035
+train/s_it: 0.1253
+train/lr: 0.0011
+train/epoch: 3985.0000
+
+Step: 119552 (Validation) Batch: 0 / 20
+
+val/loss: 0.0041
+val/s_it: 0.0516
+
+Step: 119584 (Training) Loss: 0.0037
+Step: 119616 (Training) Loss: 0.0045
+Step: 119648 (Training) Loss: 0.0033
+Step: 119680 (Training) Loss: 0.0038
+Step: 119680 (Validation) Batch: 0 / 20
+
+val/loss: 0.0041
+val/s_it: 0.0511
+
+Step: 119712 (Training) Loss: 0.0057
+Step: 119744 (Training) Loss: 0.0038
+Step: 119776 (Training) Loss: 0.0035
+Step: 119808 (Training) Loss: 0.0058
+
+train/loss: 0.0036
+train/s_it: 0.1248
+train/lr: 0.0011
+train/epoch: 3993.0000
+
+Step: 119808 (Validation) Batch: 0 / 20
+
+val/loss: 0.0041
+val/s_it: 0.0521
+
+Step: 119840 (Training) Loss: 0.0042
+Step: 119872 (Training) Loss: 0.0019
+Step: 119904 (Training) Loss: 0.0023
+Step: 119936 (Training) Loss: 0.0019
+Step: 119936 (Validation) Batch: 0 / 20
+
+val/loss: 0.0038
+val/s_it: 0.0517
+
+Step: 119968 (Training) Loss: 0.0041
+Step: 120000 (Training) Loss: 0.0034
+Step: 120032 (Training) Loss: 0.0024
+Step: 120064 (Training) Loss: 0.0049
+
+train/loss: 0.0035
+train/s_it: 0.1252
+train/lr: 0.0010
+train/epoch: 4002.0000
+
+Step: 120064 (Validation) Batch: 0 / 20
+
+val/loss: 0.0039
+val/s_it: 0.0516
+
+Step: 120096 (Training) Loss: 0.0012
+Step: 120128 (Training) Loss: 0.0021
+Step: 120160 (Training) Loss: 0.0023
+Step: 120192 (Training) Loss: 0.0017
+Step: 120192 (Validation) Batch: 0 / 20
+
+val/loss: 0.0040
+val/s_it: 0.0518
+
+Step: 120224 (Training) Loss: 0.0033
+Step: 120256 (Training) Loss: 0.0029
+Step: 120288 (Training) Loss: 0.0047
+Step: 120320 (Training) Loss: 0.0029
+
+train/loss: 0.0035
+train/s_it: 0.1263
+train/lr: 0.0010
+train/epoch: 4010.0000
+
+Step: 120320 (Validation) Batch: 0 / 20
+
+val/loss: 0.0041
+val/s_it: 0.0519
+
+Step: 120352 (Training) Loss: 0.0028
+Step: 120384 (Training) Loss: 0.0041
+Step: 120416 (Training) Loss: 0.0051
+Step: 120448 (Training) Loss: 0.0036
+Step: 120448 (Validation) Batch: 0 / 20
+
+val/loss: 0.0038
+val/s_it: 0.0518
+
+Step: 120448 (Testing) Batch: 0 / 20
+
+test/loss: 0.0036
+test/s_it: 0.0514
+
+Step: 120480 (Training) Loss: 0.0022
+Step: 120512 (Training) Loss: 0.0038
+Step: 120544 (Training) Loss: 0.0046
+Step: 120576 (Training) Loss: 0.0038
+
+train/loss: 0.0035
+train/s_it: 0.1339
+train/lr: 0.0009
+train/epoch: 4019.0000
+
+Step: 120576 (Validation) Batch: 0 / 20
+
+val/loss: 0.0038
+val/s_it: 0.0513
+
+Step: 120608 (Training) Loss: 0.0031
+Step: 120640 (Training) Loss: 0.0024
+Step: 120672 (Training) Loss: 0.0030
+Step: 120704 (Training) Loss: 0.0034
+Step: 120704 (Validation) Batch: 0 / 20
+
+val/loss: 0.0038
+val/s_it: 0.0507
+
+Step: 120736 (Training) Loss: 0.0035
+Step: 120768 (Training) Loss: 0.0037
+Step: 120800 (Training) Loss: 0.0040
+Step: 120832 (Training) Loss: 0.0048
+
+train/loss: 0.0035
+train/s_it: 0.1250
+train/lr: 0.0009
+train/epoch: 4027.0000
+
+Step: 120832 (Validation) Batch: 0 / 20
+
+val/loss: 0.0037
+val/s_it: 0.0510
+
+Step: 120832 (Testing) Batch: 0 / 20
+
+test/loss: 0.0035
+test/s_it: 0.0508
+
+Step: 120864 (Training) Loss: 0.0032
+Step: 120896 (Training) Loss: 0.0047
+Step: 120928 (Training) Loss: 0.0033
+Step: 120960 (Training) Loss: 0.0029
+Step: 120960 (Validation) Batch: 0 / 20
+
+val/loss: 0.0040
+val/s_it: 0.0512
+
+Step: 120992 (Training) Loss: 0.0041
+Step: 121024 (Training) Loss: 0.0013
+Step: 121056 (Training) Loss: 0.0035
+Step: 121088 (Training) Loss: 0.0062
+
+train/loss: 0.0035
+train/s_it: 0.1252
+train/lr: 0.0008
+train/epoch: 4036.0000
+
+Step: 121088 (Validation) Batch: 0 / 20
+
+val/loss: 0.0039
+val/s_it: 0.0505
+
+Step: 121120 (Training) Loss: 0.0043
+Step: 121152 (Training) Loss: 0.0028
+Step: 121184 (Training) Loss: 0.0058
+Step: 121216 (Training) Loss: 0.0064
+Step: 121216 (Validation) Batch: 0 / 20
+
+val/loss: 0.0039
+val/s_it: 0.0516
+
+Step: 121248 (Training) Loss: 0.0075
+Step: 121280 (Training) Loss: 0.0025
+Step: 121312 (Training) Loss: 0.0022
+Step: 121344 (Training) Loss: 0.0035
+
+train/loss: 0.0034
+train/s_it: 0.1248
+train/lr: 0.0008
+train/epoch: 4044.0000
+
+Step: 121344 (Validation) Batch: 0 / 20
+
+val/loss: 0.0040
+val/s_it: 0.0505
+
+Step: 121376 (Training) Loss: 0.0030
+Step: 121408 (Training) Loss: 0.0040
+Step: 121440 (Training) Loss: 0.0022
+Step: 121472 (Training) Loss: 0.0023
+Step: 121472 (Validation) Batch: 0 / 20
+
+val/loss: 0.0038
+val/s_it: 0.0515
+
+Step: 121504 (Training) Loss: 0.0026
+Step: 121536 (Training) Loss: 0.0042
+Step: 121568 (Training) Loss: 0.0018
+Step: 121600 (Training) Loss: 0.0028
+
+train/loss: 0.0034
+train/s_it: 0.1256
+train/lr: 0.0008
+train/epoch: 4053.0000
+
+Step: 121600 (Validation) Batch: 0 / 20
+
+val/loss: 0.0040
+val/s_it: 0.0524
+
+Step: 121632 (Training) Loss: 0.0061
+Step: 121664 (Training) Loss: 0.0016
+Step: 121696 (Training) Loss: 0.0039
+Step: 121728 (Training) Loss: 0.0027
+Step: 121728 (Validation) Batch: 0 / 20
+
+val/loss: 0.0038
+val/s_it: 0.0516
+
+Step: 121760 (Training) Loss: 0.0035
+Step: 121792 (Training) Loss: 0.0021
+Step: 121824 (Training) Loss: 0.0029
+Step: 121856 (Training) Loss: 0.0033
+
+train/loss: 0.0035
+train/s_it: 0.1252
+train/lr: 0.0007
+train/epoch: 4061.0000
+
+Step: 121856 (Validation) Batch: 0 / 20
+
+val/loss: 0.0039
+val/s_it: 0.0523
+
+Step: 121888 (Training) Loss: 0.0050
+Step: 121920 (Training) Loss: 0.0054
+Step: 121952 (Training) Loss: 0.0022
+Step: 121984 (Training) Loss: 0.0022
+Step: 121984 (Validation) Batch: 0 / 20
+
+val/loss: 0.0038
+val/s_it: 0.0515
+
+Step: 122016 (Training) Loss: 0.0058
+Step: 122048 (Training) Loss: 0.0024
+Step: 122080 (Training) Loss: 0.0050
+Step: 122112 (Training) Loss: 0.0028
+
+train/loss: 0.0034
+train/s_it: 0.1251
+train/lr: 0.0007
+train/epoch: 4070.0000
+
+Step: 122112 (Validation) Batch: 0 / 20
+
+val/loss: 0.0041
+val/s_it: 0.0519
+
+Step: 122144 (Training) Loss: 0.0027
+Step: 122176 (Training) Loss: 0.0022
+Step: 122208 (Training) Loss: 0.0027
+Step: 122240 (Training) Loss: 0.0049
+Step: 122240 (Validation) Batch: 0 / 20
+
+val/loss: 0.0038
+val/s_it: 0.0514
+
+Step: 122272 (Training) Loss: 0.0038
+Step: 122304 (Training) Loss: 0.0047
+Step: 122336 (Training) Loss: 0.0018
+Step: 122368 (Training) Loss: 0.0026
+
+train/loss: 0.0034
+train/s_it: 0.1252
+train/lr: 0.0007
+train/epoch: 4078.0000
+
+Step: 122368 (Validation) Batch: 0 / 20
+
+val/loss: 0.0038
+val/s_it: 0.0522
+
+Step: 122400 (Training) Loss: 0.0033
+Step: 122432 (Training) Loss: 0.0018
+Step: 122464 (Training) Loss: 0.0040
+Step: 122496 (Training) Loss: 0.0035
+Step: 122496 (Validation) Batch: 0 / 20
+
+val/loss: 0.0039
+val/s_it: 0.0516
+
+Step: 122528 (Training) Loss: 0.0045
+Step: 122560 (Training) Loss: 0.0050
+Step: 122592 (Training) Loss: 0.0030
+Step: 122624 (Training) Loss: 0.0022
+
+train/loss: 0.0033
+train/s_it: 0.1258
+train/lr: 0.0006
+train/epoch: 4087.0000
+
+Step: 122624 (Validation) Batch: 0 / 20
+
+val/loss: 0.0037
+val/s_it: 0.0520
+
+Step: 122656 (Training) Loss: 0.0019
+Step: 122688 (Training) Loss: 0.0036
+Step: 122720 (Training) Loss: 0.0035
+Step: 122752 (Training) Loss: 0.0033
+Step: 122752 (Validation) Batch: 0 / 20
+
+val/loss: 0.0038
+val/s_it: 0.0513
+
+Step: 122784 (Training) Loss: 0.0027
+Step: 122816 (Training) Loss: 0.0020
+Step: 122848 (Training) Loss: 0.0015
+Step: 122880 (Training) Loss: 0.0027
+
+train/loss: 0.0034
+train/s_it: 0.1260
+train/lr: 0.0006
+train/epoch: 4096.0000
+
+Step: 122880 (Validation) Batch: 0 / 20
+
+val/loss: 0.0039
+val/s_it: 0.0520
+
+Step: 122912 (Training) Loss: 0.0014
+Step: 122944 (Training) Loss: 0.0031
+Step: 122976 (Training) Loss: 0.0037
+Step: 123008 (Training) Loss: 0.0034
+Step: 123008 (Validation) Batch: 0 / 20
+
+val/loss: 0.0039
+val/s_it: 0.0518
+
+Step: 123040 (Training) Loss: 0.0042
+Step: 123072 (Training) Loss: 0.0021
+Step: 123104 (Training) Loss: 0.0016
+Step: 123136 (Training) Loss: 0.0046
+
+train/loss: 0.0034
+train/s_it: 0.1246
+train/lr: 0.0006
+train/epoch: 4104.0000
+
+Step: 123136 (Validation) Batch: 0 / 20
+
+val/loss: 0.0038
+val/s_it: 0.0514
+
+Step: 123168 (Training) Loss: 0.0038
+Step: 123200 (Training) Loss: 0.0025
+Step: 123232 (Training) Loss: 0.0025
+Step: 123264 (Training) Loss: 0.0055
+Step: 123264 (Validation) Batch: 0 / 20
+
+val/loss: 0.0038
+val/s_it: 0.0520
+
+Step: 123296 (Training) Loss: 0.0062
+Step: 123328 (Training) Loss: 0.0023
+Step: 123360 (Training) Loss: 0.0054
+Step: 123392 (Training) Loss: 0.0021
+
+train/loss: 0.0033
+train/s_it: 0.1249
+train/lr: 0.0005
+train/epoch: 4113.0000
+
+Step: 123392 (Validation) Batch: 0 / 20
+
+val/loss: 0.0038
+val/s_it: 0.0513
+
+Step: 123424 (Training) Loss: 0.0017
+Step: 123456 (Training) Loss: 0.0057
+Step: 123488 (Training) Loss: 0.0024
+Step: 123520 (Training) Loss: 0.0018
+Step: 123520 (Validation) Batch: 0 / 20
+
+val/loss: 0.0040
+val/s_it: 0.0519
+
+Step: 123552 (Training) Loss: 0.0038
+Step: 123584 (Training) Loss: 0.0047
+Step: 123616 (Training) Loss: 0.0033
+Step: 123648 (Training) Loss: 0.0019
+
+train/loss: 0.0034
+train/s_it: 0.1257
+train/lr: 0.0005
+train/epoch: 4121.0000
+
+Step: 123648 (Validation) Batch: 0 / 20
+
+val/loss: 0.0037
+val/s_it: 0.0520
+
+Step: 123680 (Training) Loss: 0.0036
+Step: 123712 (Training) Loss: 0.0030
+Step: 123744 (Training) Loss: 0.0051
+Step: 123776 (Training) Loss: 0.0020
+Step: 123776 (Validation) Batch: 0 / 20
+
+val/loss: 0.0039
+val/s_it: 0.0517
+
+Step: 123808 (Training) Loss: 0.0049
+Step: 123840 (Training) Loss: 0.0020
+Step: 123872 (Training) Loss: 0.0018
+Step: 123904 (Training) Loss: 0.0047
+
+train/loss: 0.0033
+train/s_it: 0.1254
+train/lr: 0.0005
+train/epoch: 4130.0000
+
+Step: 123904 (Validation) Batch: 0 / 20
+
+val/loss: 0.0038
+val/s_it: 0.0517
+
+Step: 123936 (Training) Loss: 0.0044
+Step: 123968 (Training) Loss: 0.0018
+Step: 124000 (Training) Loss: 0.0031
+Step: 124032 (Training) Loss: 0.0028
+Step: 124032 (Validation) Batch: 0 / 20
+
+val/loss: 0.0038
+val/s_it: 0.0518
+
+Step: 124064 (Training) Loss: 0.0017
+Step: 124096 (Training) Loss: 0.0024
+Step: 124128 (Training) Loss: 0.0029
+Step: 124160 (Training) Loss: 0.0028
+
+train/loss: 0.0033
+train/s_it: 0.1251
+train/lr: 0.0004
+train/epoch: 4138.0000
+
+Step: 124160 (Validation) Batch: 0 / 20
+
+val/loss: 0.0038
+val/s_it: 0.0524
+
+Step: 124192 (Training) Loss: 0.0021
+Step: 124224 (Training) Loss: 0.0033
+Step: 124256 (Training) Loss: 0.0023
+Step: 124288 (Training) Loss: 0.0022
+Step: 124288 (Validation) Batch: 0 / 20
+
+val/loss: 0.0038
+val/s_it: 0.0514
+
+Step: 124320 (Training) Loss: 0.0025
+Step: 124352 (Training) Loss: 0.0029
+Step: 124384 (Training) Loss: 0.0044
+Step: 124416 (Training) Loss: 0.0051
+
+train/loss: 0.0033
+train/s_it: 0.1260
+train/lr: 0.0004
+train/epoch: 4147.0000
+
+Step: 124416 (Validation) Batch: 0 / 20
+
+val/loss: 0.0039
+val/s_it: 0.0517
+
+Step: 124448 (Training) Loss: 0.0046
+Step: 124480 (Training) Loss: 0.0035
+Step: 124512 (Training) Loss: 0.0034
+Step: 124544 (Training) Loss: 0.0024
+Step: 124544 (Validation) Batch: 0 / 20
+
+val/loss: 0.0038
+val/s_it: 0.0519
+
+Step: 124576 (Training) Loss: 0.0038
+Step: 124608 (Training) Loss: 0.0032
+Step: 124640 (Training) Loss: 0.0032
+Step: 124672 (Training) Loss: 0.0052
+
+train/loss: 0.0033
+train/s_it: 0.1249
+train/lr: 0.0004
+train/epoch: 4155.0000
+
+Step: 124672 (Validation) Batch: 0 / 20
+
+val/loss: 0.0038
+val/s_it: 0.0507
+
+Step: 124704 (Training) Loss: 0.0034
+Step: 124736 (Training) Loss: 0.0035
+Step: 124768 (Training) Loss: 0.0042
+Step: 124800 (Training) Loss: 0.0063
+Step: 124800 (Validation) Batch: 0 / 20
+
+val/loss: 0.0038
+val/s_it: 0.0512
+
+Step: 124832 (Training) Loss: 0.0017
+Step: 124864 (Training) Loss: 0.0041
+Step: 124896 (Training) Loss: 0.0042
+Step: 124928 (Training) Loss: 0.0032
+
+train/loss: 0.0032
+train/s_it: 0.1259
+train/lr: 0.0003
+train/epoch: 4164.0000
+
+Step: 124928 (Validation) Batch: 0 / 20
+
+val/loss: 0.0038
+val/s_it: 0.0510
+
+Step: 124960 (Training) Loss: 0.0028
+Step: 124992 (Training) Loss: 0.0035
+Step: 125024 (Training) Loss: 0.0029
+Step: 125056 (Training) Loss: 0.0046
+Step: 125056 (Validation) Batch: 0 / 20
+
+val/loss: 0.0038
+val/s_it: 0.0517
+
+Step: 125088 (Training) Loss: 0.0033
+Step: 125120 (Training) Loss: 0.0034
+Step: 125152 (Training) Loss: 0.0020
+Step: 125184 (Training) Loss: 0.0017
+
+train/loss: 0.0032
+train/s_it: 0.1251
+train/lr: 0.0003
+train/epoch: 4172.0000
+
+Step: 125184 (Validation) Batch: 0 / 20
+
+val/loss: 0.0038
+val/s_it: 0.0519
+
+Step: 125216 (Training) Loss: 0.0074
+Step: 125248 (Training) Loss: 0.0036
+Step: 125280 (Training) Loss: 0.0029
+Step: 125312 (Training) Loss: 0.0014
+Step: 125312 (Validation) Batch: 0 / 20
+
+val/loss: 0.0038
+val/s_it: 0.0509
+
+Step: 125344 (Training) Loss: 0.0054
+Step: 125376 (Training) Loss: 0.0055
+Step: 125408 (Training) Loss: 0.0033
+Step: 125440 (Training) Loss: 0.0026
+
+train/loss: 0.0033
+train/s_it: 0.1256
+train/lr: 0.0003
+train/epoch: 4181.0000
+
+Step: 125440 (Validation) Batch: 0 / 20
+
+val/loss: 0.0037
+val/s_it: 0.0519
+
+Step: 125472 (Training) Loss: 0.0044
+Step: 125504 (Training) Loss: 0.0022
+Step: 125536 (Training) Loss: 0.0037
+Step: 125568 (Training) Loss: 0.0017
+Step: 125568 (Validation) Batch: 0 / 20
+
+val/loss: 0.0037
+val/s_it: 0.0516
+
+Step: 125600 (Training) Loss: 0.0029
+Step: 125632 (Training) Loss: 0.0025
+Step: 125664 (Training) Loss: 0.0045
+Step: 125696 (Training) Loss: 0.0037
+
+train/loss: 0.0032
+train/s_it: 0.1259
+train/lr: 0.0003
+train/epoch: 4189.0000
+
+Step: 125696 (Validation) Batch: 0 / 20
+
+val/loss: 0.0038
+val/s_it: 0.0507
+
+Step: 125728 (Training) Loss: 0.0029
+Step: 125760 (Training) Loss: 0.0050
+Step: 125792 (Training) Loss: 0.0036
+Step: 125824 (Training) Loss: 0.0016
+Step: 125824 (Validation) Batch: 0 / 20
+
+val/loss: 0.0038
+val/s_it: 0.0506
+
+Step: 125856 (Training) Loss: 0.0034
+Step: 125888 (Training) Loss: 0.0031
+Step: 125920 (Training) Loss: 0.0015
+Step: 125952 (Training) Loss: 0.0027
+
+train/loss: 0.0032
+train/s_it: 0.1248
+train/lr: 0.0002
+train/epoch: 4198.0000
+
+Step: 125952 (Validation) Batch: 0 / 20
+
+val/loss: 0.0038
+val/s_it: 0.0513
+
+Step: 125984 (Training) Loss: 0.0019
+Step: 126016 (Training) Loss: 0.0036
+Step: 126048 (Training) Loss: 0.0009
+Step: 126080 (Training) Loss: 0.0026
+Step: 126080 (Validation) Batch: 0 / 20
+
+val/loss: 0.0038
+val/s_it: 0.0516
+
+Step: 126112 (Training) Loss: 0.0031
+Step: 126144 (Training) Loss: 0.0040
+Step: 126176 (Training) Loss: 0.0041
+Step: 126208 (Training) Loss: 0.0037
+
+train/loss: 0.0032
+train/s_it: 0.1246
+train/lr: 0.0002
+train/epoch: 4206.0000
+
+Step: 126208 (Validation) Batch: 0 / 20
+
+val/loss: 0.0037
+val/s_it: 0.0513
+
+Step: 126208 (Testing) Batch: 0 / 20
+
+test/loss: 0.0035
+test/s_it: 0.0513
+
+Step: 126240 (Training) Loss: 0.0036
+Step: 126272 (Training) Loss: 0.0014
+Step: 126304 (Training) Loss: 0.0027
+Step: 126336 (Training) Loss: 0.0013
+Step: 126336 (Validation) Batch: 0 / 20
+
+val/loss: 0.0038
+val/s_it: 0.0523
+
+Step: 126368 (Training) Loss: 0.0034
+Step: 126400 (Training) Loss: 0.0044
+Step: 126432 (Training) Loss: 0.0029
+Step: 126464 (Training) Loss: 0.0037
+
+train/loss: 0.0032
+train/s_it: 0.1253
+train/lr: 0.0002
+train/epoch: 4215.0000
+
+Step: 126464 (Validation) Batch: 0 / 20
+
+val/loss: 0.0037
+val/s_it: 0.0509
+
+Step: 126496 (Training) Loss: 0.0053
+Step: 126528 (Training) Loss: 0.0035
+Step: 126560 (Training) Loss: 0.0040
+Step: 126592 (Training) Loss: 0.0037
+Step: 126592 (Validation) Batch: 0 / 20
+
+val/loss: 0.0038
+val/s_it: 0.0515
+
+Step: 126624 (Training) Loss: 0.0051
+Step: 126656 (Training) Loss: 0.0031
+Step: 126688 (Training) Loss: 0.0024
+Step: 126720 (Training) Loss: 0.0037
+
+train/loss: 0.0032
+train/s_it: 0.1263
+train/lr: 0.0002
+train/epoch: 4224.0000
+
+Step: 126720 (Validation) Batch: 0 / 20
+
+val/loss: 0.0038
+val/s_it: 0.0524
+
+Step: 126752 (Training) Loss: 0.0021
+Step: 126784 (Training) Loss: 0.0029
+Step: 126816 (Training) Loss: 0.0020
+Step: 126848 (Training) Loss: 0.0019
+Step: 126848 (Validation) Batch: 0 / 20
+
+val/loss: 0.0037
+val/s_it: 0.0518
+
+Step: 126880 (Training) Loss: 0.0033
+Step: 126912 (Training) Loss: 0.0022
+Step: 126944 (Training) Loss: 0.0032
+Step: 126976 (Training) Loss: 0.0038
+
+train/loss: 0.0032
+train/s_it: 0.1239
+train/lr: 0.0002
+train/epoch: 4232.0000
+
+Step: 126976 (Validation) Batch: 0 / 20
+
+val/loss: 0.0037
+val/s_it: 0.0518
+
+Step: 127008 (Training) Loss: 0.0047
+Step: 127040 (Training) Loss: 0.0033
+Step: 127072 (Training) Loss: 0.0021
+Step: 127104 (Training) Loss: 0.0016
+Step: 127104 (Validation) Batch: 0 / 20
+
+val/loss: 0.0037
+val/s_it: 0.0512
+
+Step: 127136 (Training) Loss: 0.0040
+Step: 127168 (Training) Loss: 0.0040
+Step: 127200 (Training) Loss: 0.0038
+Step: 127232 (Training) Loss: 0.0021
+
+train/loss: 0.0032
+train/s_it: 0.1255
+train/lr: 0.0001
+train/epoch: 4241.0000
+
+Step: 127232 (Validation) Batch: 0 / 20
+
+val/loss: 0.0038
+val/s_it: 0.0515
+
+Step: 127264 (Training) Loss: 0.0026
+Step: 127296 (Training) Loss: 0.0043
+Step: 127328 (Training) Loss: 0.0012
+Step: 127360 (Training) Loss: 0.0016
+Step: 127360 (Validation) Batch: 0 / 20
+
+val/loss: 0.0037
+val/s_it: 0.0512
+
+Step: 127392 (Training) Loss: 0.0039
+Step: 127424 (Training) Loss: 0.0026
+Step: 127456 (Training) Loss: 0.0027
+Step: 127488 (Training) Loss: 0.0043
+
+train/loss: 0.0032
+train/s_it: 0.1254
+train/lr: 0.0001
+train/epoch: 4249.0000
+
+Step: 127488 (Validation) Batch: 0 / 20
+
+val/loss: 0.0037
+val/s_it: 0.0518
+
+Step: 127520 (Training) Loss: 0.0030
+Step: 127552 (Training) Loss: 0.0021
+Step: 127584 (Training) Loss: 0.0037
+Step: 127616 (Training) Loss: 0.0024
+Step: 127616 (Validation) Batch: 0 / 20
+
+val/loss: 0.0038
+val/s_it: 0.0513
+
+Step: 127648 (Training) Loss: 0.0038
+Step: 127680 (Training) Loss: 0.0038
+Step: 127712 (Training) Loss: 0.0044
+Step: 127744 (Training) Loss: 0.0033
+
+train/loss: 0.0032
+train/s_it: 0.1262
+train/lr: 0.0001
+train/epoch: 4258.0000
+
+Step: 127744 (Validation) Batch: 0 / 20
+
+val/loss: 0.0037
+val/s_it: 0.0520
+
+Step: 127776 (Training) Loss: 0.0046
+Step: 127808 (Training) Loss: 0.0027
+Step: 127840 (Training) Loss: 0.0028
+Step: 127872 (Training) Loss: 0.0052
+Step: 127872 (Validation) Batch: 0 / 20
+
+val/loss: 0.0037
+val/s_it: 0.0509
+
+Step: 127904 (Training) Loss: 0.0033
+Step: 127936 (Training) Loss: 0.0025
+Step: 127968 (Training) Loss: 0.0019
+Step: 128000 (Training) Loss: 0.0030
+
+train/loss: 0.0031
+train/s_it: 0.1253
+train/lr: 0.0001
+train/epoch: 4266.0000
+
+Step: 128000 (Validation) Batch: 0 / 20
+
+val/loss: 0.0037
+val/s_it: 0.0517
+
+Step: 128032 (Training) Loss: 0.0028
+Step: 128064 (Training) Loss: 0.0039
+Step: 128096 (Training) Loss: 0.0022
+Step: 128128 (Training) Loss: 0.0056
+Step: 128128 (Validation) Batch: 0 / 20
+
+val/loss: 0.0038
+val/s_it: 0.0513
+
+Step: 128160 (Training) Loss: 0.0058
+Step: 128192 (Training) Loss: 0.0033
+Step: 128224 (Training) Loss: 0.0031
+Step: 128256 (Training) Loss: 0.0053
+
+train/loss: 0.0031
+train/s_it: 0.1248
+train/lr: 0.0001
+train/epoch: 4275.0000
+
+Step: 128256 (Validation) Batch: 0 / 20
+
+val/loss: 0.0037
+val/s_it: 0.0511
+
+Step: 128288 (Training) Loss: 0.0020
+Step: 128320 (Training) Loss: 0.0041
+Step: 128352 (Training) Loss: 0.0035
+Step: 128384 (Training) Loss: 0.0032
+Step: 128384 (Validation) Batch: 0 / 20
+
+val/loss: 0.0037
+val/s_it: 0.0517
+
+Step: 128416 (Training) Loss: 0.0056
+Step: 128448 (Training) Loss: 0.0048
+Step: 128480 (Training) Loss: 0.0029
+Step: 128512 (Training) Loss: 0.0022
+
+train/loss: 0.0031
+train/s_it: 0.1250
+train/lr: 0.0001
+train/epoch: 4283.0000
+
+Step: 128512 (Validation) Batch: 0 / 20
+
+val/loss: 0.0038
+val/s_it: 0.0503
+
+Step: 128544 (Training) Loss: 0.0037
+Step: 128576 (Training) Loss: 0.0037
+Step: 128608 (Training) Loss: 0.0025
+Step: 128640 (Training) Loss: 0.0015
+Step: 128640 (Validation) Batch: 0 / 20
+
+val/loss: 0.0037
+val/s_it: 0.0520
+
+Step: 128672 (Training) Loss: 0.0031
+Step: 128704 (Training) Loss: 0.0054
+Step: 128736 (Training) Loss: 0.0033
+Step: 128768 (Training) Loss: 0.0019
+
+train/loss: 0.0031
+train/s_it: 0.1248
+train/lr: 0.0000
+train/epoch: 4292.0000
+
+Step: 128768 (Validation) Batch: 0 / 20
+
+val/loss: 0.0037
+val/s_it: 0.0512
+
+Step: 128800 (Training) Loss: 0.0037
+Step: 128832 (Training) Loss: 0.0073
+Step: 128864 (Training) Loss: 0.0044
+Step: 128896 (Training) Loss: 0.0058
+Step: 128896 (Validation) Batch: 0 / 20
+
+val/loss: 0.0037
+val/s_it: 0.0516
+
+Step: 128928 (Training) Loss: 0.0020
+Step: 128960 (Training) Loss: 0.0027
+Step: 128992 (Training) Loss: 0.0048
+Step: 129024 (Training) Loss: 0.0024
+
+train/loss: 0.0032
+train/s_it: 0.1245
+train/lr: 0.0000
+train/epoch: 4300.0000
+
+Step: 129024 (Validation) Batch: 0 / 20
+
+val/loss: 0.0038
+val/s_it: 0.0508
+
+Step: 129056 (Training) Loss: 0.0016
+Step: 129088 (Training) Loss: 0.0029
+Step: 129120 (Training) Loss: 0.0051
+Step: 129152 (Training) Loss: 0.0020
+Step: 129152 (Validation) Batch: 0 / 20
+
+val/loss: 0.0037
+val/s_it: 0.0512
+
+Step: 129184 (Training) Loss: 0.0029
+Step: 129216 (Training) Loss: 0.0030
+Step: 129248 (Training) Loss: 0.0037
+Step: 129280 (Training) Loss: 0.0022
+
+train/loss: 0.0031
+train/s_it: 0.1258
+train/lr: 0.0000
+train/epoch: 4309.0000
+
+Step: 129280 (Validation) Batch: 0 / 20
+
+val/loss: 0.0037
+val/s_it: 0.0510
+
+Step: 129312 (Training) Loss: 0.0035
+Step: 129344 (Training) Loss: 0.0020
+Step: 129376 (Training) Loss: 0.0021
+Step: 129408 (Training) Loss: 0.0047
+Step: 129408 (Validation) Batch: 0 / 20
+
+val/loss: 0.0037
+val/s_it: 0.0505
+
+Step: 129440 (Training) Loss: 0.0027
+Step: 129472 (Training) Loss: 0.0026
+Step: 129504 (Training) Loss: 0.0027
+Step: 129536 (Training) Loss: 0.0027
+
+train/loss: 0.0031
+train/s_it: 0.1253
+train/lr: 0.0000
+train/epoch: 4317.0000
+
+Step: 129536 (Validation) Batch: 0 / 20
+
+val/loss: 0.0037
+val/s_it: 0.0513
+
+Step: 129568 (Training) Loss: 0.0042
+Step: 129600 (Training) Loss: 0.0034
+Step: 129632 (Training) Loss: 0.0009
+Step: 129664 (Training) Loss: 0.0037
+Step: 129664 (Validation) Batch: 0 / 20
+
+val/loss: 0.0037
+val/s_it: 0.0516
+
+Step: 129696 (Training) Loss: 0.0036
+Step: 129728 (Training) Loss: 0.0047
+Step: 129760 (Training) Loss: 0.0021
+Step: 129792 (Training) Loss: 0.0026
+
+train/loss: 0.0031
+train/s_it: 0.1242
+train/lr: 0.0000
+train/epoch: 4326.0000
+
+Step: 129792 (Validation) Batch: 0 / 20
+
+val/loss: 0.0038
+val/s_it: 0.0513
+
+Step: 129824 (Training) Loss: 0.0023
+Step: 129856 (Training) Loss: 0.0044
+Step: 129888 (Training) Loss: 0.0031
+Step: 129920 (Training) Loss: 0.0014
+Step: 129920 (Validation) Batch: 0 / 20
+
+val/loss: 0.0038
+val/s_it: 0.0521
+
+Step: 129952 (Training) Loss: 0.0028
+Step: 129984 (Training) Loss: 0.0060
+Step: 130016 (Training) Loss: 0.0031
+Step: 130048 (Training) Loss: 0.0050
+
+train/loss: 0.0031
+train/s_it: 0.1240
+train/lr: 0.0000
+train/epoch: 4334.0000
+
+Step: 130048 (Validation) Batch: 0 / 20
+
+val/loss: 0.0038
+val/s_it: 0.0515
+
+Step: 130080 (Training) Loss: 0.0028
+Step: 130112 (Training) Loss: 0.0026
+Step: 130144 (Training) Loss: 0.0017
+Step: 130176 (Training) Loss: 0.0025
+Step: 130176 (Validation) Batch: 0 / 20
+
+val/loss: 0.0037
+val/s_it: 0.0517
+
+Step: 130208 (Training) Loss: 0.0021
+Step: 130240 (Training) Loss: 0.0052
+Step: 130272 (Training) Loss: 0.0028
+Step: 130304 (Training) Loss: 0.0030
+
+train/loss: 0.0031
+train/s_it: 0.1250
+train/lr: 0.0000
+train/epoch: 4343.0000
+
+Step: 130304 (Validation) Batch: 0 / 20
+
+val/loss: 0.0037
+val/s_it: 0.0507
+
+Step: 130336 (Training) Loss: 0.0066
+Step: 130368 (Training) Loss: 0.0031
+Step: 130400 (Training) Loss: 0.0024
+Step: 130432 (Training) Loss: 0.0013
+Step: 130432 (Validation) Batch: 0 / 20
+
+val/loss: 0.0037
+val/s_it: 0.0513
+
+Step: 130464 (Training) Loss: 0.0032
+Step: 130496 (Training) Loss: 0.0021
+Step: 130528 (Training) Loss: 0.0022
+Step: 130560 (Training) Loss: 0.0048
+
+train/loss: 0.0031
+train/s_it: 0.1261
+train/lr: 0.0000
+train/epoch: 4352.0000
+
+Step: 130560 (Validation) Batch: 0 / 20
+
+val/loss: 0.0038
+val/s_it: 0.0516
+
+Step: 130592 (Training) Loss: 0.0024
+Step: 130624 (Training) Loss: 0.0055
+Step: 130656 (Training) Loss: 0.0006
+Step: 130688 (Training) Loss: 0.0040
+Step: 130688 (Validation) Batch: 0 / 20
+
+val/loss: 0.0037
+val/s_it: 0.0516
+
+Step: 130720 (Training) Loss: 0.0045
+Step: 130752 (Training) Loss: 0.0043
+Step: 130784 (Training) Loss: 0.0032
+Step: 130816 (Training) Loss: 0.0028
+
+train/loss: 0.0031
+train/s_it: 0.1253
+train/lr: 0.0000
+train/epoch: 4360.0000
+
+Step: 130816 (Validation) Batch: 0 / 20
+
+val/loss: 0.0037
+val/s_it: 0.0508
+
+Step: 130848 (Training) Loss: 0.0034
+Step: 130880 (Training) Loss: 0.0021
+Step: 130912 (Training) Loss: 0.0031
+Step: 130944 (Training) Loss: 0.0035
+Step: 130944 (Validation) Batch: 0 / 20
+
+val/loss: 0.0037
+val/s_it: 0.0515
+
+Step: 130976 (Training) Loss: 0.0024
+Step: 131008 (Training) Loss: 0.0040
+Step: 131040 (Training) Loss: 0.0019
+Stopping due to max_steps.
+Stopping due to max_steps.
