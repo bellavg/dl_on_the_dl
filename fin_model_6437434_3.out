@@ -1,0 +1,119 @@
+============================================================================================== 
+Warning! Mixing Conda and module environments may lead to corruption of the
+user environment. 
+We do not recommend users mixing those two environments unless absolutely
+necessary. Note that 
+SURF does not provide any support for Conda environment.
+For more information, please refer to our software policy page:
+https://servicedesk.surf.nl/wiki/display/WIKI/Software+policy+Snellius#SoftwarepolicySnellius-UseofAnacondaandMinicondaenvironmentsonSnellius 
+
+Remember that many packages have already been installed on the system and can
+be loaded using 
+the 'module load <package__name>' command. If you are uncertain if a package is
+already available 
+on the system, please use 'module avail' or 'module spider' to search for it.
+============================================================================================== 
+no change     /sw/arch/RHEL8/EB_production/2022/software/Anaconda3/2022.05/condabin/conda
+no change     /sw/arch/RHEL8/EB_production/2022/software/Anaconda3/2022.05/bin/conda
+no change     /sw/arch/RHEL8/EB_production/2022/software/Anaconda3/2022.05/bin/conda-env
+no change     /sw/arch/RHEL8/EB_production/2022/software/Anaconda3/2022.05/bin/activate
+no change     /sw/arch/RHEL8/EB_production/2022/software/Anaconda3/2022.05/bin/deactivate
+no change     /sw/arch/RHEL8/EB_production/2022/software/Anaconda3/2022.05/etc/profile.d/conda.sh
+no change     /sw/arch/RHEL8/EB_production/2022/software/Anaconda3/2022.05/etc/fish/conf.d/conda.fish
+no change     /sw/arch/RHEL8/EB_production/2022/software/Anaconda3/2022.05/shell/condabin/Conda.psm1
+no change     /sw/arch/RHEL8/EB_production/2022/software/Anaconda3/2022.05/shell/condabin/conda-hook.ps1
+no change     /sw/arch/RHEL8/EB_production/2022/software/Anaconda3/2022.05/lib/python3.9/site-packages/xontrib/conda.xsh
+no change     /sw/arch/RHEL8/EB_production/2022/software/Anaconda3/2022.05/etc/profile.d/conda.csh
+no change     /home/igardner/.bashrc
+No action taken.
+Epoch 1/1
+Batch 1/20, Time: 0.5851s, Memory: 0.00MB
+Batch 2/20, Time: 0.3329s, Memory: 0.00MB
+Batch 3/20, Time: 0.3077s, Memory: 0.00MB
+Batch 4/20, Time: 0.2962s, Memory: 0.00MB
+Batch 5/20, Time: 0.3002s, Memory: 0.00MB
+Batch 6/20, Time: 0.2958s, Memory: 0.00MB
+Batch 7/20, Time: 0.3039s, Memory: 0.00MB
+Batch 8/20, Time: 0.2954s, Memory: 0.00MB
+Batch 9/20, Time: 0.2973s, Memory: 0.00MB
+Batch 10/20, Time: 0.2991s, Memory: 0.00MB
+Batch 11/20, Time: 0.2956s, Memory: 0.00MB
+Batch 12/20, Time: 0.2985s, Memory: 0.00MB
+Batch 13/20, Time: 0.2997s, Memory: 0.00MB
+Batch 14/20, Time: 0.2957s, Memory: 0.00MB
+Batch 15/20, Time: 0.2945s, Memory: 0.00MB
+Batch 16/20, Time: 0.2918s, Memory: 0.00MB
+Batch 17/20, Time: 0.3006s, Memory: 0.00MB
+Batch 18/20, Time: 0.2948s, Memory: 0.00MB
+Batch 19/20, Time: 0.2947s, Memory: 0.00MB
+Batch 20/20, Time: 0.2987s, Memory: 0.00MB
+Total Memory Usage for Training: 0.00MB
+Total Time for Training: 6.2782s
+Average Memory Usage per Batch: 0.00MB
+Average Time per Batch: 0.3139s
+Batch 1/20, Time: 0.0974s, Memory: 0.00MB
+Batch 2/20, Time: 0.0949s, Memory: 0.00MB
+Batch 3/20, Time: 0.0964s, Memory: 0.00MB
+Batch 4/20, Time: 0.0958s, Memory: 0.00MB
+Batch 5/20, Time: 0.0954s, Memory: 0.00MB
+Batch 6/20, Time: 0.0992s, Memory: 0.00MB
+Batch 7/20, Time: 0.0964s, Memory: 0.00MB
+Batch 8/20, Time: 0.0957s, Memory: 0.00MB
+Batch 9/20, Time: 0.0961s, Memory: 0.00MB
+Batch 10/20, Time: 0.0966s, Memory: 0.00MB
+Batch 11/20, Time: 0.0965s, Memory: 0.00MB
+Batch 12/20, Time: 0.0965s, Memory: 0.00MB
+Batch 13/20, Time: 0.0965s, Memory: 0.00MB
+Batch 14/20, Time: 0.0969s, Memory: 0.00MB
+Batch 15/20, Time: 0.0983s, Memory: 0.00MB
+Batch 16/20, Time: 0.0982s, Memory: 0.00MB
+Batch 17/20, Time: 0.0954s, Memory: 0.00MB
+Batch 18/20, Time: 0.0971s, Memory: 0.00MB
+Batch 19/20, Time: 0.0967s, Memory: 0.00MB
+Batch 20/20, Time: 0.0958s, Memory: 0.00MB
+Total Memory Usage for Validation: 0.00MB
+Total Time for Validation: 1.9317s
+Average Memory Usage per Batch: 0.00MB
+Average Time per Batch: 0.0966s
+Epoch 1, Training Loss: 0.28435366321355104, Validation Loss: 0.05156515426933765
+Batch 1/20, Time: 0.0962s, Memory: 0.00MB
+Batch 2/20, Time: 0.0952s, Memory: 0.00MB
+Batch 3/20, Time: 0.0957s, Memory: 0.00MB
+Batch 4/20, Time: 0.0988s, Memory: 0.00MB
+Batch 5/20, Time: 0.0953s, Memory: 0.00MB
+Batch 6/20, Time: 0.0951s, Memory: 0.00MB
+Batch 7/20, Time: 0.0957s, Memory: 0.00MB
+Batch 8/20, Time: 0.0952s, Memory: 0.00MB
+Batch 9/20, Time: 0.0961s, Memory: 0.00MB
+Batch 10/20, Time: 0.0944s, Memory: 0.00MB
+Batch 11/20, Time: 0.0961s, Memory: 0.00MB
+Batch 12/20, Time: 0.0966s, Memory: 0.00MB
+Batch 13/20, Time: 0.0972s, Memory: 0.00MB
+Batch 14/20, Time: 0.0961s, Memory: 0.00MB
+Batch 15/20, Time: 0.0942s, Memory: 0.00MB
+Batch 16/20, Time: 0.0952s, Memory: 0.00MB
+Batch 17/20, Time: 0.0955s, Memory: 0.00MB
+Batch 18/20, Time: 0.0957s, Memory: 0.00MB
+Batch 19/20, Time: 0.0970s, Memory: 0.00MB
+Batch 20/20, Time: 0.0948s, Memory: 0.00MB
+Total Memory Usage for Testing: 0.00MB
+Total Time for Testing: 1.9162s
+Average Memory Usage per Batch: 0.00MB
+Average Time per Batch: 0.0958s
+Test Loss: 0.05012434609234333
+
+JOB STATISTICS
+==============
+Job ID: 6437453
+Array Job ID: 6437434_3
+Cluster: snellius
+User/Group: igardner/igardner
+State: RUNNING
+Nodes: 1
+Cores per node: 18
+CPU Utilized: 00:00:00
+CPU Efficiency: 0.00% of 00:07:12 core-walltime
+Job Wall-clock time: 00:00:24
+Memory Utilized: 0.00 MB (estimated maximum)
+Memory Efficiency: 0.00% of 120.00 GB (120.00 GB/node)
+WARNING: Efficiency statistics may be misleading for RUNNING jobs.

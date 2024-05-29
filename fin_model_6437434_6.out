@@ -1,0 +1,183 @@
+============================================================================================== 
+Warning! Mixing Conda and module environments may lead to corruption of the
+user environment. 
+We do not recommend users mixing those two environments unless absolutely
+necessary. Note that 
+SURF does not provide any support for Conda environment.
+For more information, please refer to our software policy page:
+https://servicedesk.surf.nl/wiki/display/WIKI/Software+policy+Snellius#SoftwarepolicySnellius-UseofAnacondaandMinicondaenvironmentsonSnellius 
+
+Remember that many packages have already been installed on the system and can
+be loaded using 
+the 'module load <package__name>' command. If you are uncertain if a package is
+already available 
+on the system, please use 'module avail' or 'module spider' to search for it.
+============================================================================================== 
+no change     /sw/arch/RHEL8/EB_production/2022/software/Anaconda3/2022.05/condabin/conda
+no change     /sw/arch/RHEL8/EB_production/2022/software/Anaconda3/2022.05/bin/conda
+no change     /sw/arch/RHEL8/EB_production/2022/software/Anaconda3/2022.05/bin/conda-env
+no change     /sw/arch/RHEL8/EB_production/2022/software/Anaconda3/2022.05/bin/activate
+no change     /sw/arch/RHEL8/EB_production/2022/software/Anaconda3/2022.05/bin/deactivate
+no change     /sw/arch/RHEL8/EB_production/2022/software/Anaconda3/2022.05/etc/profile.d/conda.sh
+no change     /sw/arch/RHEL8/EB_production/2022/software/Anaconda3/2022.05/etc/fish/conf.d/conda.fish
+no change     /sw/arch/RHEL8/EB_production/2022/software/Anaconda3/2022.05/shell/condabin/Conda.psm1
+no change     /sw/arch/RHEL8/EB_production/2022/software/Anaconda3/2022.05/shell/condabin/conda-hook.ps1
+no change     /sw/arch/RHEL8/EB_production/2022/software/Anaconda3/2022.05/lib/python3.9/site-packages/xontrib/conda.xsh
+no change     /sw/arch/RHEL8/EB_production/2022/software/Anaconda3/2022.05/etc/profile.d/conda.csh
+no change     /home/igardner/.bashrc
+No action taken.
+Epoch 1/1
+Batch 1/60, Time: 0.6158s, Memory: 0.00MB
+Batch 2/60, Time: 0.3342s, Memory: 0.00MB
+Batch 3/60, Time: 0.3152s, Memory: 0.00MB
+Batch 4/60, Time: 0.2930s, Memory: 0.00MB
+Batch 5/60, Time: 0.2997s, Memory: 0.00MB
+Batch 6/60, Time: 0.2951s, Memory: 0.00MB
+Batch 7/60, Time: 0.2998s, Memory: 0.00MB
+Batch 8/60, Time: 0.2956s, Memory: 0.00MB
+Batch 9/60, Time: 0.2953s, Memory: 0.00MB
+Batch 10/60, Time: 0.2993s, Memory: 0.00MB
+Batch 11/60, Time: 0.2939s, Memory: 0.00MB
+Batch 12/60, Time: 0.3048s, Memory: 0.00MB
+Batch 13/60, Time: 0.2946s, Memory: 0.00MB
+Batch 14/60, Time: 0.2953s, Memory: 0.00MB
+Batch 15/60, Time: 0.2976s, Memory: 0.00MB
+Batch 16/60, Time: 0.2951s, Memory: 0.00MB
+Batch 17/60, Time: 0.2944s, Memory: 0.00MB
+Batch 18/60, Time: 0.2965s, Memory: 0.00MB
+Batch 19/60, Time: 0.2986s, Memory: 0.00MB
+Batch 20/60, Time: 0.2960s, Memory: 0.00MB
+Batch 21/60, Time: 0.2932s, Memory: 0.00MB
+Batch 22/60, Time: 0.2916s, Memory: 0.00MB
+Batch 23/60, Time: 0.2971s, Memory: 0.00MB
+Batch 24/60, Time: 0.3025s, Memory: 0.00MB
+Batch 25/60, Time: 0.2978s, Memory: 0.00MB
+Batch 26/60, Time: 0.3041s, Memory: 0.00MB
+Batch 27/60, Time: 0.2939s, Memory: 0.00MB
+Batch 28/60, Time: 0.2916s, Memory: 0.00MB
+Batch 29/60, Time: 0.2941s, Memory: 0.00MB
+Batch 30/60, Time: 0.3022s, Memory: 0.00MB
+Batch 31/60, Time: 0.2992s, Memory: 0.00MB
+Batch 32/60, Time: 0.2934s, Memory: 0.00MB
+Batch 33/60, Time: 0.2937s, Memory: 0.00MB
+Batch 34/60, Time: 0.2924s, Memory: 0.00MB
+Batch 35/60, Time: 0.2957s, Memory: 0.00MB
+Batch 36/60, Time: 0.2995s, Memory: 0.00MB
+Batch 37/60, Time: 0.2977s, Memory: 0.00MB
+Batch 38/60, Time: 0.2971s, Memory: 0.00MB
+Batch 39/60, Time: 0.2923s, Memory: 0.00MB
+Batch 40/60, Time: 0.2954s, Memory: 0.00MB
+Batch 41/60, Time: 0.2956s, Memory: 0.00MB
+Batch 42/60, Time: 0.3004s, Memory: 0.00MB
+Batch 43/60, Time: 0.2960s, Memory: 0.00MB
+Batch 44/60, Time: 0.2943s, Memory: 0.00MB
+Batch 45/60, Time: 0.2930s, Memory: 0.00MB
+Batch 46/60, Time: 0.2952s, Memory: 0.00MB
+Batch 47/60, Time: 0.2966s, Memory: 0.00MB
+Batch 48/60, Time: 0.2963s, Memory: 0.00MB
+Batch 49/60, Time: 0.2936s, Memory: 0.00MB
+Batch 50/60, Time: 0.2949s, Memory: 0.00MB
+Batch 51/60, Time: 0.2954s, Memory: 0.00MB
+Batch 52/60, Time: 0.2938s, Memory: 0.00MB
+Batch 53/60, Time: 0.3000s, Memory: 0.00MB
+Batch 54/60, Time: 0.2980s, Memory: 0.00MB
+Batch 55/60, Time: 0.2989s, Memory: 0.00MB
+Batch 56/60, Time: 0.2948s, Memory: 0.00MB
+Batch 57/60, Time: 0.2977s, Memory: 0.00MB
+Batch 58/60, Time: 0.2919s, Memory: 0.00MB
+Batch 59/60, Time: 0.2969s, Memory: 0.00MB
+Batch 60/60, Time: 0.2966s, Memory: 0.00MB
+Total Memory Usage for Training: 0.00MB
+Total Time for Training: 18.1544s
+Average Memory Usage per Batch: 0.00MB
+Average Time per Batch: 0.3026s
+Batch 1/40, Time: 0.0964s, Memory: 0.00MB
+Batch 2/40, Time: 0.0962s, Memory: 0.00MB
+Batch 3/40, Time: 0.0956s, Memory: 0.00MB
+Batch 4/40, Time: 0.0953s, Memory: 0.00MB
+Batch 5/40, Time: 0.0956s, Memory: 0.00MB
+Batch 6/40, Time: 0.0966s, Memory: 0.00MB
+Batch 7/40, Time: 0.0962s, Memory: 0.00MB
+Batch 8/40, Time: 0.0953s, Memory: 0.00MB
+Batch 9/40, Time: 0.0983s, Memory: 0.00MB
+Batch 10/40, Time: 0.0962s, Memory: 0.00MB
+Batch 11/40, Time: 0.0953s, Memory: 0.00MB
+Batch 12/40, Time: 0.0953s, Memory: 0.00MB
+Batch 13/40, Time: 0.0952s, Memory: 0.00MB
+Batch 14/40, Time: 0.0954s, Memory: 0.00MB
+Batch 15/40, Time: 0.0969s, Memory: 0.00MB
+Batch 16/40, Time: 0.0953s, Memory: 0.00MB
+Batch 17/40, Time: 0.0957s, Memory: 0.00MB
+Batch 18/40, Time: 0.0955s, Memory: 0.00MB
+Batch 19/40, Time: 0.0980s, Memory: 0.00MB
+Batch 20/40, Time: 0.0962s, Memory: 0.00MB
+Batch 21/40, Time: 0.0964s, Memory: 0.00MB
+Batch 22/40, Time: 0.0956s, Memory: 0.00MB
+Batch 23/40, Time: 0.0955s, Memory: 0.00MB
+Batch 24/40, Time: 0.0953s, Memory: 0.00MB
+Batch 25/40, Time: 0.0966s, Memory: 0.00MB
+Batch 26/40, Time: 0.0966s, Memory: 0.00MB
+Batch 27/40, Time: 0.0952s, Memory: 0.00MB
+Batch 28/40, Time: 0.0954s, Memory: 0.00MB
+Batch 29/40, Time: 0.0972s, Memory: 0.00MB
+Batch 30/40, Time: 0.0963s, Memory: 0.00MB
+Batch 31/40, Time: 0.0949s, Memory: 0.00MB
+Batch 32/40, Time: 0.0954s, Memory: 0.00MB
+Batch 33/40, Time: 0.0944s, Memory: 0.00MB
+Batch 34/40, Time: 0.0954s, Memory: 0.00MB
+Batch 35/40, Time: 0.0952s, Memory: 0.00MB
+Batch 36/40, Time: 0.0956s, Memory: 0.00MB
+Batch 37/40, Time: 0.0954s, Memory: 0.00MB
+Batch 38/40, Time: 0.0951s, Memory: 0.00MB
+Batch 39/40, Time: 0.0969s, Memory: 0.00MB
+Batch 40/40, Time: 0.0954s, Memory: 0.00MB
+Total Memory Usage for Validation: 0.00MB
+Total Time for Validation: 3.8343s
+Average Memory Usage per Batch: 0.00MB
+Average Time per Batch: 0.0959s
+Epoch 1, Training Loss: 0.18838313339898985, Validation Loss: 0.04898556414991617
+Batch 1/40, Time: 0.0953s, Memory: 0.00MB
+Batch 2/40, Time: 0.0955s, Memory: 0.00MB
+Batch 3/40, Time: 0.0949s, Memory: 0.00MB
+Batch 4/40, Time: 0.0953s, Memory: 0.00MB
+Batch 5/40, Time: 0.0949s, Memory: 0.00MB
+Batch 6/40, Time: 0.0954s, Memory: 0.00MB
+Batch 7/40, Time: 0.0955s, Memory: 0.00MB
+Batch 8/40, Time: 0.0968s, Memory: 0.00MB
+Batch 9/40, Time: 0.0978s, Memory: 0.00MB
+Batch 10/40, Time: 0.0969s, Memory: 0.00MB
+Batch 11/40, Time: 0.0957s, Memory: 0.00MB
+Batch 12/40, Time: 0.0963s, Memory: 0.00MB
+Batch 13/40, Time: 0.0953s, Memory: 0.00MB
+Batch 14/40, Time: 0.0969s, Memory: 0.00MB
+Batch 15/40, Time: 0.0957s, Memory: 0.00MB
+Batch 16/40, Time: 0.0963s, Memory: 0.00MB
+Batch 17/40, Time: 0.0961s, Memory: 0.00MB
+Batch 18/40, Time: 0.0954s, Memory: 0.00MB
+Batch 19/40, Time: 0.0986s, Memory: 0.00MB
+Batch 20/40, Time: 0.0972s, Memory: 0.00MB
+Batch 21/40, Time: 0.0968s, Memory: 0.00MB
+Batch 22/40, Time: 0.0953s, Memory: 0.00MB
+Batch 23/40, Time: 0.0966s, Memory: 0.00MB
+Batch 24/40, Time: 0.0967s, Memory: 0.00MB
+Batch 25/40, Time: 0.0951s, Memory: 0.00MB
+Batch 26/40, Time: 0.0960s, Memory: 0.00MB
+Batch 27/40, Time: 0.0972s, Memory: 0.00MB
+Batch 28/40, Time: 0.0951s, Memory: 0.00MB
+Batch 29/40, Time: 0.0981s, Memory: 0.00MB
+Batch 30/40, Time: 0.0976s, Memory: 0.00MB
+Batch 31/40, Time: 0.0954s, Memory: 0.00MB
+Batch 32/40, Time: 0.0973s, Memory: 0.00MB
+Batch 33/40, Time: 0.0952s, Memory: 0.00MB
+Batch 34/40, Time: 0.0965s, Memory: 0.00MB
+Batch 35/40, Time: 0.0960s, Memory: 0.00MB
+Batch 36/40, Time: 0.0945s, Memory: 0.00MB
+Batch 37/40, Time: 0.0955s, Memory: 0.00MB
+Batch 38/40, Time: 0.0968s, Memory: 0.00MB
+Batch 39/40, Time: 0.0960s, Memory: 0.00MB
+Batch 40/40, Time: 0.0964s, Memory: 0.00MB
+Total Memory Usage for Testing: 0.00MB
+Total Time for Testing: 3.8459s
+Average Memory Usage per Batch: 0.00MB
+Average Time per Batch: 0.0961s
+Test Loss: 0.04737298777326941
